@@ -10,6 +10,27 @@ scenes:
         name: Architectural Styles
         file: scenes/architecturalstyles.yaml
 
+    historicandheritage:
+       group: Work In Progress
+       name: Heritage & Historical
+       file: scenes/historicandheritage.yaml
+
+    buildingagetz:
+        group: Tanzania
+        name: Building Age
+        file: scenes/startdatetz.yaml
+        legendfunction: startdates_legend //returns a legend as html
+
+    architecturalstylestz:
+        group: Tanzania
+        name: Architectural Styles
+        file: scenes/architecturalstylestz.yaml
+
+    historicandheritagetz:
+       group: Tanzania
+       name: Heritage & Historical
+       file: scenes/historicandheritagetz.yaml
+
     cinnabar:
         group: Mapzen Demos
         name: Cinnabar

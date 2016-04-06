@@ -59,6 +59,7 @@ module.exports = {
           'dist/lib/handlebars.js': ['bower_components/handlebars/handlebars.js'],
           'dist/app.js': ['src/app.js'],
           'dist/apptz.js': ['src/apptz.js'],
+          'dist/appdev.js': ['src/appdev.js'],
           'dist/app/main.js': ['src/app/main.js'],
           // And this is the reason why we have dev and prod!
           'dist/app/configdev.js': ['src/app/configdev.js'],

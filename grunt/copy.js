@@ -5,6 +5,7 @@ module.exports = {
         flatten: true,
         src: ['src/index.html',
               'src/tanzania.html',
+              'src/develop.html',
               'src/favicon.ico'],
         dest: 'dist/'
       }]
@@ -17,6 +18,14 @@ module.exports = {
         dest: 'dist/css/'
       }]
     },
+    fonts: {
+      files: [{
+        expand: true,
+        flatten: true,
+        src: 'bower_components/font-awesome/fonts/*',
+        dest: 'dist/fonts/'
+      }]
+    },
     librarycss: {
       files: [{
         expand: true,
@@ -24,6 +33,7 @@ module.exports = {
         src: ['bower_components/leaflet/dist/leaflet.css',
             'bower_components/sidebar-v2/css/leaflet-sidebar.css',
             'bower_components/Leaflet.VisualClick/dist/L.VisualClick.css',
+            'bower_components/font-awesome/css/font-awesome.min.css',
             'src/app/modules/leaflet.locationlist.css'
             ],
         dest: 'dist/css/'

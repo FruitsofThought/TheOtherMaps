@@ -15,6 +15,7 @@ module.exports = {
         'uglify:dev',
         'copy:icons',
         'copy:html',
+        'copy:fonts',
         'copy:lang',
         'copy:scenes',
         'copy:scenesimages',
@@ -43,4 +44,3 @@ module.exports = {
 //        'imagemin'
     ]
 };
-
