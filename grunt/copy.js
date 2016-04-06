@@ -21,9 +21,9 @@ module.exports = {
       files: [{
         expand: true,
         flatten: true,
-        src: ['src/_lib/leaflet/dist/leaflet.css',
-            'src/_lib/sidebar-v2/css/leaflet-sidebar.css',
-            'src/_lib/Leaflet.VisualClick/dist/L.VisualClick.css',
+        src: ['bower_components/leaflet/dist/leaflet.css',
+            'bower_components/sidebar-v2/css/leaflet-sidebar.css',
+            'bower_components/Leaflet.VisualClick/dist/L.VisualClick.css',
             'src/app/modules/leaflet.locationlist.css'
             ],
         dest: 'dist/css/'
@@ -33,9 +33,9 @@ module.exports = {
       files: [{
         expand: true,
         flatten: true,
-        src: ['src/_lib/underscore/underscore.js',
-            'src/_lib/jquery/dist/jquery.js',
-            'src/_lib/tangram/dist/tangram.min.js'
+        src: ['bower_components/underscore/underscore.js',
+            'bower_components/jquery/dist/jquery.js',
+            'bower_components/tangram/dist/tangram.min.js'
             ],
         dest: 'dist/lib/'
       }]
@@ -96,7 +96,7 @@ module.exports = {
       files: [{
         expand: true,
         flatten: true,
-        src: 'src/_lib/leaflet/dist/leaflet-src.js',
+        src: 'bower_components/leaflet/dist/leaflet-src.js',
         dest: 'dist/lib/leaflet/'
       }]
     }
