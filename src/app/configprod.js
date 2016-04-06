@@ -1,4 +1,4 @@
-define ([], function () {
+define (['jquery', 'js-yaml'], function ($, jsyaml) {
   var appconfig = Array();
   appconfig['path'] = '/';
   appconfig['filename'] = 'index.html';
