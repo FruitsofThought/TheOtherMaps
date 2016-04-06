@@ -1,0 +1,169 @@
+any:
+    id: 
+        displayname: keys.id
+        osmwiki: Node 
+        weight: 300
+    name: 
+        displayname: keys.name
+        osmwiki: Key:name
+        weight: 1
+    kind:
+        displayname: keys.kind
+        weight: 10
+    source:
+        displayname: keys.source
+        weight: 290
+    start_date:
+        displayname: keys.start_date
+        osmwiki: Key:start_date
+        weight: 50
+    area:
+        displayname: keys.area
+        weight: 280
+    wikipedia:
+        displayname: keys.wikipedia
+        wikipedia: Wikipedia
+        osmwiki: Key:wikipedia
+        wikidata: Q52
+        weight: 250
+    wikidata:
+        displayname: keys.wikidata
+        wikipedia: Wikidata
+        osmwiki: Key:wikidata
+        wikidata: Q52
+        weight: 255
+    historic:
+        displayname: keys.historic.historic
+        weight: 100
+        osmwiki: Key:historic
+        values: 
+            monument: 
+                displayname: keys.historic.monument
+                wikipedia: Monument
+                wikidata: Q4989906
+                osmwiki: Tag:historic%3Dmonument
+places:
+    kind:
+        displayname: keys.kind
+        osmwiki: Key:place
+        values: 
+            town: 
+                originalkey: place
+                originalname: town
+                displayname: keys.place.town
+                wikipedia: Town         
+                wikidata: Q3957
+                osmwiki: Tag:place%3Dtown
+    population: 
+        displayname: keys.population
+        wikipedia: Population         
+        wikidata: Q33829
+        wikiproperty: P1082     
+        osmkey: population
+        osmwiki: Key:population
+        weight: 30
+architecture: 
+    kind:
+        displayname: keys.kind
+        weight: 10
+        values: 
+            building: 
+                originalkey: building
+                originalname: yes
+                displayname: keys.building.building
+                osmwiki: Key:building
+            commercial: 
+                originalkey: building
+                originalname: commercial
+                displayname: keys.building.commercial
+                osmwiki: Tag:building=commercial
+            apartments:
+                originalkey: building
+                originalname: apartments
+                displayname: keys.building.apartments
+                osmwiki: Tag:building=apartments
+            house:
+                originalkey: building
+                originalname: house
+                displayname: keys.building.house
+                osmwiki: Tag:building=house
+            residential:
+                originalkey: building
+                originalname: residential
+                displayname: keys.building.residential
+                osmwiki: Tag:building=residential
+            church:
+                originalkey: building
+                originalname: church
+                displayname: keys.building.church
+                osmwiki: Tag:building=church
+                wikidata: Q605315
+                wikipedia: church
+            mosque:
+                originalkey: building
+                originalname: mosque
+                displayname: keys.building.mosque
+                osmwiki: Tag:building=mosque
+                wikipedia: Mosque
+                wikidata: Q32815
+    architecture_style:
+        displayname: keys.building:architecture.architecture
+        wikidata: Q32880
+        wikiproperty: P149
+        osmwiki: Key:building:architecture
+        wikipedia: Architectural_style
+        weight: 50
+        values: 
+            art_deco: 
+                displayname: keys.building:architecture.art_deco
+                wikipedia: Art_Deco#Architecture
+                wikidata: Q173782
+                osmwiki: Key:building:architecture
+            art_nouveau: 
+                displayname: keys.building:architecture.art_nouveau
+                wikipedia: Art_Nouveau
+                wikidata: Q34636
+                osmwiki: Key:building:architecture
+            gothic: 
+                displayname: keys.building:architecture.gothic
+                wikipedia: Gothic_architecture
+                wikidata: Q176483
+                osmwiki: Key:building:architecture
+            neo_gothic: 
+                displayname: keys.building:architecture.neo_gothic
+                wikipedia: Gothic_Revival_architecture
+                wikidata: Q186363
+                osmwiki: Key:building:architecture
+            indian: 
+                displayname: keys.building:architecture.indian
+                wikipedia: Indo-Islamic_architecture
+                wikidata: Q825394
+                osmwiki: Key:building:architecture
+            eclectic: 
+                displayname: keys.building:architecture.eclectic
+                wikipedia: Eclecticism_in_architecture
+                wikidata: Q2479493
+                osmwiki: Key:building:architecture
+            modernism: 
+                displayname: keys.building:architecture.modernism
+                wikipedia: Modern_architecture
+                wikidata: Q245188
+                osmwiki: Key:building:architecture
+            classic_swahili: 
+                displayname: keys.building:architecture.classic_swahili
+                wikipedia: Swahili_architecture
+                wikidata: Q7652972
+                osmwiki: Key:building:architecture
+    architecture_typology:
+        displayname: keys.building:architecture:typology.typology
+        wikidata: Q784969
+        osmwiki: Key:building:architecture:typology
+        wikipedia: Typology_(urban_planning_and_architecture)
+        weight: 55
+        values: 
+            single_storey_swahili: 
+                displayname: keys.building:architecture:typology.single_storey_swahili
+            apartment_block: 
+                displayname: keys.building:architecture:typology.apartment_block
+            indian_shopfront: 
+                displayname: keys.building:architecture:typology.indian_shopfront

@@ -1,0 +1,54 @@
+<div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#homepane" role="tab"><i class="fa fa-bars"></i></a></li>
+                <li><a href="#legendpane" role="tab"><i class="fa fa-map"></i></a></li>
+                <!-- try fa-exchange fa-filter fa-sliders -->
+                <li><a href="#sceneswitcherpane" role="tab"><i class="fa fa-filter"></i></a></li>
+                <li class="disabled"><a href="#infopane" role="tab"><i class="fa fa-info"></i></a></li>
+                <li class="disabled"><a href="#wikipediapane" role="tab"><i class="fa fa-wikipedia-w"></i></a></li>
+                <li class="disabled"><a href="#imagespane" role="tab"><i class="fa fa-file-image-o"></i></a></li>
+            </ul>
+
+            <ul role="tablist">
+                <li><a href="#settingspane" role="tab"><i class="fa fa-gear"></i></a></li>
+            </ul>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="homepane">
+                <h1 class="sidebar-header">
+                    {{ t 'home.panels.home.title' }}
+                    <span class="sidebar-close"><i class="fa fa-caret-right"></i></span>
+                </h1>
+                <div id="home">{{ t 'home.panels.home.pane' }}</div>
+            </div>
+
+            <div class="sidebar-pane" id="sceneswitcherpane">
+                <h1 class="sidebar-header">{{ t 'home.panels.sceneswitcher.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
+                <div id="sceneswitcher"></div>
+            </div>
+
+            <div class="sidebar-pane" id="legendpane">
+                <h1 class="sidebar-header">{{ t 'home.panels.legend.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
+                <div id="legend"></div>
+            </div>
+
+            <div class="sidebar-pane" id="infopane">
+                <h1 class="sidebar-header">{{ t 'home.panels.info.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
+                <div id="info"></div>
+            </div>
+
+            <div class="sidebar-pane" id="wikipediapane">
+                <h1 class="sidebar-header">{{ t 'home.panels.wikipedia.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
+                <div><iframe id="wikipedia"></iframe></div>
+            </div>
+
+            <div class="sidebar-pane" id="imagespane">
+                <h1 class="sidebar-header">{{ t 'home.panels.images.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
+            </div>
+
+            <div class="sidebar-pane" id="settingspane">
+                <h1 class="sidebar-header">{{ t 'home.panels.settings.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
+            </div>
+</div>

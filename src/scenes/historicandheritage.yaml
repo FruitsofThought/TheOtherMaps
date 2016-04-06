@@ -1,0 +1,164 @@
+scene:
+    background:
+        color: '#353535'
+
+cameras:
+    perspective:
+        type: perspective
+        vanishing_point: [0, -500]
+
+lights:
+    light1:
+        type: directional
+        direction: [.1, .5, -1]
+        diffuse: .7
+        ambient: .5
+
+textures:
+    icons:
+        url: images/wikipedia.png
+        filtering: mipmap
+        sprites:
+            # define sprites: [x origin, y origin, width, height]
+            wikipedia: [0, 0, 16, 16]
+
+styles:
+    buildings:
+        base: polygons
+        shaders:
+            blocks:
+                color: |
+                    color.rgb *= vec3(min((worldPosition().z*.001 + .5),1.));
+    ui-icons-overlay:
+        base: points
+        texture: icons
+        interactive: true
+        blend: overlay
+        blend_order: 3
+    heritageareas:
+        base: polygons
+        interactive: true
+        blend: overlay
+        blend_order: 10
+        
+
+sources:
+    mapzen:
+        type: TopoJSON
+        url:  http://tiles.mountbatten.nl/all/{z}/{x}/{y}.topojson
+
+layers:
+    earth:
+        data: { source: mapzen }
+        draw:
+            polygons:
+                order: 0
+                color: '#555'
+
+    water:
+        data: { source: mapzen }
+        draw:
+            polygons:
+                order: 2
+                color: '#353535'
+
+    landuse:
+        data: { source: mapzen }
+        draw:
+            polygons:
+                order: 1
+                color: '#666'
+        protectedarea:
+            filter:
+                kind: [protected_area, national_park, nature_reserve]
+            draw:
+                heritageareas:
+                    interactive: true
+                    order: 1
+                    color: [.2, 1, 0, .08]
+
+    places:
+        data: { source: mapzen }
+        draw:
+            polygons:
+                order: 3
+                color: '#404040'
+        labels:
+            filter:
+                name: true
+                $zoom: 
+                    min: 9
+                    max: 12 
+            draw:
+                text:
+                    font:
+                        fill: #fff
+                        family: Helvetica
+                        size: 12px
+                
+    roads:
+        data: { source: mapzen }
+        filter: { not: { kind: ferry } }
+        draw:
+            lines:
+                order: 2
+                color: '#777'
+                width: 5
+    
+    heritage:
+        data: { source: mapzen }
+
+        global:
+            filter: { $zoom: { max: 11 } }
+            draw:
+                points:
+                    size: 32px
+                    order: 1
+                    color: [.2, 1, 0, .06]
+        national:
+            filter: { $zoom: { min: 11 } }
+            draw:
+                heritageareas:
+                    interactive: true
+                    order: 1
+                    color: [.2, 1, 0, .08]
+
+        labels:
+            filter:
+                name: true
+                $zoom: { min: 15 } 
+            draw:
+                text:
+                    font:
+                        fill: white
+                        family: Helvetica
+                        size: 12px
+
+            historic:
+                filter :
+                    historic: true 
+                draw:
+                    text:
+                        font:
+                            fill: red
+                            family: Helvetica
+                            size: 14px
+            wikipedia:
+                filter :
+                    wikipedia: true 
+                draw:
+                    text:
+                        font:
+                            fill: blue
+                            family: Helvetica
+                            size: 14px
+        wikiicon:
+            filter :
+                wikipedia: true 
+                $zoom: { min: 15 } 
+            draw:
+                ui-icons-overlay:
+                    size: 16px
+                    visible: true
+                    sprite: wikipedia
+  

@@ -1,0 +1,39 @@
+{
+  "name": "OpenStreetMap Labels Box",
+  "authors": [
+    "Reinier Battenberg <reinier.battenberg@mountbatten.net>"
+  ],
+  "description": "generates labels based on OSM properties coming from a mapzen tileserver",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "demo"
+  ],
+  "license": "GPL 3.0",
+  "homepage": "www.mountbatten.nl",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "requirejs": "^2.2.0",
+    "jquery": "^2.2.2",
+    "font-awesome": "^4.5.0",
+    "tangram": "^0.6.2",
+    "polyglot": "^1.0.0",
+    "leaflet": "^0.7.7",
+    "leaflet-hash": "*",
+    "keymaster": "^1.6.3",
+    "wikidata-sdk": "^2.0.0",
+    "requirejs-plugins": "^1.0.3",
+    "require-handlebars-plugin": "^1.0.0",
+    "require-yaml": "^0.1.2",
+    "Leaflet.VisualClick": "^1.1.0",
+    "sidebar-v2": "^0.3.0",
+    "underscore": "^1.8.3"
+  }
+}

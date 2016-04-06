@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Other Maps Project</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="css/output.css" />
+  <link rel="stylesheet" href="css/leaflet.css" />
+  <link rel="stylesheet" href="css/leaflet.locationlist.css" />
+  <link rel="stylesheet" href="css/leaflet-sidebar.css" />
+  <link rel="stylesheet" href="css/L.VisualClick.css" />
+
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'> -->
+  <!-- Main tangram library. NEVER use a different name than tangram.min.js or tangram.debug.js -->
+  <script src="lib/tangram.min.js"></script>
+
+  <script data-main="appdev" src="js/require.js"></script>
+
+
+    <!-- Adding a script block to post message to the parent container (think iframed demos) -->
+    <script type="text/javascript">
+      window.addEventListener("hashchange",function(){
+        parent.postMessage(window.location.hash, "*")
+        // Allow user to edit current view in OSM
+                //window.layer.attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a> | <a href="https://mapzen.com/" target="_blank">Edit in OSM</a>'
+      });
+    </script>
+
+</head>
+<body>
+  <div id="rightsidebar" class="sidebar rightsidebar collapsed"></div>
+  <div id="leftsidebar" class="sidebar leftsidebar collapsed"></div>
+ <!-- The leaflet map -->
+  <div id="map" class="sidebar-map"></div>
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(["setDomains", ["*.maps.mountbatten.nl"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//piwik.mountbatten.net/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 35]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//piwik.mountbatten.net/piwik.php?idsite=35" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+</body>
+</html>

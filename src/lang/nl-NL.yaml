@@ -1,0 +1,73 @@
+locale: nl
+phrases:
+    undefined: Onbekende text
+    home:
+        name: Naam
+        title: Andere Kaarten
+        wikipediahover: Open Engelstalige Wikipedia pagina voor
+        osmwikihover: Open Engelstalige OpenStreetMap Wiki pagina voor
+        wikidatahover: Open Wikidata Pagina voor
+        ctrlclicknewwindow: Houdt CTRL ingedrukt om in een nieuwe tab te openen
+        panels: 
+            home: 
+                title: De Andere Kaarten
+                pane: Hier vind je veel OpenStreetMap kaarten die je elders niet vind
+            sceneswitcher:
+                title: Kaarten
+            legend:
+                title: Legenda
+            info: 
+                title: Informatie
+            wikipedia: 
+                title: Wikipedia
+            images: 
+                title: Fotos
+            settings: 
+                title: Instellingen
+            wikipediadoc: 
+                title: Wikipedia Documentatie
+            osmwiki: 
+                title: OpenStreetMap Wiki
+            wikipedia: 
+                title: Wikipedia
+    keys:
+        kind: Soort
+        name: Naam
+        id: OpenStraatKaart Nummer
+        source: Bron
+        start_date: Openingsdatum
+        area: Oppervlakte (in vierkante meters)
+        population: Bevolkingsaantal
+        wikipedia: Wikipedia Pagina
+        wikidata: Wikidata Item
+        historic: 
+            historic: Historisch
+            yes: Algemeen Historisch
+        building: 
+            building: Gebouw
+            commercial: Commercieel
+            house: Huis
+            residential: Woongelegenheid
+            apartments: Appartementen Gebouw
+            church: Kerk
+            mosque: Moskee
+        "building:architecture": 
+            architecture: Architectonische Stijl
+            art_deco: Art Deco
+            art_nouveau: Jugendstil
+            gothic: Gotiek
+            neo_gothic: Neogotiek
+            indian: Indiaas
+            eclectic: Eclectische Stijl
+            modernism: Het Nieuwe Bouwen
+            classic_swahili: Klassiek Swahili
+        "building:architecture:typology":
+            typology: Architectural Typology
+            single_storey_swahili: Enkele verdieping Swahili  
+            apartment_block: Appartementen Blok
+            indian_shopfront: Indiase Winkel
+        place: 
+            town: Stadje
+      
+    
+  

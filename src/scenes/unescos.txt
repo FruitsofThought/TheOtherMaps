@@ -1,0 +1,14 @@
+
+
+In Nederland:
+
+select * from "planet_osm_polygon" where "heritage" = '1'
+
+
+
+
+nl:Ir.D.F. Wouda-gemaal
+
+        nl:Rietveld Schröderhuis
+nl:Grachtengordel (Amsterdam)  
+nl:Van Nellefabriek

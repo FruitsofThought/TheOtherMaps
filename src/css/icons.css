@@ -1,0 +1,40 @@
+.icon-next, .icon-prev, .openstreetmap_bw, .openstreetmap_color, .wikidata_48x48, .wikidata_bw, .wikidata_color, .wikipedia_black, .wikipedia_white {
+    background: url("../icons/sprite.png") no-repeat;
+}
+
+.icon-next {
+    background-position: 0 0;
+}
+
+.icon-prev {
+    background-position: 0 -15px;
+}
+
+.openstreetmap_bw {
+    background-position: 0 -30px;
+}
+
+.openstreetmap_color {
+    background-position: 0 -46px;
+}
+
+.wikidata_48x48 {
+    background-position: 0 -62px;
+}
+
+.wikidata_bw {
+    background-position: 0 -242px;
+}
+
+.wikidata_color {
+    background-position: 0 -290px;
+}
+
+.wikipedia_black {
+    background-position: 0 -306px;
+}
+
+.wikipedia_white {
+    background-position: 0 -322px;
+}
+

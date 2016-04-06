@@ -1,0 +1,22 @@
+<div class="sidebar-tabs">
+  <ul role="tablist">
+    <li class="disabled"><a href="#wikipediadocpane" role="tab"><i class="fa fa-wikipedia-w"></i></a></li>
+    <li class="disabled"><a href="#osmwikipane" role="tab"><i class="fa fa-search"></i></a></li>
+    <li class="disabled"><a href="#wikidatapane" role="tab"><i class="fa fa-table"></i></a></li>
+  </ul>
+</div>
+<!-- Tab panes -->
+<div class="sidebar-content">
+  <div class="sidebar-pane iframepane" id="wikipediadocpane">
+    <h1 class="sidebar-header">{{ t 'home.panels.wikipediadoc.title' }}<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+    <div><iframe id="wikipediadoc"></iframe></div>
+  </div>
+  <div class="sidebar-pane iframepane" id="osmwikipane">
+    <h1 class="sidebar-header">{{ t 'home.panels.osmwiki.title' }}<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+    <div><iframe id="osmwiki"></iframe></div>
+  </div>
+  <div class="sidebar-pane iframepane" id="wikidatapane">
+    <h1 class="sidebar-header">{{ t 'home.panels.wikidata.title' }}<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+    <div><iframe id="wikidata"></iframe></div>
+  </div>
+</div>

@@ -1,0 +1,192 @@
+﻿scene:
+    background:
+        color: '#353535'
+
+cameras:
+    perspective:
+        type: perspective
+        vanishing_point: [0, -500]
+
+lights:
+    light1:
+        type: directional
+        direction: [.1, .5, -1]
+        diffuse: .7
+        ambient: .5
+
+textures:
+    icons:
+        url: images/wikipedia.png
+        filtering: mipmap
+        sprites:
+            # define sprites: [x origin, y origin, width, height]
+            wikipedia: [0, 0, 16, 16]
+
+
+styles:
+    buildings:
+        base: polygons
+        shaders:
+            blocks:
+                color: |
+                    color.rgb *= vec3(min((worldPosition().z*.001 + .5),1.));
+    ui-icons-overlay:
+        base: points
+        texture: icons
+        interactive: true
+        blend: overlay
+        blend_order: 3
+
+sources:
+    mapzen:
+        type: TopoJSON
+        url:  http://tiles.mountbatten.nl/all/{z}/{x}/{y}.topojson
+
+layers:
+    earth:
+        data: { source: mapzen }
+        draw:
+            polygons:
+                order: 0
+                color: '#555'
+
+    water:
+        data: { source: mapzen }
+        draw:
+            polygons:
+                order: 2
+                color: '#353535'
+
+    landuse:
+        data: { source: mapzen }
+        draw:
+            polygons:
+                order: 1
+                color: '#666'
+                
+    roads:
+        data: { source: mapzen }
+        filter: { not: { kind: ferry } }
+        draw:
+            lines:
+                order: 2
+                color: '#777'
+                width: 5
+
+        labels:
+            filter:
+                name: true
+                aeroway: false
+                tunnel: false
+                railway: false
+                not: { kind: rail }
+
+            draw:
+                text:
+                    font:
+                        fill: white
+                        family: Helvetica
+                        size: 11px
+
+            highway:
+                filter: { kind: highway }
+                draw:
+                    text:
+                        font:
+                            size: 12px
+                            weight: bold
+
+    buildings:
+        data: { source: mapzen , layer: architecture}
+        wikiicon:
+            filter :
+                wikipedia: true 
+            draw:
+                ui-icons-overlay:
+                    size: 16px
+                    visible: true
+                    sprite: wikipedia
+        stone_town:
+            filter: {"architecture_style": "stone_town" }
+            draw:
+                polygons:
+                    color: [0.843, 0.098, 0.110]
+        first_swahili:
+            filter: {"architecture_style": "first_swahili" }
+            draw:
+                polygons:
+                    color: [0.906, 0.357, 0.227]
+        classic_swahili:
+            filter: {"architecture_style": "classic_swahili" }
+            draw:
+                polygons:
+                    color: [0.973, 0.616, 0.349]
+        omani:
+            filter: {"architecture_style": "omani" }
+            draw:
+                polygons:
+                    color: [0.992, 0.788, 0.502]
+                    
+        indian:
+            filter: {"architecture_style": "indian" }
+            draw:
+                polygons:
+                    order: 50
+                    color: [0.996, 0.929, 0.667]
+        art_deco:
+            filter: {"architecture_style": "art_deco" }
+            draw:
+                polygons:
+                    order: 50
+                    color: [0.925, 0.969, 0.725]
+        british_colonial:
+            filter: {"architecture_style": "british_colonial" }
+            draw:
+                polygons:
+                    color: [0.780, 0.910, 0.678]
+        eclectic:
+            filter: {"architecture_style": "eclectic" }
+            draw:
+                polygons:
+                    color: [0.612, 0.827, 0.651]
+        modernism:
+            filter: {"architecture_style": "modernism" }
+            draw:
+                polygons:
+                    color: [0.388, 0.671, 0.690]
+        hyper_modern:
+            filter: {"architecture_style": "hyper_modern" }
+            draw:
+                polygons:
+                    color: [0.169, 0.514, 0.729]
+        fromhereonitsNLhyper_modern:
+            filter: {"architecture_style": "neo_gothic" }
+            draw:
+                polygons:
+                    color: [0.169, 0.514, 0.729]
+        art_nouveau:
+            filter: {"architecture_style": "art_nouveau" }
+            draw:
+                polygons:
+                    color: [0.169, 0.514, 0.729]
+        modern:
+            filter: {"architecture_style": "modern" }
+            draw:
+                polygons:
+                    color: [0.169, 0.514, 0.729]
+        rijnllandse_gothic:
+            filter: {"architecture_style": "Rijnllandse Gothic" }
+            draw:
+                polygons:
+                    color: [0.169, 0.514, 0.729]
+        hyper_modern:
+            filter: {"architecture_style": "hyper_modern" }
+            draw:
+                polygons:
+                    color: [0.169, 0.514, 0.729]
+
+        draw:
+            polygons:
+                order: 50
+                color: '#333'
+                interactive: true

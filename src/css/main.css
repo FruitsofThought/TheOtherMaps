@@ -1,0 +1,164 @@
+html { height: 100% }
+body { 
+    height: 100%; 
+    margin: 0; 
+    padding: 0;
+    font-family: 'Josefin Sans';
+  }
+
+#map {
+    height:   100%;
+    width:    100%;
+    position: absolute;
+  }
+
+#legend {
+    z-index: 10000;
+    position: absolute;
+    color: #000;
+}
+  
+#legend table {
+    margin-top: 30px;
+    width: 80%;
+    font-size: smaller;
+  }
+
+#legend a {
+    color: #000;
+    height: 15px;
+    width: 300px;
+}
+
+.leaflet-control-locationlist-arrow-next { 
+    background-image: url('images/icon-next.png');
+}
+
+.leaflet-control-locationlist-arrow-prev { 
+   background-image: url('images/icon-prev.png');
+}
+  
+.sidebar-content {
+    display: block;
+}
+
+.sidebar .icon {
+  display: block;
+  width: 35px;
+  height: 35px;
+}
+
+.iframepane {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.iframepane h1{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.iframepane.active {
+    display: block;
+    height: 100%;
+    overflow: none;  
+}
+
+.iframepane.active div {
+    height: 95%;
+}
+
+.iframepane iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+  
+#sceneswitcher .group {
+<!-- padding-inline-start: 20px; -->
+  padding-left: 20px;
+}
+
+#sceneswitcher li {
+  text-decoration: none;
+  color: #33B5E5;
+  display: block;
+  padding-left: 40px;
+  background-color: #ffffff;
+  border-color: #33B5E5;
+  border: 1px;
+  border-style: solid;
+  margin-bottom: 10px;
+}
+ 
+#sceneswitcher li:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #33B5E5;
+  border-color: #33B5E5;
+  border: 1px;
+  border-style: solid;
+}
+
+#sceneswitcher li.active {
+  color: #000;
+}
+
+.featureinfo .kind {
+  display: block;
+  clear: both;
+  font-size: big;
+}
+
+.featureinfo .valuelabel {
+  display: inline-block;
+  clear: both;
+}
+
+.featureinfo .keylabel {
+  display: inline-block;
+  clear: both;
+}
+
+.featureinfo .label.name {
+  font-weight: bigger;
+}
+
+.featureinfo .valuelabel.wikipedia,
+.featureinfo .label.underlined {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.featureinfo .icons {
+  display: inline-block;
+  float: right;
+}
+
+.featureinfo .icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #fff;
+  cursor: pointer;
+  float: left;
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+}
+
+.featureinfo .visible .icon {
+  opacity: 1;
+}
+
+.featureinfo .icon:hover {
+  border-style: dotted;
+  border-color: #000;
+  filter: none;
+}
+
+.featureinfo .wikipediaicon {
+  border-color: #000;
+}
+

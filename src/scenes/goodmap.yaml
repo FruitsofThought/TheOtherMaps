@@ -1,0 +1,91 @@
+scene:
+    background:
+        color: '#353535'
+
+cameras:
+    perspective:
+        type: perspective
+        vanishing_point: [0, -500]
+
+lights:
+    light1:
+        type: directional
+        direction: [.1, .5, -1]
+        diffuse: .7
+        ambient: .5
+
+styles:
+    buildings:
+        base: polygons
+        shaders:
+            blocks:
+                color: |
+                    color.rgb *= vec3(min((worldPosition().z*.001 + .5),1.));
+
+sources:
+    mapzen:
+        type: TopoJSON
+        url:  //vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-JUsa0Gc
+
+layers:
+    earth:
+        data: { source: mapzen }
+        draw:
+            polygons:
+                order: 0
+                color: '#555'
+
+    water:
+        data: { source: mapzen }
+        draw:
+            polygons:
+                order: 2
+                color: '#353535'
+
+    landuse:
+        data: { source: mapzen }
+        draw:
+            polygons:
+                order: 1
+                color: '#666'
+                
+    roads:
+        data: { source: mapzen }
+        filter: { not: { kind: ferry } }
+        draw:
+            lines:
+                order: 2
+                color: '#777'
+                width: 5
+
+        labels:
+            filter:
+                name: true
+                aeroway: false
+                tunnel: false
+                railway: false
+                not: { kind: rail }
+
+
+    buildings:
+        data: { source: mapzen }
+        filter: { $zoom: { min: 14 } }
+        draw:
+            polygons:
+                order: 50
+                color: '#4d4d4d'
+
+    pois:
+        data: { source: mapzen }
+        filter: 
+            $zoom: { min: 14 }
+            cuisine: true
+        labels:
+            draw:
+                text:
+                    text_source: cuisine
+                    font:
+                        fill: white
+                        family: Helvetica
+                        size: 11px
+     
