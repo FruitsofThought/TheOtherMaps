@@ -2,7 +2,7 @@
 locationsList:
     -
         title: Amsterdam
-        latlng: 
+        latlng:
             - 52.3697
             - 4.9044
         zoom: 14
@@ -14,15 +14,15 @@ locationsList:
         zoom: 14
     -
         title: Utrecht
-        latlng: 
+        latlng:
             - 52.0882
             - 5.1233
         zoom: 14
     -
         title: Rotterdam
         latlng:
-             - 51.9149 
-             - 4.4754]
+             - 51.9149
+             - 4.4754
         zoom: 14
     -
         title: Den Haag
@@ -68,7 +68,7 @@ locationsList:
         zoom: 13
     -
         title: Terschelling
-        latlng: 
+        latlng:
                - 53.3636
                - 5.2276
         zoom: 15
