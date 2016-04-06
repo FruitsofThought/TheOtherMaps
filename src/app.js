@@ -25,7 +25,7 @@ requirejs.config({
       permalink : 'app/modules/Permalink',
       sceneswitcher : 'app/modules/L.Control.SceneSwitcher',
       osminfobox : 'app/modules/OsmInfobox',
-      config: 'app/config',
+      config: 'app/configprod',
       main: 'app/main',
     },
     shim: {
