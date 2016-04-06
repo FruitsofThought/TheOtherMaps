@@ -1,6 +1,6 @@
 define (['jquery', 'js-yaml'], function ($, jsyaml) {
   var appconfig = Array();
-  appconfig['path'] = '/archtiles/fresh/dist/';
+  appconfig['path'] = '/';
   appconfig['filename'] = 'tanzania.html';
   appconfig['map_start_location'] = [-6.1653329612873105, 39.19835239648819, 16] // Ngambo
   appconfig['startscene'] = 'architecturalstylestz';
