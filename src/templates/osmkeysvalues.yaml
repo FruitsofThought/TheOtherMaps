@@ -1,9 +1,9 @@
 any:
-    id: 
+    id:
         displayname: keys.id
-        osmwiki: Node 
+        osmwiki: Node
         weight: 300
-    name: 
+    name:
         displayname: keys.name
         osmwiki: Key:name
         weight: 1
@@ -36,8 +36,8 @@ any:
         displayname: keys.historic.historic
         weight: 100
         osmwiki: Key:historic
-        values: 
-            monument: 
+        values:
+            monument:
                 displayname: keys.historic.monument
                 wikipedia: Monument
                 wikidata: Q4989906
@@ -46,33 +46,33 @@ places:
     kind:
         displayname: keys.kind
         osmwiki: Key:place
-        values: 
-            town: 
+        values:
+            town:
                 originalkey: place
                 originalname: town
                 displayname: keys.place.town
-                wikipedia: Town         
+                wikipedia: Town
                 wikidata: Q3957
                 osmwiki: Tag:place%3Dtown
-    population: 
+    population:
         displayname: keys.population
-        wikipedia: Population         
+        wikipedia: Population
         wikidata: Q33829
-        wikiproperty: P1082     
+        wikiproperty: P1082
         osmkey: population
         osmwiki: Key:population
         weight: 30
-architecture: 
+architecture:
     kind:
         displayname: keys.kind
         weight: 10
-        values: 
-            building: 
+        values:
+            building:
                 originalkey: building
                 originalname: yes
                 displayname: keys.building.building
                 osmwiki: Key:building
-            commercial: 
+            commercial:
                 originalkey: building
                 originalname: commercial
                 displayname: keys.building.commercial
@@ -113,44 +113,49 @@ architecture:
         osmwiki: Key:building:architecture
         wikipedia: Architectural_style
         weight: 50
-        values: 
-            art_deco: 
+        values:
+            art_deco:
                 displayname: keys.building:architecture.art_deco
                 wikipedia: Art_Deco#Architecture
                 wikidata: Q173782
                 osmwiki: Key:building:architecture
-            art_nouveau: 
+            art_nouveau:
                 displayname: keys.building:architecture.art_nouveau
                 wikipedia: Art_Nouveau
                 wikidata: Q34636
                 osmwiki: Key:building:architecture
-            gothic: 
+            gothic:
                 displayname: keys.building:architecture.gothic
                 wikipedia: Gothic_architecture
                 wikidata: Q176483
                 osmwiki: Key:building:architecture
-            neo_gothic: 
+            neo_gothic:
                 displayname: keys.building:architecture.neo_gothic
                 wikipedia: Gothic_Revival_architecture
                 wikidata: Q186363
                 osmwiki: Key:building:architecture
-            indian: 
+            indian:
                 displayname: keys.building:architecture.indian
                 wikipedia: Indo-Islamic_architecture
                 wikidata: Q825394
                 osmwiki: Key:building:architecture
-            eclectic: 
+            eclectic:
                 displayname: keys.building:architecture.eclectic
                 wikipedia: Eclecticism_in_architecture
                 wikidata: Q2479493
                 osmwiki: Key:building:architecture
-            modernism: 
+            modernism:
                 displayname: keys.building:architecture.modernism
                 wikipedia: Modern_architecture
                 wikidata: Q245188
                 osmwiki: Key:building:architecture
-            classic_swahili: 
+            classic_swahili:
                 displayname: keys.building:architecture.classic_swahili
+                wikipedia: Swahili_architecture
+                wikidata: Q7652972
+                osmwiki: Key:building:architecture
+            stone_town:
+                displayname: keys.building:architecture.stone_town
                 wikipedia: Swahili_architecture
                 wikidata: Q7652972
                 osmwiki: Key:building:architecture
@@ -160,10 +165,12 @@ architecture:
         osmwiki: Key:building:architecture:typology
         wikipedia: Typology_(urban_planning_and_architecture)
         weight: 55
-        values: 
-            single_storey_swahili: 
+        values:
+            single_storey_swahili:
                 displayname: keys.building:architecture:typology.single_storey_swahili
-            apartment_block: 
+            apartment_block:
                 displayname: keys.building:architecture:typology.apartment_block
-            indian_shopfront: 
+            indian_shopfront:
                 displayname: keys.building:architecture:typology.indian_shopfront
+            government:
+                displayname: keys.building:architecture:typology.government

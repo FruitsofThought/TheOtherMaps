@@ -40,7 +40,7 @@ styles:
 sources:
     mapzen:
         type: TopoJSON
-        url:  http://tz.tiles.mountbatten.nl:83/all/{z}/{x}/{y}.topojson
+        url:  https://tiles.mountbatten.nl/all/{z}/{x}/{y}.topojson
 
 layers:
     earth:
@@ -63,7 +63,7 @@ layers:
             polygons:
                 order: 1
                 color: '#666'
-                
+
     roads:
         data: { source: mapzen }
         filter: { not: { kind: ferry } }
@@ -100,7 +100,7 @@ layers:
         data: { source: mapzen , layer: architecture}
         wikiicon:
             filter :
-                wikipedia: true 
+                wikipedia: true
             draw:
                 ui-icons-overlay:
                     size: 16px
@@ -126,7 +126,7 @@ layers:
             draw:
                 polygons:
                     color: [0.992, 0.788, 0.502]
-                    
+
         indian:
             filter: {"architecture_style": "indian" }
             draw:

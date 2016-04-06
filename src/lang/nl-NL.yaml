@@ -8,27 +8,27 @@ phrases:
         osmwikihover: Open Engelstalige OpenStreetMap Wiki pagina voor
         wikidatahover: Open Wikidata Pagina voor
         ctrlclicknewwindow: Houdt CTRL ingedrukt om in een nieuwe tab te openen
-        panels: 
-            home: 
+        panels:
+            home:
                 title: De Andere Kaarten
                 pane: Hier vind je veel OpenStreetMap kaarten die je elders niet vind
             sceneswitcher:
                 title: Kaarten
             legend:
                 title: Legenda
-            info: 
+            info:
                 title: Informatie
-            wikipedia: 
+            wikipedia:
                 title: Wikipedia
-            images: 
+            images:
                 title: Fotos
-            settings: 
+            settings:
                 title: Instellingen
-            wikipediadoc: 
+            wikipediadoc:
                 title: Wikipedia Documentatie
-            osmwiki: 
+            osmwiki:
                 title: OpenStreetMap Wiki
-            wikipedia: 
+            wikipedia:
                 title: Wikipedia
     keys:
         kind: Soort
@@ -40,10 +40,10 @@ phrases:
         population: Bevolkingsaantal
         wikipedia: Wikipedia Pagina
         wikidata: Wikidata Item
-        historic: 
+        historic:
             historic: Historisch
             yes: Algemeen Historisch
-        building: 
+        building:
             building: Gebouw
             commercial: Commercieel
             house: Huis
@@ -51,7 +51,7 @@ phrases:
             apartments: Appartementen Gebouw
             church: Kerk
             mosque: Moskee
-        "building:architecture": 
+        "building:architecture":
             architecture: Architectonische Stijl
             art_deco: Art Deco
             art_nouveau: Jugendstil
@@ -63,11 +63,9 @@ phrases:
             classic_swahili: Klassiek Swahili
         "building:architecture:typology":
             typology: Architectural Typology
-            single_storey_swahili: Enkele verdieping Swahili  
+            single_storey_swahili: Enkele verdieping Swahili
             apartment_block: Appartementen Blok
             indian_shopfront: Indiase Winkel
-        place: 
+            government: Overheid
+        place:
             town: Stadje
-      
-    
-  

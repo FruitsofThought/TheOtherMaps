@@ -1,33 +1,33 @@
 locale: en
 phrases:
     undefined: Unknown Text
-    home: 
+    home:
         title: Other Maps
         wikipediahover: Open Wikipedia Page for
         osmwikihover: Open OpenStreetMap Wiki for
         wikidatahover: Open Wikidata Page for
         ctrlclicknewwindow: Press CTRL to open in new tab
-        panels: 
-            home: 
+        panels:
+            home:
                 title: Info
                 pane: This shows a lot of OpenStreetMap data that you normally do not see.
             sceneswitcher:
                 title: Scene Switcher
             legend:
                 title: Legend
-            info: 
+            info:
                 title: Info
-            images: 
+            images:
                 title: Images
-            settings: 
+            settings:
                 title: Settings
-            wikipedia: 
+            wikipedia:
                 title: Wikipedia
-            wikipediadoc: 
+            wikipediadoc:
                 title: Wikipedia Documentation
-            osmwiki: 
+            osmwiki:
                 title: OpenStreetMap Wiki
-            wikidata: 
+            wikidata:
                 title: Wikidata
     keys:
         name: Name
@@ -38,7 +38,7 @@ phrases:
         area: Area (in square meters)
         wikipedia: Wikipedia Page
         wikidata: Wikidata Item
-        historic: 
+        historic:
             historic: Historical
             yes: General Historical
             monument: Monument
@@ -50,7 +50,7 @@ phrases:
             apartments: Apartments
             church: Church
             mosque: Mosque
-        "building:architecture": 
+        "building:architecture":
             architecture: Architecture Style
             art_deco: Art Deco
             art_nouveau: Art Nouveau
@@ -60,13 +60,13 @@ phrases:
             eclectic: Eclectic
             modernism: Modernism
             classic_swahili: Classic Swahili
+            stone_town: Stone Town
         "building:architecture:typology":
             typology: Architectural Typology
             single_storey_swahili: Single Storey Swahili
             apartment_block: Apartment Block
             indian_shopfront: Indian Shop Front
+            government: Government
         place:
             town: Town
         population: Population
-    
-  
