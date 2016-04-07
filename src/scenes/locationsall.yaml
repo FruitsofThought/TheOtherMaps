@@ -1,0 +1,86 @@
+---
+locationsList:
+    -
+        title: Amsterdam
+        latlng:
+            - 52.3697
+            - 4.9044
+        zoom: 14
+    -
+        title: Maastricht
+        latlng:
+            - 50.8461
+            - 5.6945
+        zoom: 14
+    -
+        title: Utrecht
+        latlng:
+            - 52.0882
+            - 5.1233
+        zoom: 14
+    -
+        title: Rotterdam
+        latlng:
+             - 51.9149
+             - 4.4754
+        zoom: 14
+    -
+        title: Den Haag
+        latlng:
+             - 52.0840
+             - 4.3210
+        zoom: 13
+    -
+        title: Groningen
+        latlng:
+              - 53.2185
+              - 6.5662
+        zoom: 14
+    -
+        title: Enschede
+        latlng:
+              - 52.2192
+              - 6.8923
+        zoom: 14
+    -
+        title: Almelo
+        latlng:
+               - 52.3553
+               - 6.6627
+        zoom: 14
+    -
+        title: Uden
+        latlng:
+               - 51.6611
+               - 5.6284
+        zoom: 14
+    -
+        title: Steenwijk
+        latlng:
+               - 52.7893
+               - 6.1134
+        zoom: 14
+    -
+        title: Heerhugowaard
+        latlng:
+              - 52.6537
+              - 4.8049
+        zoom: 13
+    -
+        title: Terschelling
+        latlng:
+               - 53.3636
+               - 5.2276
+        zoom: 15
+    -
+        title: Ngambo
+        latlng:
+               - -6.1653329612873105
+               - 39.19835239648819
+        zoom: 15
+    -
+        title: Dar Es Salaam
+        latlng:
+               - -6.8090
+               - 39.2806
+        zoom: 13
