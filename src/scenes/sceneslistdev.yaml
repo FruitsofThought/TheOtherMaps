@@ -21,10 +21,15 @@ scenes:
         file: scenes/startdatetz.yaml
         legendfunction: startdates_legend //returns a legend as html
 
+    publicbuildings:
+        group: Netherlands
+        name: Public Buildings
+        file: scenes/publicbuildings.yaml
+
     publicbuildingstz:
         group: Tanzania
         name: Public Buildings
-        file: scenes/publicbuildings.yaml
+        file: scenes/publicbuildingstz.yaml
 
     architecturalstylestz:
         group: Tanzania

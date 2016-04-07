@@ -20,6 +20,13 @@ any:
     area:
         displayname: keys.area
         weight: 280
+    website:
+        displayname: keys.website
+        wikipedia: Website
+        osmwiki: Key:website
+        wikidata: Q35127
+        wikiproperty: P856
+        weight: 240
     wikipedia:
         displayname: keys.wikipedia
         wikipedia: Wikipedia
@@ -32,16 +39,110 @@ any:
         osmwiki: Key:wikidata
         wikidata: Q52
         weight: 255
+    image:
+        displayname: keys.image
+        wikipedia: Image
+        osmwiki: Key:image
+        wikidata: Q478798
+        wikiproperty: P18
+        weight: 255
+    tourism:
+        displayname: keys.tourism.tourism
+        weight: 110
+        osmwiki: Key:tourism
+        values:
+            attraction:
+                displayname: keys.tourism.attraction
+            museum:
+                displayname: keys.tourism.museum
+    heritage:
+        displayname: keys.heritage.heritage
+        weight: 115
+        wikipedia: Cultural_heritage
+        wikidata: Q210272
+        osmwiki: Key:heritage
+        values:
+            1:
+                displayname: keys.heritage.1
+                wikipedia: World_Heritage_Site
+                wikidata: Q9259
+            2:
+                displayname: keys.heritage.2
+            3:
+                displayname: keys.heritage.3
+            4:
+                displayname: keys.heritage.4
+    "heritage:operator":
+        displayname: keys.heritage:operator.operator
+        weight: 117
+        wikipedia: Cultural_heritage_management
+        wikidata: Q572824
+        osmwiki: Key:heritage:operator
+        values:
+            whc:
+                displayname: keys.heritage:operator.whc
+                wikipedia: UNESCO
+                wikidata: Q7809
+            rce:
+                displayname: keys.heritage:operator.rce
+                wikipedia: Rijksdienst_voor_het_Cultureel_Erfgoed
+                wikidata: Q1766396
+            Rijksmonuments:
+                displayname: keys.heritage:operator.Rijksmonuments
+                wikipedia: Rijksmonument
+                wikidata: Q916333
+    "ref:whc":
+        displayname: keys.ref:whc
+        weight: 118
     historic:
         displayname: keys.historic.historic
         weight: 100
         osmwiki: Key:historic
         values:
+            building:
+                displayname: keys.historic.building
+                wikipedia: Building
+                osmwiki: Tag:historic%3Dbuilding
             monument:
                 displayname: keys.historic.monument
                 wikipedia: Monument
                 wikidata: Q4989906
                 osmwiki: Tag:historic%3Dmonument
+            city_gate:
+                displayname: keys.historic.city_gate
+                wikipedia: City_gate
+                wikidata: Q82117
+                osmwiki: Tag:historic%3Dcity_gate
+            monastery:
+                displayname: keys.historic.monastery
+                wikipedia: Monastery
+                wikidata: Q44613
+                osmwiki: Tag:historic%3Dmonastery
+            fortress:
+                displayname: keys.historic.fortress
+                wikipedia: Fortification
+                wikidata: Q57821
+                osmwiki: Tag:historic%3Dfortress
+            railway_station:
+                displayname: keys.historic.railway_station
+                wikipedia: Train_station
+                wikidata: Q55488
+                osmwiki: Tag:historic%3Drailway_station
+            church:
+                displayname: keys.historic.church
+                wikipedia: Church
+                wikidata: Q605315
+                osmwiki: Tag:historic%3Dchurch
+            castle:
+                displayname: keys.historic.castle
+                wikipedia: Castle
+                wikidata: Q23413
+                osmwiki: Tag:historic%3Dcastle
+            memorial:
+                displayname: keys.historic.memorial
+                wikipedia: Memorial
+                wikidata: Q5003624
+                osmwiki: Tag:historic%3Dmemorial
 places:
     kind:
         displayname: keys.kind
@@ -77,6 +178,16 @@ architecture:
                 originalname: commercial
                 displayname: keys.building.commercial
                 osmwiki: Tag:building=commercial
+            retail:
+                originalkey: building
+                originalname: commercial
+                displayname: keys.building.retail
+                osmwiki: Tag:building=retail
+            industrial:
+                originalkey: building
+                originalname: commercial
+                displayname: keys.building.industrial
+                osmwiki: Tag:building=industrial
             apartments:
                 originalkey: building
                 originalname: apartments
@@ -106,6 +217,48 @@ architecture:
                 osmwiki: Tag:building=mosque
                 wikipedia: Mosque
                 wikidata: Q32815
+            houseboat:
+                originalkey: building
+                originalname: houseboat
+                displayname: keys.building.houseboat
+                osmwiki: Tag:building=houseboat
+                wikipedia: Houseboat
+                wikidata: Q1321309
+            civic:
+                originalkey: building
+                originalname: civic
+                displayname: keys.building.civic
+                osmwiki: Tag:building=civic
+                wikipedia: Civic_center
+                wikidata: Q6583066
+            office:
+                originalkey: building
+                originalname: office
+                displayname: keys.building.office
+                osmwiki: Tag:building=office
+                wikipedia: Office
+                wikidata: Q182060
+            university:
+                originalkey: building
+                originalname: university
+                displayname: keys.building.university
+                osmwiki: Tag:building=university
+                wikipedia: University
+                wikidata: Q3918
+            school:
+                originalkey: building
+                originalname: school
+                displayname: keys.building.school
+                osmwiki: Tag:building=school
+                wikipedia: School
+                wikidata: Q3914
+            train_station:
+                originalkey: building
+                originalname: train_station
+                displayname: keys.building.train_station
+                osmwiki: Tag:building=train_station
+                wikipedia: Train_station
+                wikidata: Q55488
     architecture_style:
         displayname: keys.building:architecture.architecture
         wikidata: Q32880

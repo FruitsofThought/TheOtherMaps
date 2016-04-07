@@ -70,9 +70,9 @@ define ([
     layer.addTo(map);
 
 
-    if (typeof locations != 'undefined') {
+    if (typeof config['locations'] != 'undefined') {
       // Location List Control
-      var llist = new L.control.locationlist(locations);
+      var llist = new L.control.locationlist(config['locations']); 
       map.addControl(llist);
     }
 

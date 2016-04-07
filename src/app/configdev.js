@@ -5,12 +5,12 @@ define (['jquery', 'js-yaml'], function ($, jsyaml) {
   if (location.href.split(/\/+/)[1] == 'localhost') {
     appconfig['path'] = '/archtiles/TheOtherMaps/dist/'; // Should have trailing /
   } else {
-    appconfig['path'] = '/'; // Should have trailing /    
+    appconfig['path'] = '/'; // Should have trailing /
   }
   appconfig['filename'] = 'develop.html';
   appconfig['map_start_location'] = [52.3697, 4.9044, 15] // Amsterdam
   appconfig['startscene'] = 'buildingage';
-  appconfig['locationslist'] = 'scenes/locations.yaml';
+  appconfig['locationslist'] = 'scenes/locationsall.yaml';
   appconfig['sceneslist'] = 'scenes/sceneslistdev.yaml'
   appconfig['debug'] = true;
 
@@ -18,7 +18,7 @@ define (['jquery', 'js-yaml'], function ($, jsyaml) {
     * Do not edit below this line
     */
   var jsonresult = fetchjson(appconfig['locationslist']);
-  appconfig['locations'] = jsonresult.locationsList.slice(0);
+  appconfig['locations'] = jsonresult;
   var jsonresult = fetchjson(appconfig['sceneslist']);
   appconfig['scenes'] = jsonresult.scenes;
 

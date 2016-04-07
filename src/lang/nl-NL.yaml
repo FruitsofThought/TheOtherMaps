@@ -40,9 +40,33 @@ phrases:
         population: Bevolkingsaantal
         wikipedia: Wikipedia Pagina
         wikidata: Wikidata Item
+        image: Afbeelding
+        tourism:
+            tourism: Toeristisch
+            yes: Toeristisch
+            attraction: Attractie
         historic:
             historic: Historisch
             yes: Algemeen Historisch
+            building: Building
+            city_gate: Stadspoort
+            fortress: Fort
+            monastery: Klooster
+            memorial: Gedenkingsplaats
+            church: Kerk
+            castle: Kasteel
+        heritage:
+            heritage: Erfgoed
+            1: Unesco
+            2: Nationaal
+            3: Sub-Nationaal
+            4: Lokaal
+        "heritage:operator":
+                operator: Beheerder
+                whc: UNESCO
+                rce: Rijksdienst voor het Cultureel Erfgoed
+                Rijksmonuments: Provinciale monumenten
+        "ref:whc": World Heritage Site ID
         building:
             building: Gebouw
             commercial: Commercieel
@@ -51,6 +75,14 @@ phrases:
             apartments: Appartementen Gebouw
             church: Kerk
             mosque: Moskee
+            retail: Winkel
+            industrial: Industrie
+            houseboat: Woonboot
+            civic: Publiek
+            office: Kantoor
+            university: Universiteit
+            school: School
+            train_station: Spoorwegstation
         "building:architecture":
             architecture: Architectonische Stijl
             art_deco: Art Deco

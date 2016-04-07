@@ -36,12 +36,38 @@ phrases:
         source: Source
         start_date: Opening Date
         area: Area (in square meters)
+        website: Website
         wikipedia: Wikipedia Page
         wikidata: Wikidata Item
+        image: Image
+        tourism:
+            tourism: Tourism
+            yes: Touristic
+            attraction: Attraction
+            museum: Museum
         historic:
             historic: Historical
             yes: General Historical
+            building: Building
             monument: Monument
+            city_gate: City Gate
+            fortress: Fort
+            monastery: Monastery
+            memorial: Memorial
+            church: Church
+            castle: Castle
+        heritage:
+            heritage: Heritage
+            1: Unesco
+            2: National
+            3: Sub-National
+            4: Local
+        "heritage:operator":
+                operator: Operator
+                whc: UNESCO
+                rce: Rijksdienst voor het Cultureel Erfgoed
+                Rijksmonuments: Provincial monuments
+        "ref:whc": World Heritage Site ID
         building:
             building: General Building
             commercial: Commercial
@@ -50,6 +76,14 @@ phrases:
             apartments: Apartments
             church: Church
             mosque: Mosque
+            retail: Retail
+            industrial: Industrial
+            houseboat: Houseboat
+            civic: Civic
+            office: Office
+            university: University
+            school: School
+            train_station: Train Station
         "building:architecture":
             architecture: Architecture Style
             art_deco: Art Deco

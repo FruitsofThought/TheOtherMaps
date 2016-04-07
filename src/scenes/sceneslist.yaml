@@ -6,9 +6,14 @@ scenes:
         legendfunction: startdates_legend //returns a legend as html
 
     architecturalstyles:
-        group: Architecture in NL
+        group: Architecture
         name: Architectural Styles
         file: scenes/architecturalstyles.yaml
+
+    publicbuildings:
+        group: Architecture
+        name: Public Buildings
+        file: scenes/publicbuildings.yaml
 
     cinnabar:
         group: Mapzen Demos
