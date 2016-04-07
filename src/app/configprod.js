@@ -12,7 +12,7 @@ define (['jquery', 'js-yaml'], function ($, jsyaml) {
       * Do not edit below this line
       */
     var jsonresult = fetchjson(appconfig['locationslist']);
-    appconfig['locations'] = jsonresult.locationsList.slice(0);
+    appconfig['locations'] = jsonresult;
     var jsonresult = fetchjson(appconfig['sceneslist']);
     appconfig['scenes'] = jsonresult.scenes;
 
