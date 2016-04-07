@@ -12,7 +12,7 @@ scenes:
 
     publicbuildings:
         group: Architecture
-        name: Public Buildings
+        name: Buildings Usages
         file: scenes/publicbuildings.yaml
 
     cinnabar:
