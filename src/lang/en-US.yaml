@@ -21,6 +21,8 @@ phrases:
                 title: Images
             settings:
                 title: Settings
+                en-UK: English
+                nl-NL: Nederlands
             wikipedia:
                 title: Wikipedia
             wikipediadoc:
@@ -29,6 +31,23 @@ phrases:
                 title: OpenStreetMap Wiki
             wikidata:
                 title: Wikidata
+        scenes:
+            publicbuildings:
+                publicbuildings:
+                    title: Public
+                    description: Government, Religious, Civic and other public buildings
+                residential:
+                    title: Residential
+                    description: Houses, Apartments, Houseboats etc.
+                commercial:
+                    title: Commercial
+                    description: Industrial, offices, shops etc.
+                infrastructure:
+                    title: Infrastructural
+                    description: Electricity, storage, datacentres etc.
+                primaryroads:
+                    title: Primary Roads
+                    description: Roads that lead to the next city.
     keys:
         name: Name
         kind: Kind

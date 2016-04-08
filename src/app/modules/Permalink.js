@@ -1,12 +1,14 @@
-define (['jquery', 'config'], function ($, config) {
+define(['jquery', 'postal', 'config'], function($, postal, config) {
 
   PermaLink = function() {
     this._basepath = config['path'];
     this._pagename = config['filename'];
+    this._channel = postal.channel();
 
     // leaflet-style URL hash pattern:
     // #[zoom],[lat],[lng]
-    var url_hash = window.location.hash.slice(1, window.location.hash.length).split('/');
+    var url_hash = window.location.hash.slice(1, window.location.hash.length)
+      .split('/');
     this._map_start_location = config['map_start_location'];
     if (url_hash.length == 3) {
       this._map_start_location = [url_hash[1], url_hash[2], url_hash[0]];
@@ -23,40 +25,59 @@ define (['jquery', 'config'], function ($, config) {
       myparts = parts[1].split('#');
       this._currentscene = myparts[0];
       this._currentscene = myparts[0];
-  //    this._pagename = parts[parts.length -3];
+      //    this._pagename = parts[parts.length -3];
     } else {
       // there are clean URLs so basepath/permalink
       var parts = location.href.split(/\/+/);
 
       var counter = parts.length - this._basepath.split(/\/+/).length;
       // There is a filename, but there was no permalink yet
-      if (parts[parts.length -1].indexOf('.') > 0) {
-    //    this._pagename = parts[parts.length -1];
+      if (parts[parts.length - 1].indexOf('.') > 0) {
+        //    this._pagename = parts[parts.length -1];
       }
       // There was a permalink
       if (counter > 2) {
-        this._currentlanguage = parts[counter+2];
-        myparts = parts[counter+3].split('#');
+        this._currentlanguage = parts[counter + 2];
+        myparts = parts[counter + 3].split('#');
         this._currentscene = myparts[0];
-      }
-      else {
+      } else {
         // TODO read cookie
-        this._currentlanguage = window.navigator.userLanguage || window.navigator.language;;
+        this._currentlanguage = window.navigator.userLanguage || window.navigator
+          .language;;
         console.log('language = ' + this._currentlanguage);
         this._pagename = config['filename'];
         this._currentscene = config['startscene'];
         this._setpermalink();
       }
     }
+
+    // broadcast the new language, which we just set. This will load the
+    this._channel.publish("language.change", {
+      language: this._currentlanguage,
+    });
+    // Now subscribe to that channel for future updates
+    this._languagesubscription = this._channel.subscribe(
+      "language.change",
+      function(data) {
+        require(['permalink'], function(permalink) {
+          permalink.setLanguage(data.language);
+        });
+      });
+    this._scenessubscription = this._channel.subscribe(
+      "scenes.change",
+      function(data) {
+        this.setScene(data.scene);
+      });
+
   };
 
   PermaLink.prototype = {
 
-    _basepath : '',
-    _currentscene : '',
-    _currentlanguage : '',
-    _pagename : '',
-    _map_start_location : '',
+    _basepath: '',
+    _currentscene: '',
+    _currentlanguage: '',
+    _pagename: '',
+    _map_start_location: '',
 
     getCurrentMapLocation: function() {
       return this._map_start_location;
@@ -70,11 +91,12 @@ define (['jquery', 'config'], function ($, config) {
       return this._currentscene;
     },
 
-    setLang: function(lang) {
+    setLanguage: function(lang) {
       if (lang != '') {
         this._currentlanguage = lang;
       }
       this._setpermalink();
+      location.reload();
     },
 
     setScene: function(scene) {
@@ -87,12 +109,16 @@ define (['jquery', 'config'], function ($, config) {
     _setpermalink: function() {
       var parts = location.href.split(/\/+/);
       var servername = parts[1];
-      var url_hash = window.location.hash.slice(1, window.location.hash.length).split('/');
+      var url_hash = window.location.hash.slice(1, window.location.hash
+        .length).split('/');
       if (this._pagename == '') {
-        permalink = "http://"+servername + this._basepath+ '/' + this._currentlanguage + '/' + this._currentscene + "#" + url_hash;
-      }
-      else {
-        permalink = "http://"+servername + this._basepath + this._pagename + '?' + this._currentlanguage + '/' + this._currentscene + "#" + url_hash;
+        permalink = "http://" + servername + this._basepath + '/' +
+          this._currentlanguage + '/' + this._currentscene + "#" +
+          url_hash;
+      } else {
+        permalink = "http://" + servername + this._basepath + this._pagename +
+          '?' + this._currentlanguage + '/' + this._currentscene + "#" +
+          url_hash;
       }
       history.replaceState(null, null, permalink);
     },

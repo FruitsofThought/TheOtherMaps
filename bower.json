@@ -23,8 +23,8 @@
     "requirejs": "^2.2.0",
     "jquery": "^2.2.2",
     "font-awesome": "^4.5.0",
-    "tangram": "^0.6.2",
-    "polyglot": "^1.0.0",
+    "tangram": "^0.6.3",
+    "polyglot": "^2.0.0",
     "leaflet": "^1.0.0-beta.2",
     "leaflet-hash": "*",
     "keymaster": "^1.6.3",
@@ -34,6 +34,7 @@
     "require-yaml": "^0.1.2",
     "Leaflet.VisualClick": "^1.1.0",
     "sidebar-v2": "^0.3.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "postal.js": "^1.0.8"
   }
 }

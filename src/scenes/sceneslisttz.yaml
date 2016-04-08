@@ -3,7 +3,7 @@ scenes:
         group: Tanzania
         name: Building Age
         file: scenes/startdatetz.yaml
-        legendfunction: startdates_legend //returns a legend as html
+        legendfunction: startdates_legend
 
     architecturalstylestz:
         group: Tanzania

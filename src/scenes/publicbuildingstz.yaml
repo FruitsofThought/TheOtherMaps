@@ -40,8 +40,7 @@ styles:
 sources:
     mapzen:
         type: TopoJSON
-        #url:  http://tiles.mountbatten.nl/all/{z}/{x}/{y}.topojson
-        url: //vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-KXs7X8B
+        url:  http://tz.tiles.mountbatten.nl:83/all/{z}/{x}/{y}.topojson
 
 layers:
     earth:
@@ -74,28 +73,6 @@ layers:
                 color: '#999'
                 width: 5
 
-        primaryroads:
-            filter:
-                highway: primary
-            draw:
-                lines:
-                    order: 3
-                    color: red
-                    width: 10
-        highways:
-            filter:
-                highway: [motorway, trunk]
-            draw:
-                lines:
-                    order: 5
-                    color: red
-                    width: 40
-        trunk:
-            filter:
-                highway: trunk
-            draw:
-                lines:
-                    width: 30
         labels:
             filter:
                 name: true
@@ -120,18 +97,18 @@ layers:
                             weight: bold
 
     buildings:
-        data: { source: mapzen , layer: buildings}
-#        wikiicon:
-#            filter :
-#                wikipedia: true
-#            draw:
-#                ui-icons-overlay:
-#                    size: 16px
-#                    visible: true
-#                    sprite: wikipedia
+        data: { source: mapzen , layer: architecture}
+        wikiicon:
+            filter :
+                wikipedia: true
+            draw:
+                ui-icons-overlay:
+                    size: 16px
+                    visible: true
+                    sprite: wikipedia
         publicbuildings:
             filter:
-                kind: [civic,clubhouse,sports_centre,temple,place_of_worship,palace,transportation,sportcentre,sportscenter,fire_station,station,medical,hospital,public,school,government,library,courthouse,university,museum,train_station,public_building,chapel,church,mosque,cathedral,community,city_hall,stadium]
+                kind: [public,school,government,library,courthouse,university]
             draw:
                 lines:
                     color: black
@@ -139,36 +116,6 @@ layers:
                     outline: 1px;
                 polygons:
                     color: "#2422B6"
-        residential:
-            filter:
-                kind: [residential,house,houseboat,boathouse,apartments]
-            draw:
-                lines:
-                    color: black
-                    size: .01
-                    outline: 1px;
-                polygons:
-                    color: yellow
-        infrastructure:
-            filter:
-                kind: [water_tower,toilet,silo,barn,storage,boat,container,tunnel,guard_house,pontoon,datacenter,watch_house,gate,pump_house,viaduct,ramp,beehive,shelter,gatehouse]
-            draw:
-                lines:
-                    color: black
-                    size: .01
-                    outline: 1px;
-                polygons:
-                    color: purple
-        commercial:
-            filter:
-                kind: [shop,retail,manufacture,bank,factory,store,henhouse,industrial,commercial,hotel,office,storage_tank]
-            draw:
-                lines:
-                    color: black
-                    size: .01
-                    outline: 1px;
-                polygons:
-                    color: black
         draw:
             polygons:
                 order: 50

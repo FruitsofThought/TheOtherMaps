@@ -1,4 +1,4 @@
-define ([
+define([
   'require',
   'jquery',
   'globalpolyglot',
@@ -9,6 +9,7 @@ define ([
   'hbs!templates/rightsidebar',
   'config',
   'osminfobox',
+  'postal',
   'sceneswitcher',
   'leaflet',
   'leaflethash',
@@ -17,95 +18,101 @@ define ([
   'sceneswitcher',
   'locationlist',
   'keymaster'
-], function (require, $, Polyglot, permaLink, jsyaml, HandleBars, leftsidebar, rightsidebar, config, box) {
-//  var scenes = require('yaml!'+config['scenes']);
-//  var locations = require('yaml!'+config['locations']);
-//console.log ('there are this many scenes: ' + config['scenes'].length());
+], function(require, $, Polyglot, permaLink, jsyaml, HandleBars,
+  leftsidebar, rightsidebar, config, box, postal) {
 
-    var polyglot = Polyglot();
-    // or in switch language?
-    document.title = polyglot.t("home.title");
+  var polyglot = Polyglot();
+  // or in switch language?
+  document.title = polyglot.t("home.title");
 
-    var map = L.map('map', {
-      visualClickEvents: 'click contextmenu' //can be multiple space-seperated events, like 'click', 'contextmenu', 'dblclick'...
+  var map = L.map('map', {
+    visualClickEvents: 'click contextmenu' //can be multiple space-seperated events, like 'click', 'contextmenu', 'dblclick'...
+  });
+
+  // Insert the Left Sidebar HTML
+  var html = leftsidebar();
+  $('#leftsidebar').html(html);
+  var leftsidebar = L.control.sidebar('leftsidebar', {
+    position: 'left'
+  }).addTo(map);
+
+  // Insert the Right Sidebar HTML
+  var html = rightsidebar();
+  $('#rightsidebar').html(html);
+  var rightsidebar = L.control.sidebar('rightsidebar', {
+    position: 'right'
+  }).addTo(map);
+
+  $(".sidebar .openstreetmap_bw").hover(function() {
+    $(this).toggleClass('openstreetmap_bw openstreetmap_color');
+  });
+
+  $(".sidebar .wikidata_bw").hover(function() {
+    $(this).toggleClass('wikidata_bw wikidata_color');
+  });
+
+  $("#settings input").click(function() {
+    console.log("clicked " + this.value);
+    var channel = postal.channel();
+    channel.publish("language.change", {
+      language: this.value
     });
 
-    // Insert the Left Sidebar HTML
-    var html = leftsidebar();
-    $('#leftsidebar').html(html);
-      // Sidebar Control
-    var leftsidebar = L.control.sidebar('leftsidebar', {
-      position: 'left'
-    }).addTo(map);
+  });
 
-    // Insert the Left Sidebar HTML
-    var html = rightsidebar();
-    $('#rightsidebar').html(html);
-      // Sidebar Control
-    var rightsidebar = L.control.sidebar('rightsidebar', {
-      position: 'right'
-    }).addTo(map);
+  var switcher = L.control.sceneswitcher('sceneswitcher', {
+    styles: config['scenes'],
+    currentStyle: permaLink.getCurrentScene(),
+    permaLink: permaLink,
+  }).addTo(map);
 
-    $(".sidebar .openstreetmap_bw").hover(function(){
-      $(this).toggleClass('openstreetmap_bw openstreetmap_color');
-    });
-
-    $(".sidebar .wikidata_bw").hover(function(){
-      $(this).toggleClass('wikidata_bw wikidata_color');
-    });
-//console.log()
-    var switcher = L.control.sceneswitcher('sceneswitcher', {
-      styles: config['scenes'],
-      currentStyle: permaLink.getCurrentScene(),
-      permaLink: permaLink,
-    }).addTo(map);
-
-    var initialstyle = permaLink.getCurrentScene();
-    var layer = Tangram.leafletLayer({
-      scene: config['scenes'][initialstyle].file,
-      preUpdate: preUpdate,
-      postUpdate: postUpdate,
-      attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="http://www.openstreetmap.org/about" target="_blank">&copy; OSM contributors</> | <a href="https://tilesmountbatten.nl/" target="_blank">Mountbatten</a>',
-    });
-    layer.addTo(map);
+  var initialstyle = permaLink.getCurrentScene();
+  var layer = Tangram.leafletLayer({
+    scene: config['scenes'][initialstyle].file,
+    preUpdate: preUpdate,
+    postUpdate: postUpdate,
+    attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="http://www.openstreetmap.org/about" target="_blank">&copy; OSM contributors</> | <a href="https://tilesmountbatten.nl/" target="_blank">Mountbatten</a>',
+  });
+  layer.addTo(map);
 
 
-    if (typeof config['locations'] != 'undefined') {
-      // Location List Control
-      var llist = new L.control.locationlist(config['locations']); 
-      map.addControl(llist);
+  if (typeof config['locations'] != 'undefined') {
+    // Location List Control
+    var llist = new L.control.locationlist(config['locations']);
+    map.addControl(llist);
+  }
+
+  // setView expects format ([lat, long], zoom)
+  var map_start_location = permaLink.getCurrentMapLocation();
+  map.setView(map_start_location.slice(0, 3), map_start_location[2]);
+  var hash = new L.Hash(map);
+
+  <!-- This is needed in the interaction functions -->
+  //    window.sidebar = sidebar;
+  window.layer = layer;
+  var scene = layer.scene;
+  window.scene = scene;
+
+  layer.on('init', function() {
+    console.log("Initial Layer Initialized");
+    //  addGUI();
+    initFeatureSelection();
+  });
+  layer.addTo(map);
+
+  return map;
+
+  // What follows are the functions that have been assigned to events
+  // I dont like them here, personally
+  function preUpdate(will_render) {
+    if (!will_render) {
+      return;
     }
+  }
 
-    // setView expects format ([lat, long], zoom)
-    var map_start_location = permaLink.getCurrentMapLocation();
-    map.setView(map_start_location.slice(0, 3), map_start_location[2]);
-    var hash = new L.Hash(map);
+  function postUpdate() {}
 
-    <!-- This is needed in the interaction functions -->
-//    window.sidebar = sidebar;
-    window.layer = layer;
-    var scene = layer.scene;
-    window.scene = scene;
-
-    layer.on('init', function() {
-      console.log("Initial Layer Initialized");
-      //  addGUI();
-      initFeatureSelection();
-    });
-    layer.addTo(map);
-
-    return map;
-
-    // What follows are the functions that have been assigned to events
-    // I dont like them here, personally
-    function preUpdate(will_render) {
-      if (!will_render) {
-        return;
-      }
-    }
-    function postUpdate() {}
-
-    // Feature selection
+  // Feature selection
   function initFeatureSelection() {
     // Selection info shown on hover
     var selection_info_label = document.createElement('span');
@@ -129,7 +136,8 @@ define ([
         // Only if there is a feature, but we have not clicked on a feature and are
         // showing the table with attributes
         // TODO do nicer stuff with the events of the sidebar
-        if ((feature != null) && (selection_info_table.parentNode == null)) {
+        if ((feature != null) && (selection_info_table.parentNode ==
+            null)) {
           $('.leaflet-container').css('cursor', 'help');
 
           var label = '';
@@ -139,14 +147,17 @@ define ([
           // Only if there is a label
           if (label != '') {
             selection_info_label.innerHTML = label;
-            $('#infopane .sidebar-header').append(selection_info_label);
+            $('#infopane .sidebar-header').append(
+              selection_info_label);
           } else if (selection_info_label.parentNode != null) {
             $('.leaflet-container').css('cursor', 'pointer');
-            selection_info_label.parentNode.removeChild(selection_info_label);
+            selection_info_label.parentNode.removeChild(
+              selection_info_label);
           }
         } else {
           if (selection_info_label.parentNode != null) {
-            selection_info_label.parentNode.removeChild(selection_info_label);
+            selection_info_label.parentNode.removeChild(
+              selection_info_label);
           }
         }
         // But always when not hoovering a feature, reset the mousepointer
@@ -174,10 +185,12 @@ define ([
       scene.getFeatureAt(pixel).then(function(selection) {
         if (!selection) {
           if (selection_info_label.parentNode != null) {
-            selection_info_label.parentNode.removeChild(selection_info_label);
+            selection_info_label.parentNode.removeChild(
+              selection_info_label);
           }
           if (selection_info_table.parentNode != null) {
-            selection_info_table.parentNode.removeChild(selection_info_table);
+            selection_info_table.parentNode.removeChild(
+              selection_info_table);
           }
           return;
         }
@@ -187,20 +200,25 @@ define ([
           box = require('osminfobox');
           //(layer, properties, element, language)
           if (feature.properties != null) {
-            table = box.getHTML('architecture', feature.properties, '#info', 'en', map);
+            table = box.getHTML('architecture', feature.properties,
+              '#info', 'en', map);
           }
 
           if (table != '') {
             map.sidebarcontrols['rightsidebar'].open('infopane');
           } else if (selection_info_label.parentNode != null) {
-            selection_info_table.parentNode.removeChild(selection_info_table);
-            map.sidebarcontrols['leftsidebar'].disable('wikipediapane');
+            selection_info_table.parentNode.removeChild(
+              selection_info_table);
+            map.sidebarcontrols['leftsidebar'].disable(
+              'wikipediapane');
             map.sidebarcontrols['rightsidebar'].disable('infopane');
           }
         } else if (selection_info_label.parentNode != null) {
-          selection_info_label.parentNode.removeChild(selection_info_label);
+          selection_info_label.parentNode.removeChild(
+            selection_info_label);
           if (selection_info_table.parentNode != null) {
-            selection_info_table.parentNode.removeChild(selection_info_table);
+            selection_info_table.parentNode.removeChild(
+              selection_info_table);
           }
         }
       });

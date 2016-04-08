@@ -30,6 +30,23 @@ phrases:
                 title: OpenStreetMap Wiki
             wikipedia:
                 title: Wikipedia
+        scenes:
+            publicbuildings:
+                publicbuildings:
+                    title: Publiek
+                    description: Overheid, gemeenschaps en andere publieke gebouwen
+                residential:
+                    title: Wonen
+                    description: Huizen, Appartementen, woonboten etc.
+                commercial:
+                    title: Commercieel
+                    description: Industrie, kantoren, winkels etc.
+                infrastructure:
+                    title: Infrastructureel
+                    description: Electriciteit, opslag, datacentres etc.
+                primaryroads:
+                    title: Hoofdwegen
+                    description: Wegen tussen steden
     keys:
         kind: Soort
         name: Naam

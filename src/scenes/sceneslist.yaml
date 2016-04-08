@@ -3,17 +3,29 @@ scenes:
         group: Architecture
         name: Building Age
         file: scenes/startdate.yaml
-        legendfunction: startdates_legend //returns a legend as html
+        legendfunction: startdates_legend
+        scripts: ['scenes/startdate.js']
 
     architecturalstyles:
         group: Architecture
         name: Architectural Styles
         file: scenes/architecturalstyles.yaml
+        legendfunction: architecturalstyles_legend
+        scripts: ['scenes/architecturalstyles.js']
 
     publicbuildings:
-        group: Architecture
-        name: Buildings Usages
+        group: Activities
+        name: Building Typologies
         file: scenes/publicbuildings.yaml
+        legendfunction: publicbuildings_legend
+        scripts: ['scenes/publicbuildings.js']
+        locations:
+          -
+            title: Freetown
+            latlng:
+                - 8.4705
+                - -13.2369
+            zoom: 14
 
     cinnabar:
         group: Mapzen Demos

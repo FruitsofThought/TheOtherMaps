@@ -3,12 +3,15 @@ scenes:
         group: Netherlands
         name: Building Age
         file: scenes/startdate.yaml
-        legendfunction: startdates_legend //returns a legend as html
+        legendfunction: startdates_legend
+        scripts: ['scenes/startdate.js']
 
     architecturalstyles:
         group: Netherlands
         name: Architectural Styles
         file: scenes/architecturalstyles.yaml
+        legendfunction: architecturalstyles_legend
+        scripts: ['scenes/architecturalstyles.js']
 
     historicandheritage:
        group: Netherlands
@@ -19,12 +22,14 @@ scenes:
         group: Tanzania
         name: Building Age
         file: scenes/startdatetz.yaml
-        legendfunction: startdates_legend //returns a legend as html
+        legendfunction: startdates_legend
 
     publicbuildings:
         group: Netherlands
-        name: Public Buildings
+        name: Buildings Typologies
         file: scenes/publicbuildings.yaml
+        legendfunction: publicbuildings_legend
+        scripts: ['scenes/publicbuildings.js']
 
     publicbuildingstz:
         group: Tanzania

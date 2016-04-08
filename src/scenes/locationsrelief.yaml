@@ -81,6 +81,6 @@ locationsList:
     -
         title: Dar Es Salaam
         latlng:
-               - -6.8154
-               - 39.2635
-        zoom: 14
+               - -6.8090
+               - 39.2806
+        zoom: 13
