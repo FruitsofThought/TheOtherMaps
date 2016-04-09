@@ -23,7 +23,7 @@
     "requirejs": "^2.2.0",
     "jquery": "^2.2.2",
     "font-awesome": "^4.5.0",
-    "tangram": "^0.6.3",
+    "tangram": "^0.7.0",
     "polyglot": "^2.0.0",
     "leaflet": "^1.0.0-beta.2",
     "leaflet-hash": "*",
