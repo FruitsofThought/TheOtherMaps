@@ -46,6 +46,19 @@ scenes:
        name: Heritage & Historical
        file: scenes/historicandheritagetz.yaml
 
+    reliefandredroads:
+       group: California
+       name: Relief and Red Roads
+       file: scenes/reliefandredroads.yaml
+       defaultlocation: [33.9800, -118.1726, 11]
+       locations:
+          -
+            title: Los Angeles
+            latlng:
+                - 33.9800
+                - -118.1726
+            zoom: 11
+
     cinnabar:
         group: Mapzen Demos
         name: Cinnabar

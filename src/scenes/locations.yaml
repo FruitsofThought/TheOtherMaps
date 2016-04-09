@@ -84,3 +84,9 @@ locationsList:
                - -6.8154
                - 39.2635
         zoom: 14
+    -
+        title: Los Angeles
+        latlng:
+               - 33.9800
+               - -118.1726
+        zoom: 11

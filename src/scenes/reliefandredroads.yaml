@@ -1,21 +1,22 @@
 sources:
-    osm:
-        type: TopoJSON
-        url: //vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-KXs7X8B
-    normals:
+    terrain-normals:
         type: Raster
         url: https://terrain-preview.mapzen.com/normal/{z}/{x}/{y}.png
         max_zoom: 15
+    osm:
+        type: TopoJSON
+        url: //vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-KXs7X8B
+        rasters: [terrain-normals]
 
 lights:
     directional1:
         type: directional
         direction: [1,-.5, -.5]
-        diffuse: [0.950, 0.865, 0.539]
+        diffuse: "#555"
     directional2:
         type: directional
         direction: [-1, -1, -.5]
-        diffuse: [0.542, 0.807, 0.855]
+        diffuse: 1.5
     directional3:
         type: directional
         direction: [0, -1, .2]
@@ -23,8 +24,8 @@ lights:
 
 styles:
     hillshade:
-        base: raster
-        apply: normal
+        base: polygons
+        raster: normal
         shaders:
             blocks:
                 color: |
@@ -32,7 +33,7 @@ styles:
 
 layers:
     terrain:
-        data: { source: normals, layer: _default }
+        data: { source: terrain-normals, layer: _default }
         draw:
             hillshade:
                 order: 0
@@ -45,10 +46,20 @@ layers:
                 color: [.3, .3, .3]
                 width: 1px
 
+    water:
+        data: { source: osm }
+        draw:
+            polygons:
+                order: 20
+                color: blue
+
     places:
         data: { source: osm}
         filter:
             kind: [city]
+            zoom:
+                min: 1
+                max: 10
         draw:
             text:
                 font:
@@ -64,3 +75,11 @@ layers:
                 order: 2
                 color: red
                 width: 20
+        sunset:
+            filter:
+                name: ["W Sunset Blvd.","Sunset Blvd.", "Cesar E Chavez Av."]
+            draw:
+                lines:
+                    order: 4
+                    color: "#FFF63F"
+                    width: 100
