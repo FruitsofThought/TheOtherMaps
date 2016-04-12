@@ -1,12 +1,10 @@
-define (['jquery', 'js-yaml'], function ($, jsyaml) {
+define(['jquery', 'js-yaml'], function($, jsyaml) {
   var appconfig = Array();
 
+  var server = location.origin;
+  var path = location.pathname.substr(0, location.pathname.lastIndexOf("/"));
+  appconfig['path'] = path + '/'; // Should have trailing /
 
-  if (location.href.split(/\/+/)[1] == 'localhost') {
-    appconfig['path'] = '/archtiles/TheOtherMaps/dist/'; // Should have trailing /
-  } else {
-    appconfig['path'] = '/'; // Should have trailing /
-  }
   appconfig['filename'] = 'develop.html';
   appconfig['map_start_location'] = [52.3697, 4.9044, 15] // Amsterdam
   appconfig['startscene'] = 'buildingage';
@@ -15,8 +13,8 @@ define (['jquery', 'js-yaml'], function ($, jsyaml) {
   appconfig['debug'] = true;
 
   /**
-    * Do not edit below this line
-    */
+   * Do not edit below this line
+   */
   var jsonresult = fetchjson(appconfig['locationslist']);
   appconfig['locations'] = jsonresult;
   var jsonresult = fetchjson(appconfig['sceneslist']);
@@ -24,9 +22,9 @@ define (['jquery', 'js-yaml'], function ($, jsyaml) {
 
   function fetchjson(url) {
     if (appconfig['debug']) {
-      url+="?"+"bust=v73"+ (new Date()).getTime();
+      url += "?" + "bust=v73" + (new Date()).getTime();
     }
-    console.log ('going to fetch ' + url);
+    console.log('going to fetch ' + url);
     var result;
     // using synchronous ajax to load the json. can not use requirejs for that (and this is bad, too)
     $.ajax({
@@ -37,8 +35,8 @@ define (['jquery', 'js-yaml'], function ($, jsyaml) {
         result = jsyaml.load(data);
       },
       error: function(state, err, bigerr) {
-        console.log (err+' '+bigerr.message);
-        console.log ("Cant load scenes or locations!?");
+        console.log(err + ' ' + bigerr.message);
+        console.log("Cant load scenes or locations!?");
       }
     });
 

@@ -1,6 +1,8 @@
-define (['jquery', 'js-yaml'], function ($, jsyaml) {
+define(['jquery', 'js-yaml'], function($, jsyaml) {
   var appconfig = Array();
-  appconfig['path'] = '/';
+  var server = location.origin;
+  var path = location.pathname.substr(0, location.pathname.lastIndexOf("/"));
+  appconfig['path'] = path + '/';
   appconfig['filename'] = 'index.html';
   appconfig['map_start_location'] = [52.3697, 4.9044, 15, 16] // Amsterdam
   appconfig['startscene'] = 'buildingage';
@@ -8,36 +10,36 @@ define (['jquery', 'js-yaml'], function ($, jsyaml) {
   appconfig['sceneslist'] = 'scenes/sceneslist.yaml'
   appconfig['debug'] = false;
 
-    /**
-      * Do not edit below this line
-      */
-    var jsonresult = fetchjson(appconfig['locationslist']);
-    appconfig['locations'] = jsonresult;
-    var jsonresult = fetchjson(appconfig['sceneslist']);
-    appconfig['scenes'] = jsonresult.scenes;
+  /**
+   * Do not edit below this line
+   */
+  var jsonresult = fetchjson(appconfig['locationslist']);
+  appconfig['locations'] = jsonresult;
+  var jsonresult = fetchjson(appconfig['sceneslist']);
+  appconfig['scenes'] = jsonresult.scenes;
 
-    function fetchjson(url) {
-      if (appconfig['debug']) {
-        url+="?"+"bust=v73"+ (new Date()).getTime();
-      }
-      console.log ('going to fetch ' + url);
-      var result;
-      // using synchronous ajax to load the json. can not use requirejs for that (and this is bad, too)
-      $.ajax({
-        url: url,
-        async: false,
-        cache: (appconfig['debug']),
-        success: function(data) {
-          result = jsyaml.load(data);
-        },
-        error: function(state, err, bigerr) {
-          console.log (err+' '+bigerr.message);
-          console.log ("Cant load scenes or locations!?");
-        }
-      });
-
-      return result;
+  function fetchjson(url) {
+    if (appconfig['debug']) {
+      url += "?" + "bust=v73" + (new Date()).getTime();
     }
+    console.log('going to fetch ' + url);
+    var result;
+    // using synchronous ajax to load the json. can not use requirejs for that (and this is bad, too)
+    $.ajax({
+      url: url,
+      async: false,
+      cache: (appconfig['debug']),
+      success: function(data) {
+        result = jsyaml.load(data);
+      },
+      error: function(state, err, bigerr) {
+        console.log(err + ' ' + bigerr.message);
+        console.log("Cant load scenes or locations!?");
+      }
+    });
 
-    return appconfig;
-  });
+    return result;
+  }
+
+  return appconfig;
+});
