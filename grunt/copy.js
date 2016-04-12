@@ -81,17 +81,10 @@ module.exports = {
   scenes: {
     files: [{
       expand: true,
-      flatten: true,
-      src: 'src/scenes/*',
+      flatten: false,
+      cwd: 'src/scenes/',
+      src: '**',
       dest: 'dist/scenes/'
-    }]
-  },
-  scenesimages: {
-    files: [{
-      expand: true,
-      flatten: true,
-      src: 'src/scenes/images/*',
-      dest: 'dist/scenes/images/'
     }]
   },
   templates: {
@@ -109,7 +102,7 @@ module.exports = {
       src: ['src/app/modules/L.Control.SceneSwitcher.js',
         'src/app/modules/OsmInfobox.js',
         'src/app/modules/leaflet.locationlist.js',
-        'src/app/modules/Scenes.js'
+        'src/app/modules/ScenesList.js'
       ],
       dest: 'dist/app/modules/'
     }]

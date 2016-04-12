@@ -18,7 +18,6 @@ module.exports = {
     'copy:fonts',
     'copy:lang',
     'copy:scenes',
-    'copy:scenesimages',
     'copy:templates',
     'copy:newjavascript',
     'copy:leaflet',
