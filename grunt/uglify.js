@@ -43,6 +43,9 @@ module.exports = {
       'dist/lib/requirejs/hbs.js': [
         'bower_components/require-handlebars-plugin/hbs.js'
       ],
+      'dist/lib/requirejs/promised.js': [
+        'bower_components/requirejs-promised/promised.js'
+      ],
       'dist/lib/requirejs/hbs/handlebars.js': [
         'bower_components/handlebars/handlebars.js'
       ],
@@ -59,6 +62,10 @@ module.exports = {
       // DO NOT CHANGE THIS FILENAME (or change it to tangram.debug.js) else tangram will die!
       //'dist/lib/tangram.min.js': ['bower_components/tangram/dist/tangram.debug.js'],
       'dist/lib/polyglot.js': ['bower_components/polyglot/build/polyglot.js'],
+      'dist/lib/js.cookie.js': ['bower_components/js-cookie/src/js.cookie.js'],
+      'dist/lib/jquery.tipsy.js': [
+        'bower_components/tipsy/src/javascripts/jquery.tipsy.js'
+      ],
       // the uglishing creates problems
       //          'dist/lib/leaflet/leaflet.js': ['bower_components/leaflet/dist/leaflet.js'],
       // I need to fork, clone and do some magic to bower.js to make this work
@@ -80,24 +87,22 @@ module.exports = {
       'dist/app.js': ['src/app.js'],
       'dist/apptz.js': ['src/apptz.js'],
       'dist/appdev.js': ['src/appdev.js'],
-      'dist/apprelief.js': ['src/apprelief.js'],
+      'dist/applocal.js': ['src/applocal.js'],
       'dist/app/main.js': ['src/app/main.js'],
       // And this is the reason why we have dev and prod!
       'dist/app/configdev.js': ['src/app/configdev.js'],
       'dist/app/configtz.js': ['src/app/configtz.js'],
-      'dist/app/configrelief.js': ['src/app/configrelief.js'],
+      'dist/app/configlocal.js': ['src/app/configlocal.js'],
       'dist/app/configprod.js': ['src/app/configprod.js'],
-      'dist/app/modules/GlobalPolyglot.js': [
-        'src/app/modules/GlobalPolyglot.js'
-      ],
       'dist/app/modules/Languages.js': ['src/app/modules/Languages.js'],
-      'dist/app/modules/Permalink.js': ['src/app/modules/Permalink.js'],
+      // es6 by now:
+      //'dist/app/modules/PermaLink.js': ['src/app/modules/Permalink.js'],
       // These files uses Javascript 6 (ESM6 or Harmony) and uglify does not support that yet.
       // So for now, this file is copied in a copy task
       //          'dist/app/modules/L.Control.SceneSwitcher.js': ['src/app/modules/L.Control.SceneSwitcher.js'],
       //          'dist/app/modules/OsmInfobox.js': ['src/app/modules/OsmInfobox.js'],
       'dist/templates/helpers/t.js': ['src/templates/helpers/t.js'],
-
+      'dist/templates/helpers/debug.js': ['src/templates/helpers/debug.js'],
     }
   }
 };

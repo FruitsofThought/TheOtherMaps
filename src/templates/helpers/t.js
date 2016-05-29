@@ -1,10 +1,8 @@
-define('templates/helpers/t', ['handlebars', 'globalpolyglot'], function ( Handlebars, Polyglot ) {
-  function t ( context, options ) {
-    // Simple function for example
- //   do polyglot now
-    polyglot = Polyglot();
-    return polyglot.t(context);
+define('templates/helpers/t', ['handlebars', 'ourpolyglot'], function(
+  Handlebars, Polyglot) {
+  function t(context, options) {
+    return Polyglot.t(context);
   }
-  Handlebars.registerHelper( 't', t);
+  Handlebars.registerHelper('t', t);
   return t;
-}); 
+});

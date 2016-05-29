@@ -1,9 +1,8 @@
 requirejs.config({
-  //  waitSeconds: 30,
+  urlArgs: "bust=v135", // + (new Date()).getTime(),
   baseUrl: '',
-  urlArgs: "bust=v3", // + (new Date()).getTime(),
   optimizeAllPluginResources: true,
-  enforceDefine: false,
+  enforceDefine: false, // will fail for yaml & json anyways nice for debugging
   paths: {
     jquery: 'lib/jquery',
     text: 'lib/requirejs/text', //text is required
@@ -36,7 +35,7 @@ requirejs.config({
     tomTangramInteraction: 'app/modules/TOMTangramInteraction',
     tomLegend: 'app/modules/TOMLegend',
     tomLocationsPanel: 'app/modules/TOMLocationsPanel',
-    config: 'app/configprod',
+    config: 'app/configlocal',
     main: 'app/main',
   },
   shim: {
@@ -70,5 +69,4 @@ requirejs.config({
   }
 });
 
-//use plugins as if they were at
 requirejs(['main']);

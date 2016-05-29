@@ -312,6 +312,26 @@ architecture:
                 wikipedia: Swahili_architecture
                 wikidata: Q7652972
                 osmwiki: Key:building:architecture
+            british_colonial:
+                displayname: keys.building:architecture.british_colonial
+                wikipedia: Colonial_architecture#British_colonial_architecture
+                wikidata: Q21027192
+                osmwiki: Key:building:architecture
+            omani:
+                displayname: keys.building:architecture.omani
+                wikipedia: Oman
+                wikidata: Q842
+                osmwiki: Key:building:architecture
+            omani:
+                displayname: keys.building:architecture.omani
+                wikipedia: Oman
+                wikidata: Q842
+                osmwiki: Key:building:architecture
+            rijnllandse_gothic:
+                displayname: keys.building:architecture.rijnllandse_gothic
+                wikipedia: nl:Nederrijnse_gotiek
+                wikidata: Q4530145
+                osmwiki: Key:building:architecture
     architecture_typology:
         displayname: keys.building:architecture:typology.typology
         wikidata: Q784969

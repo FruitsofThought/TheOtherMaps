@@ -1,12 +1,13 @@
 <div class="sidebar-tabs">
   <ul role="tablist">
-    <li><a href="#homepane" role="tab"><i class="fa fa-bars"></i></a></li>
-    <li><a href="#legendpane" role="tab"><i class="fa fa-map"></i></a></li>
+    <li title="{{ t 'home.panels.home.title' }}"><a href="#homepane" role="tab"><i class="fa fa-bars"></i></a></li>
     <!-- try fa-exchange fa-filter fa-sliders -->
-    <li><a href="#sceneswitcherpane" role="tab"><i class="fa fa-filter"></i></a></li>
-    <li class="disabled"><a href="#infopane" role="tab"><i class="fa fa-info"></i></a></li>
-    <li class="disabled"><a href="#wikipediapane" role="tab"><i class="fa fa-wikipedia-w"></i></a></li>
-    <li class="disabled"><a href="#imagespane" role="tab"><i class="fa fa-file-image-o"></i></a></li>
+    <li title="{{ t 'home.panels.sceneswitcher.title' }}"><a href="#sceneswitcherpane" role="tab"><i class="fa fa-filter"></i></a></li>
+    <li class="disabled" title="{{ t 'home.panels.legend.title' }}"><a href="#legendpane" role="tab"><i class="fa fa-map"></i></a></li>
+    <li class="disabled" title="{{ t 'home.panels.locations.title' }}"><a href="#locationspane" role="tab"><i class="fa fa-map-marker"></i></a></li>
+    <li class="disabled" title="{{ t 'home.panels.info.title' }}"><a href="#infopane" role="tab"><i class="fa fa-info"></i></a></li>
+    <li class="disabled" title="{{ t 'home.panels.wikipedia.title' }}"><a href="#wikipediapane" role="tab"><i class="fa fa-wikipedia-w"></i></a></li>
+    <li class="disabled" title="{{ t 'home.panels.images.title' }}"><a href="#imagespane" role="tab"><i class="fa fa-file-image-o"></i></a></li>
   </ul>
   <ul role="tablist">
     <li><a href="#settingspane" role="tab"><i class="fa fa-gear"></i></a></li>
@@ -23,11 +24,16 @@
   </div>
   <div class="sidebar-pane" id="sceneswitcherpane">
     <h1 class="sidebar-header">{{ t 'home.panels.sceneswitcher.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
+    <div id="currentscene"></div>
     <div id="sceneswitcher"></div>
   </div>
   <div class="sidebar-pane" id="legendpane">
     <h1 class="sidebar-header">{{ t 'home.panels.legend.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
     <div id="legend"></div>
+  </div>
+  <div class="sidebar-pane" id="locationspane">
+    <h1 class="sidebar-header">{{ t 'home.panels.locations.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
+    <div id="locations"></div>
   </div>
   <div class="sidebar-pane" id="infopane">
     <h1 class="sidebar-header">{{ t 'home.panels.info.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
@@ -44,7 +50,7 @@
     <h1 class="sidebar-header">{{ t 'home.panels.settings.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
     <div id="settings">
       <form>
-        <input type="radio" name="language" value="en-UK">{{ t 'home.panels.settings.en-UK' }}<br>
+        <input type="radio" name="language" value="en-US">{{ t 'home.panels.settings.en-US' }}<br>
         <input type="radio" name="language" value="nl-NL">{{ t 'home.panels.settings.nl-NL' }}<br>
       </form>
     </div>

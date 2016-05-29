@@ -1,0 +1,23 @@
+{{#each items}}
+  {{#if @first}}
+<table>
+  {{/if}}
+  <tr><td>
+{{t title}}
+<!--</li><li>-->
+  </td><td>
+  <ul>
+    <li class="color">
+      <a style="background-color: {{ color }};" title="{{t description }}"></a>
+    </li>
+    {{#if samplelocation.lat }}
+    <li>
+      <i title="{{ t 'home.panels.legend.locationtitle' }}" class="fa fa-map-marker marker" data-lat="{{ samplelocation.lat }}" data-lon="{{ samplelocation.lon }}" data-zoom="{{ samplelocation.zoom }}" ></i>
+    </li>
+    {{/if}}
+  </ul>
+</tr></td>
+  {{#if @last}}
+</table>
+  {{/if}}
+{{/each}}

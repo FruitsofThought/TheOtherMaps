@@ -1,7 +1,7 @@
 {
-  "name": "OpenStreetMap Labels Box",
+  "name": "theothermaps",
   "authors": [
-    "Reinier Battenberg <reinier.battenberg@mountbatten.net>"
+    "Reinier Battenberg <reinier.battenberg@mountbatten.nl>"
   ],
   "description": "generates labels based on OSM properties coming from a mapzen tileserver",
   "main": "index.html",
@@ -21,8 +21,8 @@
   "dependencies": {
     "handlebars": "^4.0.5",
     "requirejs": "^2.2.0",
-    "jquery": "^2.2.2",
-    "font-awesome": "^4.5.0",
+    "jquery": "^2.2.3",
+    "font-awesome": "^4.6.0",
     "tangram": "^0.7.0",
     "polyglot": "^2.0.0",
     "leaflet": "^1.0.0-beta.2",
@@ -35,6 +35,13 @@
     "Leaflet.VisualClick": "^1.1.0",
     "sidebar-v2": "^0.3.0",
     "underscore": "^1.8.3",
-    "postal.js": "^1.0.8"
+    "postal.js": "^1.0.8",
+    "requirejs-promised": "^0.1.0",
+    "js-cookie": "^2.1.1",
+    "PACE": "pace#^1.0.2",
+    "opentip": "^2.4.6"
+  },
+  "resolutions": {
+    "jquery": "^2.2.3"
   }
 }

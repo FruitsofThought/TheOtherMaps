@@ -1,18 +1,19 @@
 requirejs.config({
   waitSeconds: 30,
-  urlArgs: "bust=v73" + (new Date()).getTime(),
+  urlArgs: "bust=v116", // + (new Date()).getTime(),
   baseUrl: '',
   optimizeAllPluginResources: true,
   enforceDefine: false, // will fail for yaml & json anyways nice for debugging
   paths: {
     jquery: 'lib/jquery',
-    //  underscore: 'lib/underscore',
     text: 'lib/requirejs/text', //text is required
     json: 'lib/requirejs/json', //alias to plugin
     hbs: 'lib/requirejs/hbs',
+    promised: 'lib/requirejs/promised',
     yaml: 'lib/requirejs/yaml', //alias to plugin
     'js-yaml': 'lib/js-yaml', //alias to plugin
     polyglot: 'lib/polyglot',
+    jscookie: 'lib/js.cookie',
     lodash: 'lib/lodash',
     postal: 'lib/postal',
     leaflet: 'lib/leaflet/leaflet-src',
@@ -23,10 +24,14 @@ requirejs.config({
     keymaster: 'lib/keymaster',
     handlebars: 'lib/handlebars',
     wikidata: 'lib/wikidata-sdk',
-    globalpolyglot: 'app/modules/GlobalPolyglot',
-    permalink: 'app/modules/Permalink',
+    ourpolyglot: 'app/modules/OurPolyglot',
+    permalink: 'app/modules/PermaLink',
     sceneswitcher: 'app/modules/L.Control.SceneSwitcher',
+    scene: 'app/modules/Scene',
+    sceneslist: 'app/modules/ScenesList',
     osminfobox: 'app/modules/OsmInfobox',
+    tomTangram: 'app/modules/TOMTangram',
+    tomTangramInteraction: 'app/modules/TOMTangramInteraction',
     config: 'app/configdev',
     main: 'app/main',
   },

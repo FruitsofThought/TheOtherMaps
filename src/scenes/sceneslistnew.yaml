@@ -1,0 +1,6 @@
+---
+scenesList:
+    -
+        file: https://raw.githack.com/FruitsofThought/TOMStartDate/master/TOMStartDate.js
+    -
+        file: https://raw.githack.com/FruitsofThought/TOMArchitecturalStyles/master/TOMArchitecturalStyles.js

@@ -1,0 +1,13 @@
+{{#each locationsList}}
+{{#if @first}}
+<table>
+  <th>{{ t 'home.panels.locations.pane' }}</th>
+{{/if}}
+<tr><td class="marker" data-lat="{{ lat }}" data-lon="{{ lon }}" data-zoom="{{ zoom }}">
+{{t title}} <i class="fa fa-map-marker"></i>
+</td>
+</tr>
+{{#if @last}}
+</table>
+{{/if}}
+{{/each}}

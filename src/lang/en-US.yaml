@@ -15,13 +15,17 @@ phrases:
                 title: Scene Switcher
             legend:
                 title: Legend
+                locationtitle: Navigate the map to an example location
+            locations:
+                title: Sample Locations
+                pane: These are some sample locations with highlights of this map
             info:
                 title: Info
             images:
                 title: Images
             settings:
                 title: Settings
-                en-UK: English
+                en-US: English
                 nl-NL: Nederlands
             wikipedia:
                 title: Wikipedia
@@ -75,6 +79,7 @@ phrases:
             memorial: Memorial
             church: Church
             castle: Castle
+            railway_station: Railway Station
         heritage:
             heritage: Heritage
             1: Unesco
@@ -114,6 +119,11 @@ phrases:
             modernism: Modernism
             classic_swahili: Classic Swahili
             stone_town: Stone Town
+            british_colonial: British Colonial
+            omani: Omani
+            modern: Modern
+            hyper_modern: Hypermodern
+            rijnllandse_gothic: Rhineland Gothic
         "building:architecture:typology":
             typology: Architectural Typology
             single_storey_swahili: Single Storey Swahili

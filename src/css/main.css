@@ -1,7 +1,7 @@
 html { height: 100% }
-body { 
-    height: 100%; 
-    margin: 0; 
+body {
+    height: 100%;
+    margin: 0;
     padding: 0;
     font-family: 'Josefin Sans';
   }
@@ -17,27 +17,77 @@ body {
     position: absolute;
     color: #000;
 }
-  
+
 #legend table {
     margin-top: 30px;
-    width: 80%;
+    width: 300px;
     font-size: smaller;
   }
 
-#legend a {
-    color: #000;
-    height: 15px;
-    width: 300px;
+#legend td sdfdsf,
+#legend tr dfsdf{
+  width: 30%;
 }
 
-.leaflet-control-locationlist-arrow-next { 
+#legend a {
+    color: #000;
+    height: 20px;
+    width: 100%;
+}
+
+#legend ul {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+#legend li {
+  float: right;
+  list-style: none;
+}
+
+#legend li.color {
+  float: left;
+  width: 140px;
+}
+
+#legend .color a {
+  display: block;
+  width: 100%;
+}
+
+#legend .marker {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#legend .marker {
+  font-size: 18px;
+  color: #444;
+}
+
+#legend .marker:hover {
+  color: #000;
+}
+
+#locations .marker {
+  cursor: pointer;
+}
+
+#locations .marker:hover {
+  text-decoration: underline;
+}
+
+
+.leaflet-control-locationlist-arrow-next {
     background-image: url('images/icon-next.png');
 }
 
-.leaflet-control-locationlist-arrow-prev { 
+.leaflet-control-locationlist-arrow-prev {
    background-image: url('images/icon-prev.png');
 }
-  
+
 .sidebar-content {
     display: block;
 }
@@ -61,7 +111,7 @@ body {
 .iframepane.active {
     display: block;
     height: 100%;
-    overflow: none;  
+    overflow: none;
 }
 
 .iframepane.active div {
@@ -73,12 +123,16 @@ body {
   height: 100%;
   border: none;
 }
-  
+
 #sceneswitcher .group {
 <!-- padding-inline-start: 20px; -->
   padding-left: 20px;
 }
 
+#currentscene.preview {
+  color: #111;
+  background-color: #eee;
+}
 #sceneswitcher li {
   text-decoration: none;
   color: #33B5E5;
@@ -90,7 +144,11 @@ body {
   border-style: solid;
   margin-bottom: 10px;
 }
- 
+
+#sceneswitcher li .description {
+  display: none;
+}
+
 #sceneswitcher li:hover {
   text-decoration: none;
   color: #ffffff;
@@ -162,3 +220,13 @@ body {
   border-color: #000;
 }
 
+body .tipsy-inner {
+   padding: 10px;
+   font: red;
+   font-size: 14px;
+ }
+
+
+ body.waiting * {
+     cursor: progress;
+ }

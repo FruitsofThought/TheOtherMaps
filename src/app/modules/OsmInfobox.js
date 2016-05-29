@@ -1,23 +1,15 @@
 define(
   ['hbs!templates/osminfobox',
     'jquery',
-    'globalpolyglot', // returns a function that returns the Polyglot object
     'handlebars',
     'yaml!templates/osmkeysvalues.yaml',
     'config',
     'lodash',
     'keymaster'
   ],
-  function(template, $, Polyglot, Handlebars, keyvalues, config, underscore) {
+  function(template, $, Handlebars, keyvalues, config, underscore) {
 
-    OSMInfobox = function(map, basepath) {
-      this._polyglot = Polyglot();
-
-      this._currentscene = '';
-      this._currentlanguage = '';
-      this._pagename = '';
-      this._map = map;
-
+    OSMInfobox = function() {
 
     };
 
@@ -207,6 +199,7 @@ define(
           $('#wikipediadoc').attr('src', '');
           map.sidebarcontrols['rightsidebar'].disable('wikipediapane');
         }
+        return true;
       },
     }
 

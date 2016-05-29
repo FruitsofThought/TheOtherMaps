@@ -16,6 +16,10 @@ phrases:
                 title: Kaarten
             legend:
                 title: Legenda
+                locationtitle: Beweegt de kaart naar een voorbeeldlocatie
+            locations:
+                title: Voorbeeld uitsnedes
+                pane: Dit zijn enkele voorbeeld uitsnedes uit de gehele kaart
             info:
                 title: Informatie
             wikipedia:
@@ -72,6 +76,7 @@ phrases:
             memorial: Gedenkingsplaats
             church: Kerk
             castle: Kasteel
+            railway_station: Treinstation
         heritage:
             heritage: Erfgoed
             1: Unesco
@@ -110,6 +115,12 @@ phrases:
             eclectic: Eclectische Stijl
             modernism: Het Nieuwe Bouwen
             classic_swahili: Klassiek Swahili
+            stone_town: Stone Town
+            british_colonial: Brits Kolonisch
+            omani: Omanisch
+            modern: Modern
+            hyper_modern: Hyper modern
+            rijnllandse_gothic: Rijnlands Gothisch
         "building:architecture:typology":
             typology: Architectural Typology
             single_storey_swahili: Enkele verdieping Swahili

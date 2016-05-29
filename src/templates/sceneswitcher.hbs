@@ -1,0 +1,21 @@
+<div class="control">
+<div id="currentscene">
+<h2 class="title">{{ t current.name }}</h2>
+<div class="description">
+  {{ t current.description }}
+</div>
+</div>
+{{#each groups }}
+  {{#each this }}
+    {{#if @first}}
+     <ul class="group">{{t groupname}}
+       <li id="{{ id }}" title="{{t description }}"><span class="title inactive">{{ t name }}</span><span class="description">{{ t description }}</span></li>
+    {{else}}
+       <li id="{{ id }}" title="{{t description }}"><span class="title inactive">{{ t name }}</span><span class="description">{{ t description }}</span></li>
+    {{/if}}
+    {{#if @last}}
+     </ul>
+    {{/if}}
+  {{/each}}
+{{/each}}
+</div>

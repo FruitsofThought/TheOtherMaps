@@ -1,80 +1,14 @@
-scenes:
-    buildingage:
-        group: Netherlands
-        name: Building Age
-        file: scenes/startdate.yaml
-        legendfunction: startdates_legend
-        scripts: ['scenes/startdate.js']
-
-    architecturalstyles:
-        group: Netherlands
-        name: Architectural Styles
-        file: scenes/architecturalstyles.yaml
-        legendfunction: architecturalstyles_legend
-        scripts: ['scenes/architecturalstyles.js']
-
-    historicandheritage:
-       group: Netherlands
-       name: Heritage & Historical
-       file: scenes/historicandheritage.yaml
-
-    buildingagetz:
-        group: Tanzania
-        name: Building Age
-        file: scenes/startdatetz.yaml
-        legendfunction: startdates_legend
-
-    publicbuildings:
-        group: Netherlands
-        name: Buildings Typologies
-        file: scenes/publicbuildings.yaml
-        legendfunction: publicbuildings_legend
-        scripts: ['scenes/publicbuildings.js']
-
-    publicbuildingstz:
-        group: Tanzania
-        name: Public Buildings
-        file: scenes/publicbuildingstz.yaml
-
-    architecturalstylestz:
-        group: Tanzania
-        name: Architectural Styles
-        file: scenes/architecturalstylestz.yaml
-
-    historicandheritagetz:
-       group: Tanzania
-       name: Heritage & Historical
-       file: scenes/historicandheritagetz.yaml
-
-    reliefandredroads:
-       group: California
-       name: Relief and Red Roads
-       file: scenes/reliefandredroads.yaml
-       defaultlocation: [33.9800, -118.1726, 11]
-       locations:
-          -
-            title: Los Angeles
-            latlng:
-                - 33.9800
-                - -118.1726
-            zoom: 11
-
-    cinnabar:
-        group: Mapzen Demos
-        name: Cinnabar
-        file: //cdn.rawgit.com/tangrams/cinnabar-style/70b3d2d9ca70346ad626b4337aa676735e1ba71b/cinnabar-style.yaml
-
-    crosshatch:
-        group: Mapzen Demos
-        name: Crosshatch
-        file: //cdn.rawgit.com/tangrams/tangram-sandbox/5b6963f1efce4ba153b55294db26cf2d8caec77d/styles/crosshatch.yaml
-
-    tron:
-        name: Tron
-        group: Mapzen Demos
-        file: //cdn.rawgit.com/tangrams/tangram-sandbox/a5d9eb117a4b5a220cb23c02a79ef7d002caf071/styles/tron.yaml
-
-    refill:
-        name: Refill
-        group: Mapzen Demos
-        file: //cdn.rawgit.com/tangrams/refill-style/6e720243dfc93f2aa49d490e0676699edfe4aad7/refill-style.yaml
+---
+scenesList:
+    -
+        file: https://raw.githack.com/FruitsofThought/TOMStartDate/master/TOMStartDate.js
+    -
+        file: https://raw.githack.com/FruitsofThought/TOMVeenlandschapTransformatie/TOMVeenlandschapTransformatie.js
+    -
+        file: https://raw.githack.com/FruitsofThought/TOMArchitecturalStyles/TOMArchitecturalStyles.js
+    -
+        file: https://raw.githack.com/FruitsofThought/TOMBuildingTypologies/TOMBuildingTypologies.js
+    -
+        file: https://raw.githack.com/FruitsofThought/TOMHistoricAndHeritage/TOMHistoricAndHeritage.js
+    -
+        file: https://raw.githack.com/FruitsofThought/TOMReliefandRedRoads/TOMReliefandRedRoads.js

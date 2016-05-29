@@ -1,14 +1,19 @@
-define(['jquery', 'js-yaml'], function($, jsyaml) {
+define(['jquery', 'js-yaml'], function($, jsyaml, sceneslist) {
   var appconfig = Array();
-  var server = location.origin;
-  var path = location.pathname.substr(0, location.pathname.lastIndexOf("/"));
-  appconfig['path'] = path + '/';
-  appconfig['filename'] = 'index.html';
-  appconfig['map_start_location'] = [52.3697, 4.9044, 15, 16] // Amsterdam
-  appconfig['startscene'] = 'TOMStartDate';
-  appconfig['locationslist'] = 'scenes/locations.yaml';
-  appconfig['sceneslist'] = 'scenes/sceneslistnew.yaml'
-  appconfig['debug'] = false;
+
+  //  var server = location.origin;
+  //  var path = location.pathname.substr(0, location.pathname.lastIndexOf("/"));
+  //  appconfig['path'] = path + '/'; // Should have trailing /
+
+  //  appconfig['filename'] = 'develop.html';
+  appconfig['map_start_location'] = [52.3697, 4.9044, 15] // Amsterdam
+  appconfig['startscene'] = 'TOMBuildingTypologies';
+  appconfig['locationslist'] = 'scenes/locationsall.yaml';
+  appconfig['sceneslist'] = 'scenes/sceneslistlocal.yaml';
+  appconfig['languages'] = Array();
+  appconfig['languages'][0] = window.navigator.userLanguage || window.navigator
+    .language;
+  appconfig['debug'] = true;
 
   /**
    * Do not edit below this line

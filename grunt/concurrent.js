@@ -2,7 +2,7 @@ module.exports = {
 
   // Task options
   options: {
-    limit: 3
+    limit: 12
   },
 
   // Dev tasks
@@ -23,7 +23,7 @@ module.exports = {
     'copy:leaflet',
     'copy:librarycss',
     'copy:libraryjs',
-    'copy:tangram53',
+    'copy:images',
     'cssmin',
   ],
 
