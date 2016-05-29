@@ -4,3 +4,7 @@ scenesList:
         file: https://raw.githack.com/FruitsofThought/TOMStartDate/master/TOMStartDate.js
     -
         file: https://raw.githack.com/FruitsofThought/TOMArchitecturalStyles/master/TOMArchitecturalStyles.js
+    -
+        file: https://raw.githack.com/FruitsofThought/TOMReliefandRedRoads/master/TOMReliefandRedRoads.js
+    -
+        file: https://raw.githack.com/FruitsofThought/TOMBuildingTypologies/master/TOMBuildingTypologies.js

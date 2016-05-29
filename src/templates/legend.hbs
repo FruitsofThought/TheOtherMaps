@@ -14,7 +14,7 @@
     <li>
       {{#if samplelocation.title }}
       <i title="{{ t samplelocation.title }}" class="fa fa-map-marker marker" data-lat="{{ samplelocation.lat }}" data-lon="{{ samplelocation.lon }}" data-zoom="{{ samplelocation.zoom }}" ></i>
-    {{/else}}  
+      {{ else }}
       <i title="{{ t 'home.panels.legend.locationtitle' }}" class="fa fa-map-marker marker" data-lat="{{ samplelocation.lat }}" data-lon="{{ samplelocation.lon }}" data-zoom="{{ samplelocation.zoom }}" ></i>
     {{/if}}
     </li>
