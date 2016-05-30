@@ -1,14 +1,14 @@
 ---
 scenesList:
     -
-        file: https://raw.githack.com/FruitsofThought/TOMStartDate/master/TOMStartDate.js
+        file: https://maps.mountbatten.nl/TOMStyles/TOMStartDate/TOMStartDate.js
     -
-        file: https://raw.githack.com/FruitsofThought/TOMVeenlandschapTransformatie/TOMVeenlandschapTransformatie.js
+        file: https://maps.mountbatten.nl/TOMStyles/TOMVeenlandschapTransformatie/TOMVeenlandschapTransformatie.js
     -
-        file: https://raw.githack.com/FruitsofThought/TOMArchitecturalStyles/TOMArchitecturalStyles.js
+        file: https://maps.mountbatten.nl/TOMStyles/TOMArchitecturalStyles/TOMArchitecturalStyles.js
     -
-        file: https://raw.githack.com/FruitsofThought/TOMBuildingTypologies/TOMBuildingTypologies.js
+        file: https://maps.mountbatten.nl/TOMStyles/TOMBuildingTypologies/TOMBuildingTypologies.js
     -
-        file: https://raw.githack.com/FruitsofThought/TOMHistoricAndHeritage/TOMHistoricAndHeritage.js
+        file: https://maps.mountbatten.nl/TOMStyles/TOMHistoricAndHeritage/TOMHistoricAndHeritage.js
     -
-        file: https://raw.githack.com/FruitsofThought/TOMReliefandRedRoads/TOMReliefandRedRoads.js
+        file: https://maps.mountbatten.nl/TOMStyles/TOMReliefandRedRoads/TOMReliefandRedRoads.js
