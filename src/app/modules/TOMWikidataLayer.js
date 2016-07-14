@@ -60,7 +60,8 @@ define(
         var sw = bounds.getWest() + ' ' + bounds.getSouth();
         var ne = bounds.getEast() + ' ' + bounds.getNorth();
 
-        var language = Cookies.get('language').substr(0, 2);
+        var language = Cookies.get('language');
+        var language = (typeof language === 'undefined') ? 'en' : Cookies.get('language').substr(0, 2);
         // Add english as fallback language
         if (language != 'en') {
           language += ",en";
