@@ -7,13 +7,14 @@ define(['jquery', 'js-yaml'], function($, jsyaml, sceneslist) {
 
   //  appconfig['filename'] = 'develop.html';
   appconfig['map_start_location'] = [52.3697, 4.9044, 15] // Amsterdam
-  appconfig['startscene'] = 'TOMBuildingTypologies';
+  appconfig['startscene'] = 'TOMArchitecturalTypology';
   appconfig['locationslist'] = 'scenes/locationsall.yaml';
   appconfig['sceneslist'] = 'scenes/sceneslistlocal.yaml';
   appconfig['languages'] = Array();
   appconfig['languages'][0] = window.navigator.userLanguage || window.navigator
     .language;
   appconfig['debug'] = true;
+  appconfig['logLevel'] = 'warn'; // loglevel of Tangram, also possible 'warn' or 'error'
 
   /**
    * Do not edit below this line

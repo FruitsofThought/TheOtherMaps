@@ -5,21 +5,9 @@
 {{#if key.name }}
 <h2>
 {{/if}}
-<span class="label keylabel {{ key }}">{{t displayname}}
-  <span class="icons">
-    {{#if wikipedia }}
-      <a class="icon wikipedia_white" href="https://en.wikipedia.org/wiki/{{ wikipedia }}" data="{{ wikipedia }}" title="{{{t "home.wikipediahover" }}} {{ t displayname }} {{{t "home.ctrlclicknewwindow" }}}" target="_blank"></a>
-    {{/if}}
-    {{#if osmwiki }}
-      <a class="icon openstreetmap_bw" href="https://wiki.openstreetmap.org/wiki/{{ osmwiki }}" data="{{ osmwiki }}" title="{{{t "home.osmwikihover" }}} {{ t displayname }} {{{t "home.ctrlclicknewwindow" }}}" target="_blank"></a>
-    {{/if}}
-    {{#if wikidata }}
-      <a class="icon wikidata_bw" href="https://www.wikidata.org/wiki/{{ wikidata }}" data="{{ wikidata }}" title="{{{t "home.wikidatahover" }}} {{ wikidata }} {{{t "home.ctrlclicknewwindow" }}}" target="_blank"></a>
-    {{/if}}
-  </span>
-</span>
+{{>templates/osmlabel item=this class='keylabel' key=key}}
 </td><td>
-<span class="label valuelabel {{ key }}">{{t ./value/displayname}}
+<span class="osmlabel valuelabel {{ key }}">{{t ./value/displayname}}
   <span class="icons">
     {{#if ./value/wikipedia }}
       <a class="icon wikipedia_white" href="https://en.wikipedia.org/wiki/{{ ./value/wikipedia }}" data="{{ ./value/wikipedia }}" title="{{{t "home.wikipediahover" }}} {{ t ./value/displayname }}" target="_blank"></a>
@@ -29,6 +17,11 @@
     {{/if}}
     {{#if ./value/wikidata }}
       <a class="icon wikidata_bw" href="https://www.wikidata.org/wiki/{{ ./value/wikidata }}" data="{{ ./value/wikidata }}" title="{{t "home.wikidatahover" }} {{ ./value/wikidata }}" target="_blank"></a>
+    {{/if}}
+    {{#if wikiproperty }}
+      {{#if ./value/wikidata }}
+        <a class="icon mapmarker_bw" data-wikidataproperty="{{ wikiproperty }}" data-wikidatavalue="{{ ./value/wikidata }}"></a>
+      {{/if}}
     {{/if}}
   </span>
 </span>

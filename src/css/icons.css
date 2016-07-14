@@ -1,4 +1,4 @@
-.icon-next, .icon-prev, .openstreetmap_bw, .openstreetmap_color, .wikidata_48x48, .wikidata_bw, .wikidata_color, .wikipedia_black, .wikipedia_white {
+.icon-next, .icon-prev, .mapmarker_bw, .mapmarker_color, .marker-icon, .marker-shadow, .openstreetmap_bw, .openstreetmap_color, .sprite, .wikidata_48x48, .wikidata_bw, .wikidata_color, .wikipedia_black, .wikipedia_white {
     background: url("../icons/sprite.png") no-repeat;
 }
 
@@ -10,31 +10,51 @@
     background-position: 0 -15px;
 }
 
-.openstreetmap_bw {
+.mapmarker_bw {
     background-position: 0 -30px;
 }
 
-.openstreetmap_color {
+.mapmarker_color {
     background-position: 0 -46px;
 }
 
-.wikidata_48x48 {
+.marker-icon {
     background-position: 0 -62px;
 }
 
+.marker-shadow {
+    background-position: 0 -103px;
+}
+
+.openstreetmap_bw {
+    background-position: 0 -144px;
+}
+
+.openstreetmap_color {
+    background-position: 0 -160px;
+}
+
+.sprite {
+    background-position: 0 -176px;
+}
+
+.wikidata_48x48 {
+    background-position: 0 -1272px;
+}
+
 .wikidata_bw {
-    background-position: 0 -242px;
+    background-position: 0 -1452px;
 }
 
 .wikidata_color {
-    background-position: 0 -290px;
+    background-position: 0 -1468px;
 }
 
 .wikipedia_black {
-    background-position: 0 -306px;
+    background-position: 0 -1484px;
 }
 
 .wikipedia_white {
-    background-position: 0 -322px;
+    background-position: 0 -1500px;
 }
 

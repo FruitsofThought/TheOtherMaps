@@ -80,6 +80,7 @@ phrases:
             church: Church
             castle: Castle
             railway_station: Railway Station
+            ruins: Ruins
         heritage:
             heritage: Heritage
             1: Unesco
@@ -104,10 +105,15 @@ phrases:
             industrial: Industrial
             houseboat: Houseboat
             civic: Civic
+            public: Public
             office: Office
             university: University
+            hospital: Hospital
             school: School
             train_station: Train Station
+            construction: Construction
+            container: Container
+            ruins: Ruins
         "building:architecture":
             architecture: Architecture Style
             art_deco: Art Deco
@@ -126,10 +132,29 @@ phrases:
             rijnllandse_gothic: Rhineland Gothic
         "building:architecture:typology":
             typology: Architectural Typology
+            high_street: High Street
             single_storey_swahili: Single Storey Swahili
+            modern_multi_storey_swahili: Modern Multi Storey Swahili
+            modern_swahili: Modern Swahili
+            post_modern_multi_storey_swahili: Post Modern Multi Storey Swahili
+            suburban_villa: Suburban Villa
+            others: Others
             apartment_block: Apartment Block
             indian_shopfront: Indian Shop Front
+            modern_indian_shopfront: Modern Indian Shop Front
             government: Government
+            mosque: Mosque
+            church: Church
+            market_stall: Market Stall
+            madrasa: Madrasa
+            public_school: State School
+            arcade_building: Arcade Building
+        "building:condition":
+            condition: Condition
+            poor: Poor
+            average: Average
+            good: Good
+            ruinous: In Ruins
         place:
             town: Town
         population: Population

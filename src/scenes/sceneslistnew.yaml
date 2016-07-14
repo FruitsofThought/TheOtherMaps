@@ -5,6 +5,6 @@ scenesList:
     -
         file: https://maps.mountbatten.nl/TOMStyles/TOMArchitecturalStyles/TOMArchitecturalStyles.js
     -
-        file: https://maps.mountbatten.nl/TOMStyles/TOMReliefandRedRoads/TOMReliefandRedRoads.js
+        file: https://maps.mountbatten.nl/TOMStyles/TOMArchitecturalTypology/TOMArchitecturalTypology.js
     -
-        file: https://maps.mountbatten.nl/TOMStyles/TOMBuildingTypologies/TOMBuildingTypologies.js
+        file: https://maps.mountbatten.nl/TOMStyles/TOMBuildingStatus/TOMBuildingStatus.js

@@ -1,13 +1,14 @@
 define(
   ['hbs!templates/osminfobox',
     'jquery',
+    'postal',
     'handlebars',
     'yaml!templates/osmkeysvalues.yaml',
     'config',
     'lodash',
     'keymaster'
   ],
-  function(template, $, Handlebars, keyvalues, config, underscore) {
+  function(template, $, postal, Handlebars, keyvalues, config, underscore) {
 
     OSMInfobox = function() {
 
@@ -94,7 +95,7 @@ define(
           }
         });
         // Load all the iframes
-        $(element + " .label").click({
+        $(element + " .osmlabel").click({
           map: map
         }, function(event) {
           if ($(this).hasClass('wikipedia') > 0) {
@@ -115,7 +116,6 @@ define(
             map.sidebarcontrols['leftsidebar'].open(activetab +
               'pane');
           }
-          console.log("got some");
         });
 
         $(element + " .valuelabel.wikipedia").click(function() {
@@ -153,6 +153,7 @@ define(
             'osmwikipane');
           return false;
         });
+
         $(element + " .wikidata_bw").click({
           map: map
         }, function(event) {
@@ -165,6 +166,21 @@ define(
         });
         $(element + " .wikidata_bw").hover(function() {
           $(this).toggleClass('wikidata_bw wikidata_color');
+        });
+
+        $(element + " .mapmarker_bw").hover(function() {
+          $(this).toggleClass('mapmarker_bw mapmarker_color');
+        });
+        $(element + " .mapmarker_bw").click({
+          map: map
+        }, function(event) {
+          var channel = postal.channel();
+          channel.publish("wikidata.change", {
+            wikidataproperty: this.dataset.wikidataproperty,
+            wikidatavalue: this.dataset.wikidatavalue
+          });
+
+          return false;
         });
         $(element + " .keylabel").hover(function() {
           $(this).toggleClass('visible');
@@ -185,6 +201,9 @@ define(
         $(element).find('.icon').parent().parent().addClass('underlined');
 
         if (typeof properties.wikipedia !== "undefined") {
+          // If wikipedia is set, but wikidata is not then use
+          // https://github.com/maxlath/wikidata-sdk/blob/master/src/queries/get_wikidata_ids_from_sitelinks.coffee
+          // to get the wikidata item, then but that wikidata entry on the event bus
           var items = properties.wikipedia.split(':');
           // we could also embed ?printable=yes
           if (items.length == 1) {

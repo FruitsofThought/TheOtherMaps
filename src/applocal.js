@@ -1,5 +1,5 @@
 requirejs.config({
-  urlArgs: "bust=v138", // + (new Date()).getTime(),
+  urlArgs: "bust=v182", // + (new Date()).getTime(),
   baseUrl: '',
   optimizeAllPluginResources: true,
   enforceDefine: false, // will fail for yaml & json anyways nice for debugging
@@ -23,7 +23,7 @@ requirejs.config({
     keymaster: 'lib/keymaster',
     tipsy: 'lib/jquery.tipsy',
     handlebars: 'lib/handlebars',
-    wikidata: 'lib/wikidata-sdk',
+    'wikidata-sdk': 'lib/wikidata-sdk',
     ourpolyglot: 'app/modules/OurPolyglot',
     permalink: 'app/modules/PermaLink',
     sceneswitcher: 'app/modules/L.Control.SceneSwitcher',
@@ -35,6 +35,7 @@ requirejs.config({
     tomTangramInteraction: 'app/modules/TOMTangramInteraction',
     tomLegend: 'app/modules/TOMLegend',
     tomLocationsPanel: 'app/modules/TOMLocationsPanel',
+    tomWikidataLayer: 'app/modules/TOMWikidataLayer',
     config: 'app/configlocal',
     main: 'app/main',
   },

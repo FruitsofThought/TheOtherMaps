@@ -1,0 +1,21 @@
+<span class="osmlabel {{class}} {{ key }}">{{t item.displayname}}
+  <span class="icons">
+    {{#if item.wikipedia }}
+      <a class="icon wikipedia_white" href="https://en.wikipedia.org/wiki/{{ item.wikipedia }}" data="{{ item.wikipedia }}" title="{{{t "home.wikipediahover" }}} {{ t item.displayname }} {{{t "home.ctrlclicknewwindow" }}}" target="_blank"></a>
+    {{/if}}
+    {{#if item.osmwiki }}
+      <a class="icon openstreetmap_bw" href="https://wiki.openstreetmap.org/wiki/{{ item.osmwiki }}" data="{{ item.osmwiki }}" title="{{{t "home.osmwikihover" }}} {{ t item.displayname }} {{{t "home.ctrlclicknewwindow" }}}" target="_blank"></a>
+    {{/if}}
+    {{#if item.wikidata }}
+      <a class="icon wikidata_bw" href="https://www.wikidata.org/wiki/{{ item.wikidata }}" data="{{ item.wikidata }}" title="{{{t "home.wikidatahover" }}} {{ item.wikidata }} {{{t "home.ctrlclicknewwindow" }}}" target="_blank"></a>
+    {{/if}}
+
+{{#if item.wikiproperty }}
+  {{#if item.wikidata }}
+    <a class="icon mapmarker_bw" data-wikidataproperty="{{ item.wikiproperty }}" data-wikidatavalue="{{ item.wikidata }}"></a>
+    {{else}}
+    <a class="icon mapmarker_bw" data-wikidataproperty="{{ item.wikiproperty }}" data-wikidatavalue=""></a>
+  {{/if}}
+{{/if}}
+  </span>
+</span>

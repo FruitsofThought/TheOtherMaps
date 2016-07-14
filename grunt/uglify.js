@@ -81,7 +81,7 @@ module.exports = {
         'bower_components/Leaflet.VisualClick/dist/L.VisualClick.js'
       ],
       'dist/lib/wikidata-sdk.js': [
-        'bower_components/wikidata-sdk/dist/wikidata-sdk.js'
+        'bower_components/wikidata-sdk/dist/wikidata-sdk.min.js'
       ],
       'dist/lib/handlebars.js': ['bower_components/handlebars/handlebars.js'],
       'dist/app.js': ['src/app.js'],
@@ -103,6 +103,7 @@ module.exports = {
       //          'dist/app/modules/OsmInfobox.js': ['src/app/modules/OsmInfobox.js'],
       'dist/templates/helpers/t.js': ['src/templates/helpers/t.js'],
       'dist/templates/helpers/debug.js': ['src/templates/helpers/debug.js'],
+      'dist/templates/helpers/getosmkeyvalue.js': ['src/templates/helpers/getosmkeyvalue.js'],
     }
   }
 };

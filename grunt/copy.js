@@ -113,7 +113,8 @@ module.exports = {
         'src/app/modules/TOMLegend.js',
         'src/app/modules/TOMTangram.js',
         'src/app/modules/TOMTangramInteraction.js',
-        'src/app/modules/TOMLocationsPanel.js'
+        'src/app/modules/TOMLocationsPanel.js',
+        'src/app/modules/TOMWikidataLayer.js'
       ],
       dest: 'dist/app/modules/'
     }]
@@ -124,6 +125,14 @@ module.exports = {
       flatten: true,
       src: 'bower_components/leaflet/dist/leaflet-src.js',
       dest: 'dist/lib/leaflet/'
+    }]
+  },
+  leafletimages: {
+    files: [{
+      expand: true,
+      flatten: true,
+      src: 'bower_components/leaflet/dist/images/*',
+      dest: 'dist/lib/leaflet/images/'
     }]
   }
 };

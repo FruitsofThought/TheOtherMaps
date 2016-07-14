@@ -3,23 +3,32 @@
 <table>
   {{/if}}
   <tr><td>
-{{t title}}
+  {{#if osmkeyvalue }}
+    {{#with (getosmkeyvalue osmkeyvalue) }}
+      {{>templates/osmlabel item=this class='valuelabel' key=@key}}
+    {{/with}}
+  {{else}}
+  {{ title }}
+  {{/if}}
 <!--</li><li>-->
   </td><td>
-  <ul>
+  <ul class="style">
     <li class="color">
+      {{#if css}}
+      <a style="{{css}}" title="{{t description }}"></a>
+      {{else}}
       <a style="background-color: {{ color }};" title="{{t description }}"></a>
+      {{/if}}
     </li>
-    {{#if samplelocation.lat }}
-    <li>
-      {{#if samplelocation.title }}
-      <i title="{{ t samplelocation.title }}" class="fa fa-map-marker marker" data-lat="{{ samplelocation.lat }}" data-lon="{{ samplelocation.lon }}" data-zoom="{{ samplelocation.zoom }}" ></i>
-      {{ else }}
-      <i title="{{ t 'home.panels.legend.locationtitle' }}" class="fa fa-map-marker marker" data-lat="{{ samplelocation.lat }}" data-lon="{{ samplelocation.lon }}" data-zoom="{{ samplelocation.zoom }}" ></i>
-    {{/if}}
-    </li>
-  {{/if}}
   </ul>
+</td><td>
+  {{#if samplelocation.lat }}
+    {{#if samplelocation.title }}
+    <i title="{{ t samplelocation.title }}" class="fa fa-map-marker marker" data-lat="{{ samplelocation.lat }}" data-lon="{{ samplelocation.lon }}" data-zoom="{{ samplelocation.zoom }}" ></i>
+    {{ else }}
+    <i title="{{ t 'home.panels.legend.locationtitle' }}" class="fa fa-map-marker marker" data-lat="{{ samplelocation.lat }}" data-lon="{{ samplelocation.lon }}" data-zoom="{{ samplelocation.zoom }}" ></i>
+  {{/if}}
+  {{/if}}
 </tr></td>
   {{#if @last}}
 </table>

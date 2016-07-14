@@ -12,6 +12,10 @@ body {
     position: absolute;
   }
 
+#sceneswitcher #currentscene {
+  min-height: 200px;
+}
+
 #legend {
     z-index: 10000;
     position: absolute;
@@ -29,30 +33,30 @@ body {
   width: 30%;
 }
 
-#legend a {
+#legend .style a {
     color: #000;
     height: 20px;
     width: 100%;
 }
 
-#legend ul {
+#legend  ul.style {
   margin-block-start: 0px;
   margin-block-end: 0px;
   padding: 0px;
   width: 100%;
 }
 
-#legend li {
+#legend .style li {
   float: right;
   list-style: none;
 }
 
-#legend li.color {
+#legend .style li.color {
   float: left;
-  width: 140px;
+  width: 130px;
 }
 
-#legend .color a {
+#legend .style .color a {
   display: block;
   width: 100%;
 }
@@ -162,38 +166,44 @@ body {
   color: #000;
 }
 
-.featureinfo .kind {
+.osmlabel.kind {
   display: block;
   clear: both;
   font-size: big;
 }
 
-.featureinfo .valuelabel {
+.osmlabel.valuelabel {
   display: inline-block;
   clear: both;
 }
 
-.featureinfo .keylabel {
+.osmlabel.keylabel {
   display: inline-block;
   clear: both;
 }
 
-.featureinfo .label.name {
+.osmlabel.name {
   font-weight: bigger;
 }
 
-.featureinfo .valuelabel.wikipedia,
-.featureinfo .label.underlined {
+.osmlabel.wikipedia,
+.osmlabel.underlined {
   cursor: pointer;
   text-decoration: underline;
 }
 
-.featureinfo .icons {
+.osmlabel .icons {
   display: inline-block;
   float: right;
+  position: absolute;
+  padding: 5px;
 }
 
-.featureinfo .icon {
+.osmlabel.visible .icons {
+  background-color: #fff;
+}
+
+.osmlabel .icon {
   display: block;
   width: 16px;
   height: 16px;
@@ -206,17 +216,17 @@ body {
   transition: opacity .25s ease-in-out;
 }
 
-.featureinfo .visible .icon {
+.osmlabel.visible .icon {
   opacity: 1;
 }
 
-.featureinfo .icon:hover {
+.osmlabel .icon:hover {
   border-style: dotted;
   border-color: #000;
   filter: none;
 }
 
-.featureinfo .wikipediaicon {
+.osmlabel .wikipediaicon {
   border-color: #000;
 }
 

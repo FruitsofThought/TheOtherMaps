@@ -102,47 +102,72 @@ any:
             building:
                 displayname: keys.historic.building
                 wikipedia: Building
-                osmwiki: Tag:historic%3Dbuilding
+                osmwiki: Tag:historic=building
             monument:
                 displayname: keys.historic.monument
                 wikipedia: Monument
                 wikidata: Q4989906
-                osmwiki: Tag:historic%3Dmonument
+                osmwiki: Tag:historic=monument
             city_gate:
                 displayname: keys.historic.city_gate
                 wikipedia: City_gate
                 wikidata: Q82117
-                osmwiki: Tag:historic%3Dcity_gate
+                osmwiki: Tag:historic=city_gate
             monastery:
                 displayname: keys.historic.monastery
                 wikipedia: Monastery
                 wikidata: Q44613
-                osmwiki: Tag:historic%3Dmonastery
+                osmwiki: Tag:historic=monastery
             fortress:
                 displayname: keys.historic.fortress
                 wikipedia: Fortification
                 wikidata: Q57821
-                osmwiki: Tag:historic%3Dfortress
+                osmwiki: Tag:historic=fortress
             railway_station:
                 displayname: keys.historic.railway_station
                 wikipedia: Train_station
                 wikidata: Q55488
-                osmwiki: Tag:historic%3Drailway_station
+                osmwiki: Tag:historic=railway_station
             church:
                 displayname: keys.historic.church
                 wikipedia: Church
                 wikidata: Q605315
-                osmwiki: Tag:historic%3Dchurch
+                osmwiki: Tag:historic=church
             castle:
                 displayname: keys.historic.castle
                 wikipedia: Castle
                 wikidata: Q23413
-                osmwiki: Tag:historic%3Dcastle
+                osmwiki: Tag:historic=castle
             memorial:
                 displayname: keys.historic.memorial
                 wikipedia: Memorial
                 wikidata: Q5003624
-                osmwiki: Tag:historic%3Dmemorial
+                osmwiki: Tag:historic=memorial
+            ruins:
+                displayname: keys.historic.ruins
+                osmwiki: Tag:historic=ruins
+                wikipedia: Ruins
+                wikidata: Q109607
+landuse:
+    kind:
+        displayname: keys.kind
+        osmwiki: Key:landuse
+        values:
+            protected_area:
+                displayname: keys.landuse.protected_area
+                wikipedia: Protected_area
+                wikidata: Q473972
+                osmwiki: Tag:boundary=protected_area
+            national_park:
+                displayname: keys.landuse.national_park
+                wikipedia: National_park
+                wikidata: Q46169
+                osmwiki: Tag:boundary=national park
+            nature_reserve:
+                displayname: keys.leisure.nature_reserve
+                wikipedia: Nature_reserve
+                wikidata: Q179049
+                osmwiki: Tag:leisure=nature_reserve
 places:
     kind:
         displayname: keys.kind
@@ -154,7 +179,7 @@ places:
                 displayname: keys.place.town
                 wikipedia: Town
                 wikidata: Q3957
-                osmwiki: Tag:place%3Dtown
+                osmwiki: Tag:place=town
     population:
         displayname: keys.population
         wikipedia: Population
@@ -193,6 +218,8 @@ architecture:
                 originalname: apartments
                 displayname: keys.building.apartments
                 osmwiki: Tag:building=apartments
+                wikipedia: Revenue_house
+                wikidata: Q1577547
             house:
                 originalkey: building
                 originalname: house
@@ -208,8 +235,9 @@ architecture:
                 originalname: church
                 displayname: keys.building.church
                 osmwiki: Tag:building=church
-                wikidata: Q605315
-                wikipedia: church
+                wikidata: Q16970
+                wikiproperty: P31
+                wikipedia: Church_(building)
             mosque:
                 originalkey: building
                 originalname: mosque
@@ -217,6 +245,7 @@ architecture:
                 osmwiki: Tag:building=mosque
                 wikipedia: Mosque
                 wikidata: Q32815
+                wikiproperty: P31
             houseboat:
                 originalkey: building
                 originalname: houseboat
@@ -231,6 +260,13 @@ architecture:
                 osmwiki: Tag:building=civic
                 wikipedia: Civic_center
                 wikidata: Q6583066
+            public:
+                originalkey: building
+                originalname: public
+                displayname: keys.building.public
+                osmwiki: Tag:building=public
+                wikipedia: Public_space
+                wikidata: Q294440
             office:
                 originalkey: building
                 originalname: office
@@ -245,6 +281,13 @@ architecture:
                 osmwiki: Tag:building=university
                 wikipedia: University
                 wikidata: Q3918
+            hospital:
+                originalkey: building
+                originalname: hospital
+                displayname: keys.building.hospital
+                osmwiki: Tag:building=hospital
+                wikipedia: Hospital
+                wikidata: Q16917
             school:
                 originalkey: building
                 originalname: school
@@ -259,9 +302,30 @@ architecture:
                 osmwiki: Tag:building=train_station
                 wikipedia: Train_station
                 wikidata: Q55488
+            construction:
+                originalkey: building
+                originalname: construction
+                displayname: keys.building.construction
+                osmwiki: Tag:building=construction
+                wikipedia: Construction
+                wikidata: Q385378
+            container:
+                originalkey: building
+                originalname: container
+                displayname: keys.building.container
+                osmwiki: Tag:building=container
+                wikipedia: Intermodal_container
+                wikidata: Q187956
+            ruins:
+                originalkey: building
+                originalname: ruins
+                displayname: keys.building.ruins
+                osmwiki: Tag:building=ruins
+                wikipedia: Ruins
+                wikidata: Q109607
     architecture_style:
         displayname: keys.building:architecture.architecture
-        wikidata: Q32880
+        wikidatahopla: Q32880
         wikiproperty: P149
         osmwiki: Key:building:architecture
         wikipedia: Architectural_style
@@ -302,6 +366,21 @@ architecture:
                 wikipedia: Modern_architecture
                 wikidata: Q245188
                 osmwiki: Key:building:architecture
+            modern:
+                displayname: keys.building:architecture.modernism
+                wikipedia: Modern_architecture
+                wikidata: Q245188
+                osmwiki: Key:building:architecture
+            hyper_modern:
+                displayname: keys.building:architecture.hyper_modern
+                wikipedia: Hypermodernism_(art)
+                wikidata: Q5958328
+                osmwiki: Key:building:architecture
+            classic_swahili:
+                displayname: keys.building:architecture.classic_swahili
+                wikipedia: Swahili_architecture
+                wikidata: Q7652972
+                osmwiki: Key:building:architecture
             classic_swahili:
                 displayname: keys.building:architecture.classic_swahili
                 wikipedia: Swahili_architecture
@@ -338,12 +417,80 @@ architecture:
         osmwiki: Key:building:architecture:typology
         wikipedia: Typology_(urban_planning_and_architecture)
         weight: 55
+        wikiproperty: P31
         values:
+            high_street:
+              displayname: keys.building:architecture:typology.high_street
+              wikipedia: High_Street
+              wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
+              wikidata: Q21000333
+              wikiproperty: P31
             single_storey_swahili:
                 displayname: keys.building:architecture:typology.single_storey_swahili
+            modern_multi_storey_swahili:
+                displayname: keys.building:architecture:typology.modern_multi_storey_swahili
+            modern_swahili:
+                displayname: keys.building:architecture:typology.modern_swahili
+            post_modern_multi_storey_swahili:
+                displayname: keys.building:architecture:typology.post_modern_multi_storey_swahili
+            suburban_villa:
+                displayname: keys.building:architecture:typology.suburban_villa
+            others:
+                displayname: keys.building:architecture:typology.others
             apartment_block:
                 displayname: keys.building:architecture:typology.apartment_block
+                wikipedia: Tower_block
+                wikidata: Q18142
+                wikiproperty: P31
             indian_shopfront:
                 displayname: keys.building:architecture:typology.indian_shopfront
+            modern_indian_shopfront:
+                displayname: keys.building:architecture:typology.modern_indian_shopfront
             government:
                 displayname: keys.building:architecture:typology.government
+                wikipedia: Category:Government_buildings
+                wikidata: Q16831714
+                wikiproperty: P31
+            madrasa:
+                displayname: keys.building:architecture:typology.madrasa
+                wikidata: Q132834
+                wikiproperty: P31
+                wikipedia: Madrasa
+            mosque:
+                displayname: keys.building:architecture:typology.mosque
+                wikipedia: Mosque
+                wikidata: Q32815
+                wikiproperty: P31
+            church:
+                displayname: keys.building:architecture:typology.church
+                wikipedia: Church
+                wikidata: Q605315
+            market_stall:
+                displayname: keys.building:architecture:typology.market_stall
+                wikipedia: Market_stall
+                wikidata: Q16556730
+            public_school:
+                displayname: keys.building:architecture:typology.public_school
+                wikipedia: State_school
+                wikidata: Q1080794
+            arcade_building:
+                displayname: keys.building:architecture:typology.arcade_building
+                wikipedia: Shopping_mall
+                wikidata: Q11315
+    building_condition:
+        displayname: keys.building:condition.condition
+        wikidata: Q813912
+        osmwiki: Key:building:condition
+        wikipedia: Condition_(philosophy)
+        weight: 56
+        values:
+            poor:
+                displayname: keys.building:condition.poor
+            average:
+                displayname: keys.building:condition.average
+            good:
+                displayname: keys.building:condition.good
+            ruinous:
+                displayname: keys.building:condition.ruinous
+                wikipedia: Ruin
+                wikidata: Q109607

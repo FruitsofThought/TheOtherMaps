@@ -3,12 +3,16 @@ scenesList:
     -
         file: https://localhost/TOMStyles/TOMStartDate/TOMStartDate.js
     -
-        file: https://localhost/TOMStyles/TOMVeenlandschapTransformatie/TOMVeenlandschapTransformatie.js
-    -
         file: https://localhost/TOMStyles/TOMArchitecturalStyles/TOMArchitecturalStyles.js
     -
-        file: https://localhost/TOMStyles/TOMBuildingTypologies/TOMBuildingTypologies.js
+        file: https://localhost/TOMStyles/TOMArchitecturalTypology/TOMArchitecturalTypology.js
+    -
+        file: https://localhost/TOMStyles/TOMBuildingStatus/TOMBuildingStatus.js
     -
         file: https://localhost/TOMStyles/TOMHistoricAndHeritage/TOMHistoricAndHeritage.js
     -
         file: https://localhost/TOMStyles/TOMReliefandRedRoads/TOMReliefandRedRoads.js
+    -
+        file: https://localhost/TOMStyles/TOMBuildingTypologies/TOMBuildingTypologies.js
+    -
+        file: https://localhost/TOMStyles/TOMVeenlandschapTransformatie/TOMVeenlandschapTransformatie.js

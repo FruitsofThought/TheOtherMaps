@@ -119,8 +119,17 @@ define(['require',
 
 
     var channel = postal.channel();
+    console.log("Publishing event Initializing Scene ", initialscene);
     channel.publish("scenes.change", {
       scene: initialscene
+    });
+
+    var wikidataproperty = permaLink.WikidataProperty;
+    var wikidatavalue = permaLink.WikidataValue;
+
+    channel.publish("wikidata.change", {
+      wikidataproperty: wikidataproperty,
+      wikidatavalue: wikidatavalue
     });
 
   });

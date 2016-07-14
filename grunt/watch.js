@@ -10,6 +10,7 @@ module.exports = {
       'src/app/*.js',
       'src/js/*.js',
       'src/*.js',
+      'src/templates/helpers/*.js',
     ],
     tasks: [
       'jshint',

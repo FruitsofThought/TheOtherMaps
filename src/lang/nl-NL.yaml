@@ -77,6 +77,8 @@ phrases:
             church: Kerk
             castle: Kasteel
             railway_station: Treinstation
+            construction: In Aanbouw
+            ruins: Ruïnes
         heritage:
             heritage: Erfgoed
             1: Unesco
@@ -101,10 +103,13 @@ phrases:
             industrial: Industrie
             houseboat: Woonboot
             civic: Publiek
+            public: Openbaar
             office: Kantoor
             university: Universiteit
+            hospital: Ziekenhuis
             school: School
             train_station: Spoorwegstation
+            ruins: Ruïnes
         "building:architecture":
             architecture: Architectonische Stijl
             art_deco: Art Deco
@@ -123,9 +128,29 @@ phrases:
             rijnllandse_gothic: Rijnlands Gothisch
         "building:architecture:typology":
             typology: Architectural Typology
+            high_street: Winkelstraat
             single_storey_swahili: Enkele verdieping Swahili
+            modern_multi_storey_swahili: Modern Swahili met meerdere verdiepingen
+            modern_swahili: Modern Swahili
+            post_modern_multi_storey_swahili: Post Modern Swahili met meerdere verdiepingen
+            suburban_villa: Buitenwijk vrijstaand
+            others: Iets Anders
             apartment_block: Appartementen Blok
             indian_shopfront: Indiase Winkel
+            modern_indian_shopfront: Moderne Indiase Winkel
             government: Overheid
+            mosque: Moskee
+            church: Kerk
+            market_stall: Marktkraam
+            madrasa: Madrasa
+            public_school: Overheids School
+            arcade_building: Overdekt winkelcentrum
+        "building:condition":
+            condition: Staat
+            poor: Vervallen
+            average: Gemiddeld
+            good: Goed
+            ruinous: In Puin
         place:
             town: Stadje
+        population: Bevolkingsaantal
