@@ -46,7 +46,8 @@ define(
         this.markers.remove();
       }
       populate() {
-        if (this.wikiproperty.length + this.wikivalue.length === 0) {
+        if (((typeof this.wikiproperty === 'undefined') || (typeof this.wikivalue === 'undefined')) || (this.wikiproperty
+            .length + this.wikivalue.length === 0)) {
           return;
         }
         $('body').addClass('waiting');
