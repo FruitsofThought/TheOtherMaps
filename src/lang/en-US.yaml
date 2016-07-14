@@ -10,8 +10,7 @@ phrases:
         panels:
             home:
                 title: Info
-                pane: >
-                This shows a lot of OpenStreetMap data that you normally do not see.
+                pane: This shows a lot of OpenStreetMap data that you normally do not see.
             sceneswitcher:
                 title: Scene Switcher
             legend:
