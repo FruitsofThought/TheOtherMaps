@@ -4,8 +4,8 @@ define(['jquery', 'js-yaml'], function($, jsyaml) {
   var path = location.pathname.substr(0, location.pathname.lastIndexOf("/"));
   appconfig['path'] = path + '/';
   appconfig['filename'] = 'index.html';
-  appconfig['map_start_location'] = [52.3697, 4.9044, 15, 16] // Amsterdam
-  appconfig['startscene'] = 'TOMStartDate';
+  appconfig['map_start_location'] = [-6.1652, 39.2021, 15]; //Ng'Ambo   [52.3697, 4.9044, 15, 16] // Amsterdam
+  appconfig['startscene'] = 'TOMArchitecturalStyles';
   appconfig['locationslist'] = 'scenes/locations.yaml';
   appconfig['sceneslist'] = 'scenes/sceneslistnew.yaml'
   appconfig['debug'] = false;
