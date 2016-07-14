@@ -1,7 +1,7 @@
 requirejs.config({
   //  waitSeconds: 30,
   baseUrl: '',
-  urlArgs: "bust=v5", // + (new Date()).getTime(),
+  urlArgs: "bust=v6", // + (new Date()).getTime(),
   optimizeAllPluginResources: true,
   enforceDefine: false,
   paths: {

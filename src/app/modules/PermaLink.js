@@ -46,7 +46,9 @@ define(['jquery', 'postal', 'config', 'jscookie'],
           function(data) {
             if (data.language != '') {
               if (Cookies.get('language') != data.language) {
-                Cookies.set('language', data.language)
+                Cookies.set('language', data.language, {
+                  expires: 365
+                })
                 me._setpermalink();
                 location.reload();
               }
@@ -77,9 +79,6 @@ define(['jquery', 'postal', 'config', 'jscookie'],
       get WikidataValue() {
         return this.permalinkitems[2];
       }
-
-      //      set Language(lang) {
-      //      }
 
       set Scene(scene) {
         if (scene != '') {

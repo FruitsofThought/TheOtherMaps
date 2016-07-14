@@ -9,6 +9,8 @@ define(
       constructor() {
         this.map = map;
         this.markers = new L.layerGroup();
+        this.wikiproperty = '';
+        this.wikivalue = '';
         var me = this;
         this.map.on('viewreset', function() {
           console.log("Going to redraw the map");
@@ -44,6 +46,9 @@ define(
         this.markers.remove();
       }
       populate() {
+        if (this.wikiproperty.length + this.wikivalue.length === 0) {
+          return;
+        }
         $('body').addClass('waiting');
         var bounds = this.map.getBounds();
         // TODO: Here we can calculate markers.getBounds() compared to map.getBounds()

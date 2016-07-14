@@ -46,6 +46,7 @@ define(['require',
   $(".sidebar .wikidata_bw").hover(function() {
     $(this).toggleClass('wikidata_bw wikidata_color');
   });
+
   $("#settings input[name=language][value=" + Cookies.get('language') + "]")
     .prop('checked', true);
   $("#settings input").click(function() {
@@ -133,7 +134,13 @@ define(['require',
     });
 
   });
-  //});
+
+
+  if (!Cookies.get('firstview3')) {
+    Cookies.set('firstview', true);
+    map.sidebarcontrols.rightsidebar.open('homepane');
+  }
+
   return map;
 
   // What follows are the functions that have been assigned to events

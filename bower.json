@@ -23,7 +23,7 @@
     "requirejs": "^2.2.0",
     "jquery": "^2.2.4",
     "font-awesome": "^4.6.0",
-    "tangram": "^0.8.0",
+    "tangram": "^0.8.2",
     "polyglot": "^2.0.0",
     "leaflet": "^1.0.0-rc.1",
     "leaflet-hash": "*",
@@ -39,9 +39,6 @@
     "requirejs-promised": "^0.1.0",
     "js-cookie": "^2.1.2",
     "PACE": "pace#^1.0.2",
-    "opentip": "^2.4.6"
-  },
-  "resolutions": {
-    "jquery": "^2.2.4"
+    "tipsy": "^0.1.7"
   }
 }
