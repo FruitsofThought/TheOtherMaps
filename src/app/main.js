@@ -136,7 +136,7 @@ define(['require',
   });
 
 
-  if (!Cookies.get('firstview3')) {
+  if (!Cookies.get('firstview')) {
     Cookies.set('firstview', true);
     map.sidebarcontrols.rightsidebar.open('homepane');
   }
