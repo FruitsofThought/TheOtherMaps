@@ -477,6 +477,57 @@ architecture:
                 displayname: keys.building:architecture:typology.arcade_building
                 wikipedia: Shopping_mall
                 wikidata: Q11315
+    building_material:
+        displayname: keys.building:material.material
+        wikidata: Q784969
+        osmwiki: Key:building:material
+        wikipedia: Typology_(urban_planning_and_architecture)
+        weight: 58
+        wikiproperty: P31
+        values:
+            concrete:
+              displayname: keys.building:material.concrete
+              wikipedia: Concrete
+              wikidata: Q21000333
+    building_structure:
+        displayname: keys.building:structure.structure
+        wikidata: Q784969
+        osmwiki: Key:building:structure
+        wikipedia: Typology_(urban_planning_and_architecture)
+        weight: 56
+        wikiproperty: P31
+        values:
+            cement_blocks:
+              displayname: keys.building:structure.cement_blocks
+              wikipedia: High_Street
+              wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
+              wikidata: Q21000333
+            concrete_frame_and_cement_blocks:
+              displayname: keys.building:structure.concrete_frame_and_cement_blocks
+              wikipedia: High_Street
+              wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
+              wikidata: Q21000333
+            coralstone_and_lime:
+              displayname: keys.building:structure.coralstone_and_lime
+              wikipedia: High_Street
+              wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
+              wikidata: Q21000333
+            wattle_and_daub:
+              displayname: keys.building:structure.wattle_and_daub
+              wikipedia: High_Street
+              wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
+              wikidata: Q21000333
+            makeshift:
+              displayname: keys.building:structure.makeshift
+              wikipedia: High_Street
+              wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
+              wikidata: Q21000333
+            cement_blocks:
+              displayname: keys.building:structure.cement_blocks
+              wikipedia: High_Street
+              wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
+              wikidata: Q21000333
+
     building_condition:
         displayname: keys.building:condition.condition
         wikidata: Q813912

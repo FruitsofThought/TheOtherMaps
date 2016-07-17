@@ -16,3 +16,7 @@ scenesList:
         file: https://localhost/TOMStyles/TOMBuildingTypologies/TOMBuildingTypologies.js
     -
         file: https://localhost/TOMStyles/TOMVeenlandschapTransformatie/TOMVeenlandschapTransformatie.js
+    -
+        file: https://localhost/TOMStyles/TOMBuildingStructure/TOMBuildingStructure.js
+    -
+        file: https://localhost/TOMStyles/TOMBuildingMaterial/TOMBuildingMaterial.js

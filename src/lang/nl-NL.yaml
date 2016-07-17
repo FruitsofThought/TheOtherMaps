@@ -145,6 +145,16 @@ phrases:
             madrasa: Madrasa
             public_school: Overheids School
             arcade_building: Overdekt winkelcentrum
+        "building:material":
+            material: Materiaal
+            concrete: Beton
+        "building:structure":
+            structure: Bouwtechniek
+            cement_blocks: Cement blokken
+            concrete_frame_and_cement_blocks: Betonnen frame en cement blokken
+            coralstone_and_lime: Koraalsteen en kalksteen
+            wattle_and_daub: Kwak en rietmatten
+            makeshift: Vanalles
         "building:condition":
             condition: Staat
             poor: Vervallen

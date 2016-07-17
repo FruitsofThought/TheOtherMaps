@@ -149,6 +149,16 @@ phrases:
             madrasa: Madrasa
             public_school: State School
             arcade_building: Arcade Building
+        "building:material":
+            material: Building Material
+            concrete: Concrete
+        "building:structure":
+            structure: Building Structure
+            cement_blocks: Cement Blocks
+            concrete_frame_and_cement_blocks: Concrete Frame and Cement Blocks
+            coralstone_and_lime: Coral Stone and Lime
+            wattle_and_daub: Wattle and Daub
+            makeshift: Makeshift
         "building:condition":
             condition: Condition
             poor: Poor
