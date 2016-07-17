@@ -78,11 +78,11 @@ define(
           then: function(resolve, fail) {
             require(['yaml!' + me.path + 'legend.yaml'],
               function(yaml) {
-                //                console.log("yaml", yaml);
+                // console.log("yaml", yaml);
                 resolve(yaml);
               },
               function(err) {
-                //                console.log("Error loading a legend.", err);
+                console.log("Error loading a legend.", err);
                 fail();
               });
           }
