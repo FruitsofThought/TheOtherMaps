@@ -7,7 +7,7 @@ define(['jquery', 'js-yaml'], function($, jsyaml, sceneslist) {
 
   //  appconfig['filename'] = 'develop.html';
   appconfig['map_start_location'] = [52.3697, 4.9044, 15] // Amsterdam
-  appconfig['startscene'] = 'TOMArchitecturalTypology';
+  appconfig['startscene'] = 'TOMBuildingMaterial';
   appconfig['locationslist'] = 'scenes/locationsall.yaml';
   appconfig['sceneslist'] = 'scenes/sceneslistlocal.yaml';
   appconfig['languages'] = Array();
