@@ -68,13 +68,15 @@ define(
               if (typeof me.layer.scene.config.global === "undefined") {
                 // This is only to prevent errors, the actual
                 // translate function does not work if you assign it from here.
-                //               
+                //
                 me.layer.scene.config.global = {};
               }
 
               console.log("INIT Global is  ", me.layer.scene.config.global);
               me.layer.scene.config.global.labels = true; // We can store this in a cookie later
-              me.layer.scene.config.global.language = Cookies.get('language').substr(0, 2);
+              var language = Cookies.get('language');
+              me.layer.scene.config.global.language = (typeof language !== 'undefined') ? language.substr(0, 2) :
+                'en';
               me.layer.scene.updateConfig();
               console.log("INIT NEW Global is  ", me.layer.scene.config.global);
               console.log("Initial Layer Initialized");
