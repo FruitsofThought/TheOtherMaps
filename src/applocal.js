@@ -1,5 +1,5 @@
 requirejs.config({
-  urlArgs: "bust=1", // + (new Date()).getTime(), this kills javascript debugging
+  urlArgs: "bust=2", // + (new Date()).getTime(), this kills javascript debugging
   baseUrl: '',
   optimizeAllPluginResources: true,
   enforceDefine: false, // will fail for yaml & json anyways nice for debugging

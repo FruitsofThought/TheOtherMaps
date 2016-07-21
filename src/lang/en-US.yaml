@@ -10,7 +10,7 @@ phrases:
         panels:
             home:
                 title: Info
-                pane: This shows a lot of OpenStreetMap data that you normally do not see.
+                pane: TOM is an application that allows you to show a set of maps using OpenStreetMap data that you normally do not see. It integrates with Wikipedia and Wikidata, is completely multi-lingual and very fast. This example installation shows several Architecture focused maps in The Netherlands and Tanzanzia.
             sceneswitcher:
                 title: Scene Switcher
             legend:

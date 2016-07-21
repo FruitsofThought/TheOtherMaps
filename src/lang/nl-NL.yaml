@@ -11,8 +11,7 @@ phrases:
         panels:
             home:
                 title: De Andere Kaarten
-                pane: Hier vind je veel OpenStreetMap kaarten die je elders niet vind
-            sceneswitcher:
+                pane: TOM is een applicatie die je in staat stelt om snel een set kaarten te publiceren op basis van OpenStreetMap. TOM integreert met Wikipedia en Wikidata om uitleg te geven over elementen op de kaart. TOM is makkelijk te vertalen. Deze voorbeeldinstallatie van TOM bevat enkele kaarten over architectonische eigenschappen van gebouwen in Nederland en Tanzania.
                 title: Kaarten
             legend:
                 title: Legenda

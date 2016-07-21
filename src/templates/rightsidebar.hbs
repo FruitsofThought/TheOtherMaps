@@ -7,7 +7,7 @@
     <li class="disabled" title="{{ t 'home.panels.locations.title' }}"><a href="#locationspane" role="tab"><i class="fa fa-map-marker"></i></a></li>
     <li class="disabled" title="{{ t 'home.panels.info.title' }}"><a href="#infopane" role="tab"><i class="fa fa-info"></i></a></li>
     <li class="disabled" title="{{ t 'home.panels.wikipedia.title' }}"><a href="#wikipediapane" role="tab"><i class="fa fa-wikipedia-w"></i></a></li>
-    <li class="disabled" title="{{ t 'home.panels.images.title' }}"><a href="#imagespane" role="tab"><i class="fa fa-file-image-o"></i></a></li>
+<!--    <li class="disabled" title="{{ t 'home.panels.images.title' }}"><a href="#imagespane" role="tab"><i class="fa fa-file-image-o"></i></a></li> -->
   </ul>
   <ul role="tablist">
     <li><a href="#settingspane" role="tab"><i class="fa fa-gear"></i></a></li>
@@ -20,7 +20,19 @@
       {{ t 'home.panels.home.title' }}
       <span class="sidebar-close"><i class="fa fa-caret-right"></i></span>
     </h1>
-    <div id="home">{{ t 'home.panels.home.pane' }}</div>
+    <div id="home">{{ t 'home.panels.home.pane' }}
+      <ul>
+        <li><i class="fa fa-filter"></i>{{ t 'home.panels.sceneswitcher.title' }}</li>
+        <li><i class="fa fa-map"></i>{{ t 'home.panels.legend.title' }}</li>
+        <li><i class="fa fa-map-marker"></i>{{ t 'home.panels.locations.title' }}</li>
+        <li><i class="fa fa-info"></i>{{ t 'home.panels.info.title' }}</li>
+        <li><i class="fa fa-wikipedia-w"></i>{{ t 'home.panels.wikipedia.title' }}</li>
+        <li><i class="fa fa-gear"></i>{{ t 'home.panels.settings.title' }}</li>
+        <li><i class="fa fa-search"></i>{{ t 'home.panels.osmwiki.title' }}</li>
+        <li><i class="fa fa-table"></i>{{ t 'home.panels.wikidata.title' }}</li>
+      </ul>
+
+    </div>
   </div>
   <div class="sidebar-pane" id="sceneswitcherpane">
     <h1 class="sidebar-header">{{ t 'home.panels.sceneswitcher.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
