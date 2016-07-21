@@ -34,6 +34,9 @@ module.exports = {
                   'bower_components/handlebars/handlebars.js',
                 ],
                 */
+      'dist/lib/bowser.js': [
+        'bower_components/bowser/src/bowser.js'
+      ],
       'dist/lib/requirejs/text.js': [
         'bower_components/requirejs-text/text.js'
       ],

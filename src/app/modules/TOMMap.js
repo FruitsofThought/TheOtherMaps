@@ -1,6 +1,6 @@
 "use strict";
 define(['require', 'jquery', 'permalink', 'leaflet', 'leafletclickevents',
-    'leaflethash'
+    'leaflethash', 'sceneswitcher'
   ],
   function(require, $, permaLink) {
     console.log('Creating Map');

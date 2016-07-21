@@ -114,7 +114,9 @@ module.exports = {
         'src/app/modules/TOMTangram.js',
         'src/app/modules/TOMTangramInteraction.js',
         'src/app/modules/TOMLocationsPanel.js',
-        'src/app/modules/TOMWikidataLayer.js'
+        'src/app/modules/TOMWikidataLayer.js',
+        'src/app/modules/TOMLeftSidebar.js',
+        'src/app/modules/TOMRightSidebar.js'
       ],
       dest: 'dist/app/modules/'
     }]

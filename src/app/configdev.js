@@ -1,4 +1,4 @@
-define(['jquery', 'js-yaml'], function($, jsyaml, sceneslist) {
+define(['jquery', 'js-yaml'], function($, jsyaml) {
   var appconfig = Array();
 
   var server = location.origin;
@@ -8,7 +8,7 @@ define(['jquery', 'js-yaml'], function($, jsyaml, sceneslist) {
   appconfig['filename'] = 'develop.html';
   appconfig['map_start_location'] = [52.3697, 4.9044, 15] // Amsterdam
   appconfig['startscene'] = 'TOMBuildingTypologies';
-  appconfig['locationslist'] = 'scenes/locationsall.yaml';
+  //  appconfig['locationslist'] = 'scenes/locationsall.yaml';
   appconfig['sceneslist'] = 'scenes/sceneslistdev.yaml';
   appconfig['languages'] = Array();
   appconfig['languages'][0] = window.navigator.userLanguage || window.navigator
@@ -19,7 +19,7 @@ define(['jquery', 'js-yaml'], function($, jsyaml, sceneslist) {
    * Do not edit below this line
    */
   var jsonresult = fetchjson(appconfig['locationslist']);
-  appconfig['locations'] = jsonresult;
+  //  appconfig['locations'] = jsonresult;
 
   function fetchjson(url) {
     if (appconfig['debug']) {

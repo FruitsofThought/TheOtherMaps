@@ -31,9 +31,13 @@ define(['promised!require',
         engine.listpromise = Promise.resolve({
             then: function(resolve, reject) {
               // do async stuff
-              console.log("Loading Scenes from " + sceneslistyaml);
+              var loadlist = sceneslistyaml;
+              if (config.debug) {
+                loadlist += "?bust=" + (new Date()).getTime();
+              }
+              console.log("Loading Scenes from " + loadlist);
               var result;
-              require(['yaml!' + sceneslistyaml], function(yaml) {
+              require(['yaml!' + loadlist], function(yaml) {
                 resolve(yaml);
               });
             }

@@ -39,6 +39,7 @@
     "requirejs-promised": "^0.1.0",
     "js-cookie": "^2.1.2",
     "PACE": "pace#^1.0.2",
-    "tipsy": "^0.1.7"
+    "tipsy": "^0.1.7",
+    "bowser": "^1.4.1"
   }
 }

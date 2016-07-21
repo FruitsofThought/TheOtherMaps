@@ -6,6 +6,7 @@ requirejs.config({
   enforceDefine: false,
   paths: {
     jquery: 'lib/jquery',
+    bowser: 'lib/bowser',
     text: 'lib/requirejs/text', //text is required
     json: 'lib/requirejs/json', //alias to plugin
     hbs: 'lib/requirejs/hbs',
@@ -37,6 +38,8 @@ requirejs.config({
     tomLegend: 'app/modules/TOMLegend',
     tomLocationsPanel: 'app/modules/TOMLocationsPanel',
     tomWikidataLayer: 'app/modules/TOMWikidataLayer',
+    tomLeftSidebar: 'app/modules/TOMLeftSidebar',
+    tomRightSidebar: 'app/modules/TOMRightSidebar',
     config: 'app/configprod',
     main: 'app/main',
   },

@@ -4,9 +4,10 @@ define(
     'ourpolyglot',
     'js-yaml',
     'jscookie',
-    'postal'
+    'postal',
+    'config'
   ],
-  function(require, $, Polyglot, jsyaml, Cookies, postal) {
+  function(require, $, Polyglot, jsyaml, Cookies, postal, config) {
 
     class Scene {
       constructor(config) {
@@ -44,6 +45,10 @@ define(
         };
         var json;
         var translationsjson = this.path + 'lang/' + language + '.yaml';
+        if (config.debug) {
+          translationsjson += "?bust=" + (new Date()).getTime();
+        }
+
         //        console.log("scene language path " + translationsjson);
         // using synchronous ajax to load the json. can not use requirejs for that (and this is bad, too)
         $.ajax({
@@ -68,7 +73,11 @@ define(
       }
       get tangramScene() {
           var engine = this;
-          return engine.path + engine.file;
+          var path = engine.path + engine.file;
+          if (config.debug) {
+            path += "?bust=" + (new Date()).getTime();
+          }
+          return path;
         }
         // legend may be overridden by the layer
         // otherwise, this return value disables the legend pane
@@ -76,7 +85,11 @@ define(
         var me = this;
         var mypromise = Promise.resolve({
           then: function(resolve, fail) {
-            require(['yaml!' + me.path + 'legend.yaml'],
+            var path = 'yaml!' + me.path + 'legend.yaml';
+            if (config.debug) {
+              path += "?bust=" + (new Date()).getTime();
+            }
+            require([path],
               function(yaml) {
                 // console.log("yaml", yaml);
                 resolve(yaml);
@@ -94,7 +107,11 @@ define(
         var me = this;
         var mypromise = Promise.resolve({
           then: function(resolve, fail) {
-            require(['yaml!' + me.path + 'locations.yaml'],
+            var path = 'yaml!' + me.path + 'locations.yaml';
+            if (config.debug) {
+              path += "?bust=" + (new Date()).getTime();
+            }
+            require([path],
               function(yaml) {
                 resolve(yaml);
               },

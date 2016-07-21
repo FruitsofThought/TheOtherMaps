@@ -12,6 +12,37 @@ body {
     position: absolute;
   }
 
+#browsersupport {
+  width: 60%;
+  background-color: #000;
+  opacity: .5;
+   margin: 0 auto;
+margin-top: 100px;
+   border-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+     padding: 30px;
+}
+
+#browsersupport #text {
+  font-size: 24px;
+  background-color: #000;
+  opacity: 1;
+  color: #fff;
+}
+
+#browsersupport #button {
+  text-align: center;
+}
+#browsersupport button {
+display: block;
+  width: 90%;
+  margin: 20px;
+  padding: 4px;
+  margin: 0 auto;
+}
 #sceneswitcher #currentscene {
   min-height: 200px;
 }
