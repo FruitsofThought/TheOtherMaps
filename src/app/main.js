@@ -6,14 +6,25 @@ define(['require',
   'jscookie',
 ], function(require, $, browser, config, postal, Cookies) {
   // if either the cookie has not been set yet or you are not using a supported browser
-  if (Cookies.get('trymybrowser' === 'undefined')) {
-    if ((!browser.firefox) && (!browser.chrome) && (!browser.chromium)) {
-      alert('you unfortunately have ' + browser.name);
-      console.log(browser);
+  console.log(browser);
+  console.log(browser.compareVersions(['47', browser.version]));
+  if (Cookies.get('trymybrowser') === undefined) {
+    var compatible = false;
+    if (browser.firefox) {
+      compatible = browser.compareVersions(['47.0', browser.version]) >= 0;
+    }
+    if ((browser.chrome) || (browser.chromium)) {
+      compatible = browser.compareVersions(['51.0', browser.version]) >= 0;
+    }
+    if (browser.opera) {
+      compatible = browser.compareVersions(['38.0', browser.version]) >= 0;
+    }
+    if (browser.msie == true) {
+      // sorry this garbage is unfixable while i work for free
+      //      compatible = browser.compareVersions(['11', browser.version]) >= 0;
+    }
+    if (compatible == false) {
       $('body').removeClass('waiting');
-      if (typeof map !== 'undefined') {
-        //    map.remove();
-      }
       $('#map').append(
         '<div id="browsersupport"><div id="text">This application has only been tested in the latest <a href="http://www.google.com/chrome">Chrome</a> and <a href="http://www.getfirefox.com">Firefox</a> browsers. It is a good idea to use Open Source browsers anyways, so this is a good time to switch.<div id="button"><input id="tryanyway" type="button" value="I will take the risk. Let me try anyways." /></div></div></div>'
       );
@@ -23,15 +34,15 @@ define(['require',
       });
       return;
     }
-  } else {
-    //  alert('you have ' + browser.name);
   }
 
   // require   'tomTangram',  'permalink','sceneslist',
   //  map, permaLink, scenesList
 
   console.log('Going to require ScenesList');
-  require(['tomMap', 'permalink', 'sceneslist', 'tomTangram', 'tomLeftSidebar', 'tomRightSidebar'], function(map,
+  require(['tomMap', 'permalink', 'sceneslist', 'tomTangram',
+    'tomLeftSidebar', 'tomRightSidebar'
+  ], function(map,
     permaLink, scenesList) {
     scenesList.Initialized.then(function() {
       var initialscenename = permaLink.Scene;
