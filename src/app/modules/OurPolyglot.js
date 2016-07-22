@@ -1,7 +1,6 @@
 "use strict";
-define(['jquery', 'polyglot', 'js-yaml', 'postal', 'jscookie'], function($,
-  Polyglot,
-  jsyaml, postal, Cookies) {
+define(['jquery', 'polyglot', 'js-yaml', 'postal', 'jscookie', 'config'], function($,
+  Polyglot, jsyaml, postal, Cookies, config) {
   // This object is responsible for maintaining the strings for the current
   // language.
   class OurPolyglot extends Polyglot {
@@ -74,6 +73,10 @@ define(['jquery', 'polyglot', 'js-yaml', 'postal', 'jscookie'], function($,
       }
     }
     loadFile(file) {
+      if (config.debug) {
+        file += "?bust=" + (new Date()).getTime();
+      }
+
       console.log('going to fetch ' + file);
       var json;
       var me = this;
