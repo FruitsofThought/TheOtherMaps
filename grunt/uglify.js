@@ -13,7 +13,7 @@ module.exports = {
       mangle: false,
       sourceMap: true,
       beautify: true,
-      banner: '/*! (c) Reinier Battenberg OSM Labels lib - v 1.0 -' +
+      banner: '/*! (c) Reinier Battenberg TOM lib - v 1.0 -' +
         '<%= grunt.template.today("yyyy-mm-dd") %> */'
     },
     files: {
