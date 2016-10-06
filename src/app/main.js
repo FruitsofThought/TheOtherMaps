@@ -11,15 +11,31 @@ define(['require',
   if (Cookies.get('trymybrowser') === undefined) {
     var compatible = false;
     if (browser.firefox) {
-      compatible = browser.compareVersions(['47.0', browser.version]) >= 0;
+      compatible = browser.check({
+        firefox: "35"
+      });
     }
     if ((browser.chrome) || (browser.chromium)) {
-      compatible = browser.compareVersions(['51.0', browser.version]) >= 0;
+      compatible = browser.check({
+        chrome: "45"
+      });
     }
     if (browser.opera) {
-      compatible = browser.compareVersions(['38.0', browser.version]) >= 0;
+      compatible = browser.check({
+        opera: "38"
+      });
     }
-    if (browser.msie == true) {
+    if (browser.safari) {
+      compatible = browser.check({
+        safari: "10"
+      });
+    }
+    if (browser.msedge) {
+      compatible = true;
+      // sorry this garbage is unfixable while i work for free
+      //      compatible = browser.compareVersions(['11', browser.version]) >= 0;
+    }
+    if (browser.msie) {
       // sorry this garbage is unfixable while i work for free
       //      compatible = browser.compareVersions(['11', browser.version]) >= 0;
     }
