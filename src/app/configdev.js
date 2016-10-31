@@ -14,6 +14,7 @@ define(['jquery', 'js-yaml'], function($, jsyaml) {
   appconfig['languages'][0] = window.navigator.userLanguage || window.navigator
     .language;
   appconfig['debug'] = false;
+  appconfig['mapzenapikey'] = 'vector-tiles-KXs7X8B';
 
   /**
    * Do not edit below this line

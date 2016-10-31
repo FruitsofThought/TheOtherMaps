@@ -1,6 +1,6 @@
 requirejs.config({
   waitSeconds: 30,
-  urlArgs: "bust=v116", // + (new Date()).getTime(),
+  urlArgs: "bust=v117", // + (new Date()).getTime(),
   baseUrl: '',
   optimizeAllPluginResources: true,
   enforceDefine: false, // will fail for yaml & json anyways nice for debugging
@@ -21,6 +21,7 @@ requirejs.config({
     leaflethash: 'lib/leaflet/leaflet-hash',
     leafletsidebar: 'lib/leaflet/leaflet-sidebar',
     leafletclickevents: 'lib/leaflet/L.VisualClick',
+    leafletgeocodermapzen: 'lib/leaflet-geocoder-mapzen',
     locationlist: 'app/modules/leaflet.locationlist',
     keymaster: 'lib/keymaster',
     tipsy: 'lib/jquery.tipsy',

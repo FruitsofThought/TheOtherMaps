@@ -1,7 +1,7 @@
 requirejs.config({
   //  waitSeconds: 30,
   baseUrl: '',
-  urlArgs: "bust=v8", // + (new Date()).getTime(),
+  urlArgs: "bust=v9", // + (new Date()).getTime(),
   optimizeAllPluginResources: true,
   enforceDefine: false,
   paths: {
@@ -21,6 +21,7 @@ requirejs.config({
     leaflethash: 'lib/leaflet/leaflet-hash',
     leafletsidebar: 'lib/leaflet/leaflet-sidebar',
     leafletclickevents: 'lib/leaflet/L.VisualClick',
+    leafletgeocodermapzen: 'lib/leaflet-geocoder-mapzen',
     locationlist: 'app/modules/leaflet.locationlist',
     keymaster: 'lib/keymaster',
     tipsy: 'lib/jquery.tipsy',

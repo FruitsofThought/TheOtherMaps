@@ -9,6 +9,7 @@ define(['jquery', 'js-yaml'], function($, jsyaml) {
   appconfig['locationslist'] = 'scenes/locations.yaml';
   appconfig['sceneslist'] = 'scenes/sceneslistnew.yaml'
   appconfig['debug'] = false;
+  appconfig['mapzenapikey'] = 'vector-tiles-KXs7X8B';
 
   /**
    * Do not edit below this line
