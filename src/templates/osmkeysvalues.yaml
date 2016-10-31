@@ -204,16 +204,25 @@ architecture:
                 originalname: commercial
                 displayname: keys.building.commercial
                 osmwiki: Tag:building=commercial
+                wikidata: Q655686
             retail:
                 originalkey: building
                 originalname: commercial
                 displayname: keys.building.retail
                 osmwiki: Tag:building=retail
+                wikidata: Q126793
             industrial:
                 originalkey: building
                 originalname: commercial
                 displayname: keys.building.industrial
                 osmwiki: Tag:building=industrial
+                wikidata: Q329683
+            warehouse:
+                originalkey: warehouse
+                originalname: warehouse
+                displayname: keys.building.warehouse
+                osmwiki: Tag:building=warehouse
+                wikidata: Q1362225
             apartments:
                 originalkey: building
                 originalname: apartments
@@ -571,10 +580,16 @@ buildings:
                 wikidata: Q126793
             industrial:
                 originalkey: building
-                originalname: commercial
+                originalname: industrial
                 displayname: keys.building.industrial
                 osmwiki: Tag:building=industrial
                 wikidata: Q329683
+            warehouse:
+                originalkey: warehouse
+                originalname: warehouse
+                displayname: keys.building.warehouse
+                osmwiki: Tag:building=warehouse
+                wikidata: Q1362225
             apartments:
                 originalkey: building
                 originalname: apartments
@@ -685,3 +700,10 @@ buildings:
                 osmwiki: Tag:building=ruins
                 wikipedia: Ruins
                 wikidata: Q109607
+            bunker:
+                originalkey: military
+                originalname: bunker
+                displayname: keys.building.bunker
+                osmwiki: Tag:military=bunker
+                wikipedia: Bunker
+                wikidata: Q91122

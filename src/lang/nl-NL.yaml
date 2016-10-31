@@ -102,6 +102,7 @@ phrases:
             mosque: Moskee
             retail: Winkel
             industrial: Industrie
+            warehouse: Pakhuis
             houseboat: Woonboot
             civic: Publiek
             public: Openbaar
@@ -110,7 +111,8 @@ phrases:
             hospital: Ziekenhuis
             school: School
             train_station: Spoorwegstation
-            ruins: Ruïnes
+            ruins: Ruïne
+            bunker: Bunker
         "building:architecture":
             architecture: Architectonische Stijl
             art_deco: Art Deco

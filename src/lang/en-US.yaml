@@ -105,6 +105,7 @@ phrases:
             mosque: Mosque
             retail: Retail
             industrial: Industrial
+            warehouse: Warehouse
             houseboat: Houseboat
             civic: Civic
             public: Public
@@ -116,6 +117,7 @@ phrases:
             construction: Construction
             container: Container
             ruins: Ruins
+            bunker: Bunker
         "building:architecture":
             architecture: Architecture Style
             art_deco: Art Deco
