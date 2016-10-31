@@ -10,3 +10,5 @@ scenesList:
         file: https://maps.mountbatten.nl/TOMStyles/TOMStartDate/TOMStartDate.js
     -
         file: https://maps.mountbatten.nl/TOMStyles/TOMBuildingStructure/TOMBuildingStructure.js
+    -
+        file: https://maps.mountbatten.nl/TOMStyles/TOMBuildingTypologies/TOMBuildingTypologies.js
