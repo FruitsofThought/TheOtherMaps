@@ -37,7 +37,7 @@ module.exports = {
         'bower_components/Leaflet.VisualClick/dist/L.VisualClick.css',
         'bower_components/font-awesome/css/font-awesome.min.css',
         'src/app/modules/leaflet.locationlist.css',
-        'bower_components/PACE/themes/black/pace-theme-center-simple.css'
+        'bower_components/PACE/themes/black/pace-theme-center-simple.css',
       ],
       dest: 'dist/css/'
     }]
@@ -52,7 +52,8 @@ module.exports = {
         'bower_components/tangram/dist/tangram.debug.js',
         'bower_components/lodash/lodash.js',
         'bower_components/postal.js/lib/postal.js',
-        'bower_components/PACE/pace.min.js'
+        'bower_components/PACE/pace.min.js',
+        'bower_components/leaflet-geocoder-mapzen/src/leaflet-geocoder-mapzen.js'
       ],
       dest: 'dist/lib/'
     }]
@@ -69,7 +70,7 @@ module.exports = {
     files: [{
       expand: true,
       flatten: true,
-      src: 'bower_components/tipsy/src/images/tipsy.gif',
+      src: ['bower_components/tipsy/src/images/tipsy.gif'],
       dest: 'dist/images/'
     }]
   },
@@ -135,6 +136,15 @@ module.exports = {
       flatten: true,
       src: 'bower_components/leaflet/dist/images/*',
       dest: 'dist/lib/leaflet/images/'
+    }]
+  },
+  // The geocoder gets the icons somewhere else than leaflet itself
+  leafletgeocoderimages: {
+    files: [{
+      expand: true,
+      flatten: true,
+      src: ['bower_components/leaflet/dist/images/*', 'bower_components/leaflet-geocoder-mapzen/src/images/*'],
+      dest: 'dist/css/images/'
     }]
   }
 };

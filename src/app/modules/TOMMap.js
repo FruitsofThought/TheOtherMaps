@@ -1,8 +1,8 @@
 "use strict";
-define(['require', 'jquery', 'permalink', 'leaflet', 'leafletclickevents',
-    'leaflethash', 'sceneswitcher'
+define(['require', 'jquery', 'config', 'permalink', 'leaflet', 'leafletclickevents',
+    'leaflethash', 'sceneswitcher', 'leafletgeocodermapzen'
   ],
-  function(require, $, permaLink) {
+  function(require, $, config, permaLink) {
     console.log('Creating Map');
     // setView expects format ([lat, long], zoom)
     var map_start_location = permaLink.CurrentMapLocation;
@@ -14,5 +14,14 @@ define(['require', 'jquery', 'permalink', 'leaflet', 'leafletclickevents',
     });
     var hash = new L.Hash(map);
 
+    var options = {
+      layers: ['country', 'region', 'locality', 'venue', 'street'],
+      params: {
+        sources: ['wof'],
+        //'boundary.country': ['nl', 'tz'] // This fails, you can only  use 1 country as a string
+      }
+    };
+
+    L.control.geocoder(config.mapzenapikey, options).addTo(map);
     return map;
   });

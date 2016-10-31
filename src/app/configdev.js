@@ -6,14 +6,14 @@ define(['jquery', 'js-yaml'], function($, jsyaml) {
   appconfig['path'] = path + '/'; // Should have trailing /
 
   appconfig['filename'] = 'develop.html';
-  appconfig['map_start_location'] = [52.3697, 4.9044, 15] // Amsterdam
+  appconfig['map_start_location'] = [50.8493, 5.6978, 14] // Maastricht
   appconfig['startscene'] = 'TOMBuildingTypologies';
   //  appconfig['locationslist'] = 'scenes/locationsall.yaml';
   appconfig['sceneslist'] = 'scenes/sceneslistdev.yaml';
   appconfig['languages'] = Array();
   appconfig['languages'][0] = window.navigator.userLanguage || window.navigator
     .language;
-  appconfig['debug'] = true;
+  appconfig['debug'] = false;
 
   /**
    * Do not edit below this line

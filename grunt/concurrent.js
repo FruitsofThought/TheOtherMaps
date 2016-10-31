@@ -25,7 +25,8 @@ module.exports = {
     'copy:libraryjs',
     'copy:images',
     'cssmin',
-    'copy:leafletimages'
+    'copy:leafletimages',
+    'copy:leafletgeocoderimages'
   ],
 
   // Production tasks

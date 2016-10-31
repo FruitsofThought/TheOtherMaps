@@ -23,7 +23,7 @@
     "requirejs": "^2.3.2",
     "jquery": "^2.2.4",
     "font-awesome": "^4.6.0",
-    "tangram": "^0.10.4",
+    "tangram": "^0.10.6",
     "polyglot": "^2.0.0",
     "leaflet": "^1.0.1",
     "leaflet-hash": "*",
@@ -41,6 +41,7 @@
     "PACE": "pace#^1.0.2",
     "tipsy": "^0.1.7",
     "bowser": "^1.4.6",
-    "lodash": "^4.16.4"
+    "lodash": "^4.16.4",
+    "leaflet-geocoder-mapzen": "^1.7.1"
   }
 }

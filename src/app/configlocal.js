@@ -15,6 +15,7 @@ define(['jquery', 'js-yaml'], function($, jsyaml) {
     .language;
   appconfig['debug'] = true;
   appconfig['logLevel'] = 'warn'; // loglevel of Tangram, also possible 'warn' or 'error'
+  appconfig['mapzenapikey'] = 'vector-tiles-KXs7X8B';
 
   /**
    * Do not edit below this line
