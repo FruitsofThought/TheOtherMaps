@@ -118,7 +118,7 @@ define(
             if ((feature != null)) {
               if ((feature.properties != null)) {
                 require(['osminfobox'], function(box) {
-                  loaded = box.getHTML('architecture',
+                  loaded = box.getHTML(feature.source_layer,
                     feature.properties,
                     '#info', 'en', map);
                   map.sidebarcontrols['rightsidebar'].open(
