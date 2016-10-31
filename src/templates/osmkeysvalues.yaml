@@ -7,9 +7,9 @@ any:
         displayname: keys.name
         osmwiki: Key:name
         weight: 1
-    kind:
-        displayname: keys.kind
-        weight: 10
+    kind_detail:
+        displayname: keys.kind_detail
+        weight: 11
     source:
         displayname: keys.source
         weight: 290
@@ -189,6 +189,7 @@ places:
         osmwiki: Key:population
         weight: 30
 architecture:
+    description: This is a custom layer on the Mountbatten Server. It still uses the old schema. A copy of these values is in buildings>kind_detail
     kind:
         displayname: keys.kind
         weight: 10
@@ -544,4 +545,143 @@ architecture:
             ruinous:
                 displayname: keys.building:condition.ruinous
                 wikipedia: Ruin
+                wikidata: Q109607
+buildings:
+    description: This is a copy of the values defined for the (custom mb layer) architecture
+    kind_detail:
+        displayname: keys.kind_detail
+        values:
+            building:
+                originalkey: building
+                originalname: yes
+                displayname: keys.building.building
+                osmwiki: Key:building
+                wikidata: Q41176
+            commercial:
+                originalkey: building
+                originalname: commercial
+                displayname: keys.building.commercial
+                osmwiki: Tag:building=commercial
+                wikidata: Q655686
+            retail:
+                originalkey: building
+                originalname: commercial
+                displayname: keys.building.retail
+                osmwiki: Tag:building=retail
+                wikidata: Q126793
+            industrial:
+                originalkey: building
+                originalname: commercial
+                displayname: keys.building.industrial
+                osmwiki: Tag:building=industrial
+                wikidata: Q329683
+            apartments:
+                originalkey: building
+                originalname: apartments
+                displayname: keys.building.apartments
+                osmwiki: Tag:building=apartments
+                wikipedia: Revenue_house
+                wikidata: Q1577547
+            house:
+                originalkey: building
+                originalname: house
+                displayname: keys.building.house
+                osmwiki: Tag:building=house
+            residential:
+                originalkey: building
+                originalname: residential
+                displayname: keys.building.residential
+                osmwiki: Tag:building=residential
+            church:
+                originalkey: building
+                originalname: church
+                displayname: keys.building.church
+                osmwiki: Tag:building=church
+                wikidata: Q16970
+                wikiproperty: P31
+                wikipedia: Church_(building)
+            mosque:
+                originalkey: building
+                originalname: mosque
+                displayname: keys.building.mosque
+                osmwiki: Tag:building=mosque
+                wikipedia: Mosque
+                wikidata: Q32815
+                wikiproperty: P31
+            houseboat:
+                originalkey: building
+                originalname: houseboat
+                displayname: keys.building.houseboat
+                osmwiki: Tag:building=houseboat
+                wikipedia: Houseboat
+                wikidata: Q1321309
+            civic:
+                originalkey: building
+                originalname: civic
+                displayname: keys.building.civic
+                osmwiki: Tag:building=civic
+                wikipedia: Civic_center
+                wikidata: Q6583066
+            public:
+                originalkey: building
+                originalname: public
+                displayname: keys.building.public
+                osmwiki: Tag:building=public
+                wikipedia: Public_space
+                wikidata: Q294440
+            office:
+                originalkey: building
+                originalname: office
+                displayname: keys.building.office
+                osmwiki: Tag:building=office
+                wikipedia: Office
+                wikidata: Q182060
+            university:
+                originalkey: building
+                originalname: university
+                displayname: keys.building.university
+                osmwiki: Tag:building=university
+                wikipedia: University
+                wikidata: Q3918
+            hospital:
+                originalkey: building
+                originalname: hospital
+                displayname: keys.building.hospital
+                osmwiki: Tag:building=hospital
+                wikipedia: Hospital
+                wikidata: Q16917
+            school:
+                originalkey: building
+                originalname: school
+                displayname: keys.building.school
+                osmwiki: Tag:building=school
+                wikipedia: School
+                wikidata: Q3914
+            train_station:
+                originalkey: building
+                originalname: train_station
+                displayname: keys.building.train_station
+                osmwiki: Tag:building=train_station
+                wikipedia: Train_station
+                wikidata: Q55488
+            construction:
+                originalkey: building
+                originalname: construction
+                displayname: keys.building.construction
+                osmwiki: Tag:building=construction
+                wikipedia: Construction
+                wikidata: Q385378
+            container:
+                originalkey: building
+                originalname: container
+                displayname: keys.building.container
+                osmwiki: Tag:building=container
+                wikipedia: Intermodal_container
+                wikidata: Q187956
+            ruins:
+                originalkey: building
+                originalname: ruins
+                displayname: keys.building.ruins
+                osmwiki: Tag:building=ruins
+                wikipedia: Ruins
                 wikidata: Q109607

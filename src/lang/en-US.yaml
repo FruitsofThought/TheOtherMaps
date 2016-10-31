@@ -55,6 +55,8 @@ phrases:
     keys:
         name: Name
         kind: Kind
+        kind_detail: Kind Detail
+        landuse_kind: Landuse
         id: OpenStreetMap ID
         source: Source
         start_date: Opening Date
