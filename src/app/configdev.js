@@ -19,7 +19,7 @@ define(['jquery', 'js-yaml'], function($, jsyaml) {
   /**
    * Do not edit below this line
    */
-  var jsonresult = fetchjson(appconfig['locationslist']);
+  //var jsonresult = fetchjson(appconfig['locationslist']);
   //  appconfig['locations'] = jsonresult;
 
   function fetchjson(url) {
