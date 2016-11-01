@@ -22,7 +22,7 @@
     "handlebars": "^4.0.5",
     "requirejs": "^2.3.2",
     "jquery": "^2.2.4",
-    "font-awesome": "^4.6.0",
+    "font-awesome": "^4.7.0",
     "tangram": "^0.10.6",
     "polyglot": "^2.0.0",
     "leaflet": "^1.0.1",
