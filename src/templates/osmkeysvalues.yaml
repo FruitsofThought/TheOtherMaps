@@ -509,35 +509,32 @@ architecture:
         values:
             cement_blocks:
               displayname: keys.building:structure.cement_blocks
-              wikipedia: High_Street
+              wikipedia: Concrete_masonry_unit
               wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
-              wikidata: Q21000333
+              wikidata: Q766952
             concrete_frame_and_cement_blocks:
               displayname: keys.building:structure.concrete_frame_and_cement_blocks
-              wikipedia: High_Street
+              wikipedia: Reinforced_concrete
               wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
-              wikidata: Q21000333
+              wikidata: Q184190
             coralstone_and_lime:
               displayname: keys.building:structure.coralstone_and_lime
-              wikipedia: High_Street
+              wikipedia: Coral_rag
               wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
-              wikidata: Q21000333
+              wikidata: Q5169526
             wattle_and_daub:
               displayname: keys.building:structure.wattle_and_daub
-              wikipedia: High_Street
+              wikipedia: Wattle_and_daub
               wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
-              wikidata: Q21000333
+              wikidata: Q1368940
             makeshift:
+              # https://stats.oecd.org/glossary/detail.asp?ID=1303
+              # http://borgenproject.org/5-examples-makeshift-housing/
+              # Who creates the Wikipedia page for Makeshift Housing?
               displayname: keys.building:structure.makeshift
-              wikipedia: High_Street
+              #wikipedia: Makeshift Housing
               wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
-              wikidata: Q21000333
-            cement_blocks:
-              displayname: keys.building:structure.cement_blocks
-              wikipedia: High_Street
-              wikidata_really_but_never_used_unlike_shoppingstreet: Q1308100
-              wikidata: Q21000333
-
+              # wikidata: 
     building_condition:
         displayname: keys.building:condition.condition
         wikidata: Q813912
