@@ -25,6 +25,10 @@ phrases:
                 title: Wikipedia
             images:
                 title: Fotos
+            wms:
+                title: Historische Kaarten
+                layers: Kaartlagen
+                transparancy: Doorzichtigheid
             settings:
                 title: Instellingen
             wikipediadoc:

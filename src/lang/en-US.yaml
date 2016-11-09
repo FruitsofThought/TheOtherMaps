@@ -23,6 +23,10 @@ phrases:
                 title: Info
             images:
                 title: Images
+            wms:
+                title: Historic Maps
+                layers: layers
+                transparancy: Transparancy
             settings:
                 title: Settings
                 en-US: English

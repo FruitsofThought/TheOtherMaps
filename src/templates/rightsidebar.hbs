@@ -7,6 +7,7 @@
     <li class="disabled" title="{{ t 'home.panels.locations.title' }}"><a href="#locationspane" role="tab"><i class="fa fa-map-marker"></i></a></li>
     <li class="disabled" title="{{ t 'home.panels.info.title' }}"><a href="#infopane" role="tab"><i class="fa fa-info"></i></a></li>
     <li class="disabled" title="{{ t 'home.panels.wikipedia.title' }}"><a href="#wikipediapane" role="tab"><i class="fa fa-wikipedia-w"></i></a></li>
+    <li class="disabled" title="{{ t 'home.panels.wms.title' }}"><a href="#wmspane" role="tab"><i class="fa fa-bank"></i></a></li><!-- more generic: fa-window-restore -->
 <!--    <li class="disabled" title="{{ t 'home.panels.images.title' }}"><a href="#imagespane" role="tab"><i class="fa fa-file-image-o"></i></a></li> -->
   </ul>
   <ul role="tablist">
@@ -54,6 +55,13 @@
   <div class="sidebar-pane iframepane" id="wikipediapane">
     <h1 class="sidebar-header">{{ t 'home.panels.wikipedia.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
     <div><iframe id="wikipedia"></iframe></div>
+  </div>
+  <div class="sidebar-pane" id="wmspane">
+    <h1 class="sidebar-header">{{ t 'home.panels.wms.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
+    <h2>{{ t 'home.panels.wms.layers' }}</h2>
+    <div id="wms"></div>
+    <label id="wmsopacityslidelabel" for="wmsopacityslide">{{ t 'home.panels.wms.transparancy' }}</label>
+    <input id="wmsopacityslide" type="range" min="0" max="1" step="0.1" value="0.5">
   </div>
   <div class="sidebar-pane" id="imagespane">
     <h1 class="sidebar-header">{{ t 'home.panels.images.title' }}<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>

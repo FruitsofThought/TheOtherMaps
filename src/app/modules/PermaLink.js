@@ -1,5 +1,5 @@
 "use strict";
-define(['jquery', 'postal', 'config', 'jscookie'],
+define(['jquery', 'postal', 'promise!config', 'jscookie'],
   function($, postal, config, Cookies) {
 
     class PermaLink {

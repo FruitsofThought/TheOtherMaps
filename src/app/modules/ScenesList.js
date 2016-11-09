@@ -2,7 +2,7 @@
 define(['promised!require',
     'jquery',
     'js-yaml',
-    'config',
+    'promise!config',
     'yaml'
   ],
   function(require, $, jsyaml, config) {

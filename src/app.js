@@ -1,48 +1,68 @@
+var basepath = requirejs.toUrl('');
+
+// basepath will look like the whole URL of this app.
+// require.config.baseUrl should only be the subdir part of basepath
+// otherwise handlebars partials gets confused
+
+var baseUrls = basepath.split('/')
+baseUrls.shift();
+baseUrls.shift();
+baseUrls.shift();
+baseUrl = '/' + baseUrls.join('/');
+
+// mylocation is the location we are called from. That folder *must* have
+// a config.yaml file.
+var loc = window.location
+var mylocation = loc.origin + loc.pathname;
+
 requirejs.config({
-  //  waitSeconds: 30,
-  baseUrl: '',
-  urlArgs: "bust=v9", // + (new Date()).getTime(),
+  urlArgs: "bust=21", // + (new Date()).getTime(), this kills javascript debugging
+  baseUrl: baseUrl,
   optimizeAllPluginResources: true,
-  enforceDefine: false,
+  enforceDefine: false, // will fail for yaml & json anyways nice for debugging
   paths: {
-    jquery: 'lib/jquery',
-    bowser: 'lib/bowser',
-    text: 'lib/requirejs/text', //text is required
-    json: 'lib/requirejs/json', //alias to plugin
-    hbs: 'lib/requirejs/hbs',
-    promised: 'lib/requirejs/promised',
-    yaml: 'lib/requirejs/yaml', //alias to plugin
-    'js-yaml': 'lib/js-yaml', //alias to plugin
-    polyglot: 'lib/polyglot',
-    jscookie: 'lib/js.cookie',
-    lodash: 'lib/lodash',
-    postal: 'lib/postal',
-    leaflet: 'lib/leaflet/leaflet-src',
-    leaflethash: 'lib/leaflet/leaflet-hash',
-    leafletsidebar: 'lib/leaflet/leaflet-sidebar',
-    leafletclickevents: 'lib/leaflet/L.VisualClick',
-    leafletgeocodermapzen: 'lib/leaflet-geocoder-mapzen',
-    locationlist: 'app/modules/leaflet.locationlist',
-    keymaster: 'lib/keymaster',
-    tipsy: 'lib/jquery.tipsy',
-    handlebars: 'lib/handlebars',
-    'wikidata-sdk': 'lib/wikidata-sdk',
-    ourpolyglot: 'app/modules/OurPolyglot',
-    permalink: 'app/modules/PermaLink',
-    sceneswitcher: 'app/modules/L.Control.SceneSwitcher',
-    scene: 'app/modules/Scene',
-    sceneslist: 'app/modules/ScenesList',
-    osminfobox: 'app/modules/OsmInfobox',
-    tomMap: 'app/modules/TOMMap',
-    tomTangram: 'app/modules/TOMTangram',
-    tomTangramInteraction: 'app/modules/TOMTangramInteraction',
-    tomLegend: 'app/modules/TOMLegend',
-    tomLocationsPanel: 'app/modules/TOMLocationsPanel',
-    tomWikidataLayer: 'app/modules/TOMWikidataLayer',
-    tomLeftSidebar: 'app/modules/TOMLeftSidebar',
-    tomRightSidebar: 'app/modules/TOMRightSidebar',
-    config: 'app/configprod',
-    main: 'app/main',
+    jquery: basepath + 'lib/jquery',
+    bowser: basepath + 'lib/bowser',
+    text: basepath + 'lib/requirejs/text', //text is required
+    json: basepath + 'lib/requirejs/json', //alias to plugin
+    hbs: basepath + 'lib/requirejs/hbs',
+    promised: basepath + 'lib/requirejs/promised',
+    'promise': basepath + 'lib/requirejs/requirejs-promise',
+    yaml: basepath + 'lib/requirejs/yaml', //alias to plugin
+    'js-yaml': basepath + 'lib/js-yaml', //alias to plugin
+    polyglot: basepath + 'lib/polyglot',
+    jscookie: basepath + 'lib/js.cookie',
+    lodash: basepath + 'lib/lodash',
+    postal: basepath + 'lib/postal',
+    leaflet: basepath + 'lib/leaflet/leaflet-src',
+    leaflethash: basepath + 'lib/leaflet/leaflet-hash',
+    leafletsidebar: basepath + 'lib/leaflet/leaflet-sidebar',
+    leafletclickevents: basepath + 'lib/leaflet/L.VisualClick',
+    leafletgeocodermapzen: basepath + 'lib/leaflet-geocoder-mapzen',
+    locationlist: basepath + 'app/modules/leaflet.locationlist',
+    keymaster: basepath + 'lib/keymaster',
+    tipsy: basepath + 'lib/jquery.tipsy',
+    handlebars: basepath + 'lib/handlebars',
+    'wikidata-sdk': basepath + 'lib/wikidata-sdk',
+    ourpolyglot: basepath + 'app/modules/OurPolyglot',
+    permalink: basepath + 'app/modules/PermaLink',
+    sceneswitcher: basepath + 'app/modules/L.Control.SceneSwitcher',
+    scene: basepath + 'app/modules/Scene',
+    sceneslist: basepath + 'app/modules/ScenesList',
+    osminfobox: basepath + 'app/modules/OsmInfobox',
+    tomMap: basepath + 'app/modules/TOMMap',
+    tomWMS: basepath + 'app/modules/TOMWMS',
+    tomTangram: basepath + 'app/modules/TOMTangram',
+    tomTangramInteraction: basepath + 'app/modules/TOMTangramInteraction',
+    tomLegend: basepath + 'app/modules/TOMLegend',
+    tomLocationsPanel: basepath + 'app/modules/TOMLocationsPanel',
+    tomWikidataLayer: basepath + 'app/modules/TOMWikidataLayer',
+    tomWikidataLayer: basepath + 'app/modules/TOMWikidataLayer',
+    tomWikidataLayer: basepath + 'app/modules/TOMWikidataLayer',
+    tomLeftSidebar: basepath + 'app/modules/TOMLeftSidebar',
+    tomRightSidebar: basepath + 'app/modules/TOMRightSidebar',
+    config: basepath + 'app/modules/TOMConfig',
+    main: basepath + 'app/main',
   },
   shim: {
     leaflet: {
@@ -70,10 +90,15 @@ requirejs.config({
   hbs: { // optional
     helpers: true, // default: true
     templateExtension: 'hbs', // default: 'hbs'
-    partialsUrl: '', // default: ''
+    partialsUrl: 'templates/', // default: ''
     handlebarsPath: "handlebars"
-  }
+  },
+  config: {
+    'config': {
+      url: mylocation,
+      basepath: basepath,
+    }
+  },
 });
 
-//use plugins as if they were at
-requirejs(['main']);
+requirejs([basepath + 'app/main.js']);

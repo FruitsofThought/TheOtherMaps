@@ -1,6 +1,6 @@
 "use strict";
 define(
-  ['require', 'postal', 'jscookie', 'config', 'tomMap', 'tomTangramInteraction', 'tomWikidataLayer'],
+  ['require', 'postal', 'jscookie', 'promise!config', 'tomMap', 'tomTangramInteraction', 'tomWikidataLayer'],
   function(require, postal, Cookies, config, map, tomTangramInteraction) {
 
     // TODO Make Screenshot button

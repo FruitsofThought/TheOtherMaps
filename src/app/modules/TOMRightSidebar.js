@@ -1,5 +1,5 @@
 "use strict";
-define(['jquery', 'postal', 'tomMap', 'jscookie', 'hbs!templates/rightsidebar', 'tomLegend',
+define(['jquery', 'postal', 'tomMap', 'jscookie', 'hbs!templates/rightsidebar', 'hbs!templates/osmlabel', 'tomLegend',
   'tomLocationsPanel', 'leafletsidebar', 'locationlist', 'sceneswitcher'
 ], function($, postal, map, Cookies, rightSidebar) {
 

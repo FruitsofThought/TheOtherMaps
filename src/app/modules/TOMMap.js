@@ -1,5 +1,5 @@
 "use strict";
-define(['require', 'jquery', 'config', 'permalink', 'leaflet', 'leafletclickevents',
+define(['require', 'jquery', 'promise!config', 'permalink', 'leaflet', 'leafletclickevents',
     'leaflethash', 'sceneswitcher', 'leafletgeocodermapzen'
   ],
   function(require, $, config, permaLink) {
@@ -10,6 +10,7 @@ define(['require', 'jquery', 'config', 'permalink', 'leaflet', 'leafletclickeven
     var map = L.map('map', {
       center: map_start_location.slice(0, 3),
       zoom: map_start_location[2],
+      _debugTangram: true,
       visualClickEvents: 'click contextmenu' //can be multiple space-seperated events, like 'click', 'contextmenu', 'dblclick'...
     });
     var hash = new L.Hash(map);

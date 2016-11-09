@@ -5,7 +5,7 @@
   <tr><td>
   {{#if osmkeyvalue }}
     {{#with (getosmkeyvalue osmkeyvalue) }}
-      {{>templates/osmlabel item=this class='valuelabel' key=@key}}
+      {{> osmlabel item=this class='valuelabel' key=@key}}
     {{/with}}
   {{else}}
   {{ title }}

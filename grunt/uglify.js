@@ -18,22 +18,6 @@ module.exports = {
     },
     files: {
       'dist/js/require.js': ['bower_components/requirejs/require.js'],
-      /*          'dist/js/lib.min.js': [
-                  'bower_components/requirejs/requirejs-text/text.js',
-                  'bower_components/js-yaml/dist/js-yaml.js',
-                  'bower_components/jquery/dist/jquery.js',
-                  'bower_components/requirejs-yaml/yaml.js',
-                  'bower_components/requirejs-plugins/requirejs-plugins.js',
-                  'bower_components/tangram/tangram-debug.js',
-                  'bower_components/polyglot/polyglot.js',
-                  'bower_components/leaflet/leaflet.js',
-                  'bower_components/leaflet-sidebar/leaflet-sidebar.js',
-                  'bower_components/keymaster/keymaster.js',
-                  'bower_components/leaflet-hash/leaflet-hash.js',
-                  'bower_components/wikidata-sdk/wikidata-sdk.js',
-                  'bower_components/handlebars/handlebars.js',
-                ],
-                */
       'dist/lib/bowser.js': [
         'bower_components/bowser/src/bowser.js'
       ],
@@ -48,6 +32,9 @@ module.exports = {
       ],
       'dist/lib/requirejs/promised.js': [
         'bower_components/requirejs-promised/promised.js'
+      ],
+      'dist/lib/requirejs/requirejs-promise.js': [
+        'bower_components/requirejs-promise/requirejs-promise.js'
       ],
       'dist/lib/requirejs/hbs/handlebars.js': [
         'bower_components/handlebars/handlebars.js'
@@ -88,15 +75,15 @@ module.exports = {
       ],
       'dist/lib/handlebars.js': ['bower_components/handlebars/handlebars.js'],
       'dist/app.js': ['src/app.js'],
-      'dist/apptz.js': ['src/apptz.js'],
-      'dist/appdev.js': ['src/appdev.js'],
-      'dist/applocal.js': ['src/applocal.js'],
+      //      'dist/apptz.js': ['src/apptz.js'],
+      //      'dist/appdev.js': ['src/appdev.js'],
+      //      'dist/applocal.js': ['src/applocal.js'],
       'dist/app/main.js': ['src/app/main.js'],
       // And this is the reason why we have dev and prod!
-      'dist/app/configdev.js': ['src/app/configdev.js'],
-      'dist/app/configtz.js': ['src/app/configtz.js'],
-      'dist/app/configlocal.js': ['src/app/configlocal.js'],
-      'dist/app/configprod.js': ['src/app/configprod.js'],
+      //      'dist/app/configdev.js': ['src/app/configdev.js'],
+      //      'dist/app/configtz.js': ['src/app/configtz.js'],
+      //      'dist/app/configlocal.js': ['src/app/configlocal.js'],
+      //      'dist/app/configprod.js': ['src/app/configprod.js'],
       'dist/app/modules/Languages.js': ['src/app/modules/Languages.js'],
       // es6 by now:
       //'dist/app/modules/PermaLink.js': ['src/app/modules/Permalink.js'],

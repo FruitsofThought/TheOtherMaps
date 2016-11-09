@@ -17,7 +17,6 @@ module.exports = {
     'copy:html',
     'copy:fonts',
     'copy:lang',
-    'copy:scenes',
     'copy:templates',
     'copy:newjavascript',
     'copy:leaflet',

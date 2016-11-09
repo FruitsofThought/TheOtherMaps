@@ -12,8 +12,6 @@ define(['jquery', 'tomMap', 'hbs!templates/leftsidebar', 'leafletsidebar'], func
       var leftsidebar = L.control.sidebar('leftsidebar', {
         position: 'left'
       }).addTo(map);
-
-
     }
   };
   return new TOMLeftSidebar();

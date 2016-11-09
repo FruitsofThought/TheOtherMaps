@@ -1,5 +1,5 @@
 "use strict";
-define(['jquery', 'polyglot', 'js-yaml', 'postal', 'jscookie', 'config'], function($,
+define(['jquery', 'polyglot', 'js-yaml', 'postal', 'jscookie', 'promise!config'], function($,
   Polyglot, jsyaml, postal, Cookies, config) {
   // This object is responsible for maintaining the strings for the current
   // language.
@@ -16,8 +16,8 @@ define(['jquery', 'polyglot', 'js-yaml', 'postal', 'jscookie', 'config'], functi
       this.files = Array();
       this.files['en-US'] = Array();
       this.files['nl-NL'] = Array();
-      this.files['en-US'].push('lang/en-US.yaml');
-      this.files['nl-NL'].push('lang/nl-NL.yaml');
+      this.files['en-US'].push(config.basepath + 'lang/en-US.yaml');
+      this.files['nl-NL'].push(config.basepath + 'lang/nl-NL.yaml');
       var me = this;
       // Subscribe to different general Application events
       var _channel = postal.channel();

@@ -4,9 +4,6 @@ module.exports = {
       expand: true,
       flatten: true,
       src: ['src/index.html',
-        'src/tanzania.html',
-        'src/develop.html',
-        'src/local.html',
         'src/favicon.ico'
       ],
       dest: 'dist/'
@@ -32,12 +29,8 @@ module.exports = {
     files: [{
       expand: true,
       flatten: true,
-      src: ['bower_components/leaflet/dist/leaflet.css',
-        'bower_components/sidebar-v2/css/leaflet-sidebar.css',
-        'bower_components/Leaflet.VisualClick/dist/L.VisualClick.css',
-        'bower_components/font-awesome/css/font-awesome.min.css',
-        'src/app/modules/leaflet.locationlist.css',
-        'bower_components/PACE/themes/black/pace-theme-center-simple.css',
+      src: [
+        'bower_components/PACE/themes/black/pace-theme-center-simple.css'
       ],
       dest: 'dist/css/'
     }]
@@ -82,15 +75,6 @@ module.exports = {
       dest: 'dist/lang/'
     }]
   },
-  scenes: {
-    files: [{
-      expand: true,
-      flatten: false,
-      cwd: 'src/scenes/',
-      src: '**',
-      dest: 'dist/scenes/'
-    }]
-  },
   templates: {
     files: [{
       expand: true,
@@ -110,9 +94,11 @@ module.exports = {
         'src/app/modules/Scene.js',
         'src/app/modules/ScenesList.js',
         'src/app/modules/OurPolyglot.js',
+        'src/app/modules/TOMConfig.js',
         'src/app/modules/TOMMap.js',
         'src/app/modules/TOMLegend.js',
         'src/app/modules/TOMTangram.js',
+        'src/app/modules/TOMWMS.js',
         'src/app/modules/TOMTangramInteraction.js',
         'src/app/modules/TOMLocationsPanel.js',
         'src/app/modules/TOMWikidataLayer.js',

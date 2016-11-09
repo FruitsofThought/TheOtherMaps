@@ -1,5 +1,5 @@
 "use strict";
-define(['require', 'jquery', 'postal', 'tomMap'], function(require, $, postal,
+define(['require', 'jquery', 'postal', 'tomMap', 'hbs!templates/osmlabel'], function(require, $, postal,
   map) {
 
   class TOMLocationsPanel {

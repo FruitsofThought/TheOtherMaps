@@ -4,7 +4,7 @@ define(
     'postal',
     'handlebars',
     'yaml!templates/osmkeysvalues.yaml',
-    'config',
+    'promise!config',
     'lodash',
     'keymaster'
   ],
