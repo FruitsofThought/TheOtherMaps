@@ -1,0 +1,8 @@
+locale: en
+phrases:
+    home:
+        title: The Other Maps - Sample Application
+        panels:
+            home:
+                title: Info
+                pane: TOM is an application to host Tangram based maps with extra functionality. Getting started requires very little effort.

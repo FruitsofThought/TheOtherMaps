@@ -1,14 +1,4 @@
 module.exports = {
-  html: {
-    files: [{
-      expand: true,
-      flatten: true,
-      src: ['src/index.html',
-        'src/favicon.ico'
-      ],
-      dest: 'dist/'
-    }]
-  },
   css: {
     files: [{
       expand: true,

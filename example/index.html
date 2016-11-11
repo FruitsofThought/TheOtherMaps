@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Other Maps Project</title>
+  <script src="../dist/lib/pace.min.js"></script>
+  <link href="../dist/css/pace-theme-center-simple.css" rel="stylesheet" />
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="../dist/css/output.css" />
+
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <!-- Main tangram library. NEVER use a different name than tangram.min.js or tangram.debug.js -->
+  <script src="../dist/lib/tangram.min.js"></script>
+
+  <script data-main="../dist/app" src="../dist/js/require.js"></script>
+
+</head>
+<body>
+ <!-- The leaflet map -->
+  <div id="map" class="sidebar-map"></div>
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(["setDomains", ["*.maps.mountbatten.nl"]]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//piwik.mountbatten.nl/";
+      _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['setSiteId', '35']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <noscript><p><img src="//piwik.mountbatten.nl/piwik.php?idsite=35" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+</body>
+</html>

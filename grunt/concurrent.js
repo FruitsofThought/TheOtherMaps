@@ -14,7 +14,6 @@ module.exports = {
     'sass:dev',
     'uglify:dev',
     'copy:icons',
-    'copy:html',
     'copy:fonts',
     'copy:lang',
     'copy:templates',

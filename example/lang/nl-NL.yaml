@@ -1,0 +1,173 @@
+locale: nl
+phrases:
+    undefined: Onbekende text
+    home:
+        name: Naam
+        title: Andere Kaarten
+        wikipediahover: Open Engelstalige Wikipedia pagina voor
+        osmwikihover: Open Engelstalige OpenStreetMap Wiki pagina voor
+        wikidatahover: Open Wikidata Pagina voor
+        ctrlclicknewwindow: Houdt CTRL ingedrukt om in een nieuwe tab te openen
+        panels:
+            home:
+                title: De Andere Kaarten
+                pane: TOM is een applicatie die je in staat stelt om snel een set kaarten te publiceren op basis van OpenStreetMap. TOM integreert met Wikipedia en Wikidata om uitleg te geven over elementen op de kaart. TOM is makkelijk te vertalen. Deze voorbeeldinstallatie van TOM bevat enkele kaarten over architectonische eigenschappen van gebouwen in Nederland en Tanzania.
+                title: Kaarten
+            legend:
+                title: Legenda
+                locationtitle: Beweegt de kaart naar een voorbeeldlocatie
+            locations:
+                title: Voorbeeld uitsnedes
+                pane: Dit zijn enkele voorbeeld uitsnedes uit de gehele kaart
+            info:
+                title: Informatie
+            wikipedia:
+                title: Wikipedia
+            images:
+                title: Fotos
+            wms:
+                title: Historische Kaarten
+                layers: Kaartlagen
+                transparancy: Doorzichtigheid
+            settings:
+                title: Instellingen
+            wikipediadoc:
+                title: Wikipedia Documentatie
+            osmwiki:
+                title: OpenStreetMap Wiki
+            wikipedia:
+                title: Wikipedia
+        scenes:
+            publicbuildings:
+                publicbuildings:
+                    title: Publiek
+                    description: Overheid, gemeenschaps en andere publieke gebouwen
+                residential:
+                    title: Wonen
+                    description: Huizen, Appartementen, woonboten etc.
+                commercial:
+                    title: Commercieel
+                    description: Industrie, kantoren, winkels etc.
+                infrastructure:
+                    title: Infrastructureel
+                    description: Electriciteit, opslag, datacentres etc.
+                primaryroads:
+                    title: Hoofdwegen
+                    description: Wegen tussen steden
+    keys:
+        kind: Soort
+        kind_detail: Soort (detail)
+        landuse_kind: Grondgebruik
+        name: Naam
+        id: OpenStraatKaart Nummer
+        source: Bron
+        start_date: Openingsdatum
+        area: Oppervlakte (in vierkante meters)
+        population: Bevolkingsaantal
+        wikipedia: Wikipedia Pagina
+        wikidata: Wikidata Item
+        image: Afbeelding
+        tourism:
+            tourism: Toeristisch
+            yes: Toeristisch
+            attraction: Attractie
+        historic:
+            historic: Historisch
+            yes: Algemeen Historisch
+            building: Building
+            city_gate: Stadspoort
+            fortress: Fort
+            monastery: Klooster
+            memorial: Gedenkingsplaats
+            church: Kerk
+            castle: Kasteel
+            railway_station: Treinstation
+            construction: In Aanbouw
+            ruins: Ruïnes
+        heritage:
+            heritage: Erfgoed
+            1: Unesco
+            2: Nationaal
+            3: Sub-Nationaal
+            4: Lokaal
+        "heritage:operator":
+                operator: Beheerder
+                whc: UNESCO
+                rce: Rijksdienst voor het Cultureel Erfgoed
+                Rijksmonuments: Provinciale monumenten
+        "ref:whc": World Heritage Site ID
+        building:
+            building: Gebouw
+            commercial: Commercieel
+            house: Huis
+            residential: Woongelegenheid
+            apartments: Appartementen Gebouw
+            church: Kerk
+            mosque: Moskee
+            retail: Winkel
+            industrial: Industrie
+            warehouse: Pakhuis
+            houseboat: Woonboot
+            civic: Publiek
+            public: Openbaar
+            office: Kantoor
+            university: Universiteit
+            hospital: Ziekenhuis
+            school: School
+            train_station: Spoorwegstation
+            ruins: Ruïne
+            bunker: Bunker
+        "building:architecture":
+            architecture: Architectonische Stijl
+            art_deco: Art Deco
+            art_nouveau: Jugendstil
+            gothic: Gotiek
+            neo_gothic: Neogotiek
+            indian: Indiaas
+            eclectic: Eclectische Stijl
+            modernism: Het Nieuwe Bouwen
+            classic_swahili: Klassiek Swahili
+            stone_town: Stone Town
+            british_colonial: Brits Kolonisch
+            omani: Omanisch
+            modern: Modern
+            hyper_modern: Hyper modern
+            rijnllandse_gothic: Rijnlands Gothisch
+        "building:architecture:typology":
+            typology: Architectural Typology
+            high_street: Winkelstraat
+            single_storey_swahili: Enkele verdieping Swahili
+            modern_multi_storey_swahili: Modern Swahili met meerdere verdiepingen
+            modern_swahili: Modern Swahili
+            post_modern_multi_storey_swahili: Post Modern Swahili met meerdere verdiepingen
+            suburban_villa: Buitenwijk vrijstaand
+            others: Iets Anders
+            apartment_block: Appartementen Blok
+            indian_shopfront: Indiase Winkel
+            modern_indian_shopfront: Moderne Indiase Winkel
+            government: Overheid
+            mosque: Moskee
+            church: Kerk
+            market_stall: Marktkraam
+            madrasa: Madrasa
+            public_school: Overheids School
+            arcade_building: Overdekt winkelcentrum
+        "building:material":
+            material: Materiaal
+            concrete: Beton
+        "building:structure":
+            structure: Bouwtechniek
+            cement_blocks: Cement blokken
+            concrete_frame_and_cement_blocks: Betonnen frame en cement blokken
+            coralstone_and_lime: Koraalsteen en kalksteen
+            wattle_and_daub: Kwak en rietmatten
+            makeshift: Vanalles
+        "building:condition":
+            condition: Staat
+            poor: Vervallen
+            average: Gemiddeld
+            good: Goed
+            ruinous: In Puin
+        place:
+            town: Stadje
+        population: Bevolkingsaantal

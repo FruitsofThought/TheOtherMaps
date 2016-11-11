@@ -1,22 +1,26 @@
 var basepath = requirejs.toUrl('');
-
+var baseUrl = '';
 // basepath will look like the whole URL of this app.
 // require.config.baseUrl should only be the subdir part of basepath
 // otherwise handlebars partials gets confused
 
-var baseUrls = basepath.split('/')
-baseUrls.shift();
-baseUrls.shift();
-baseUrls.shift();
-baseUrl = '/' + baseUrls.join('/');
-
+if (basepath == "\.\./dist/") {
+  // We are running the example
+  baseUrl = window.location.pathname + basepath;
+} else {
+  var baseUrls = basepath.split('/')
+  baseUrls.shift();
+  baseUrls.shift();
+  baseUrls.shift();
+  baseUrl = '/' + baseUrls.join('/');
+}
 // mylocation is the location we are called from. That folder *must* have
 // a config.yaml file.
 var loc = window.location
 var mylocation = loc.origin + loc.pathname;
 
 requirejs.config({
-  urlArgs: "bust=21", // + (new Date()).getTime(), this kills javascript debugging
+  urlArgs: "bust=22", // + (new Date()).getTime(), this kills javascript debugging
   baseUrl: baseUrl,
   optimizeAllPluginResources: true,
   enforceDefine: false, // will fail for yaml & json anyways nice for debugging

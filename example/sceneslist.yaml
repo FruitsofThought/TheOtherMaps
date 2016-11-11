@@ -1,0 +1,8 @@
+---
+scenesList:
+    -
+        file: https://maps.mountbatten.nl/TOMStyles/TOMBuildingTypologies/TOMBuildingTypologies.js
+    -
+        file: https://maps.mountbatten.nl/TOMStyles/TOMUrbanTypologies/TOMUrbanTypologies.js
+    -
+        file: https://maps.mountbatten.nl/TOMStyles/TOMStartDate/TOMStartDate.js

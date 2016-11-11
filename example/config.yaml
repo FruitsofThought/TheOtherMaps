@@ -1,0 +1,11 @@
+---
+config:
+# Amsterdam
+    map_start_location: [34.0412,-118.2334, 13]
+    startscene: 'TOMUrbanTypologies'
+    sceneslist: 'sceneslist.yaml'
+    debug: false
+# loglevel of Tangram, also possible 'warn' or 'error'
+    logLevel: ''
+    mapzenapikey: 'vector-tiles-KXs7X8B'
+    languagefiles: ['en-US', 'nl-NL']

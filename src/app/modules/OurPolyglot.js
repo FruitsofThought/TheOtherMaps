@@ -18,6 +18,13 @@ define(['jquery', 'polyglot', 'js-yaml', 'postal', 'jscookie', 'promise!config']
       this.files['nl-NL'] = Array();
       this.files['en-US'].push(config.basepath + 'lang/en-US.yaml');
       this.files['nl-NL'].push(config.basepath + 'lang/nl-NL.yaml');
+      var i = 0;
+      while (i < Object.keys(config.languagefiles).length) {
+        var lang = Object.keys(config.languagefiles)[i];
+        this.files[lang].push(config.languagefiles[lang]);
+        i++;
+      }
+      //      this.files = $.extend(true, this.files, config.languagefiles);
       var me = this;
       // Subscribe to different general Application events
       var _channel = postal.channel();
