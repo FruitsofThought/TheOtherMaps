@@ -9,6 +9,7 @@ define(['js-yaml', 'module'], function(jsyaml, module) {
       require(['yaml!' + url + 'config.yaml?bust=1'], function(yaml) {
         console.log("HERE IS THE CONFIG")
         console.log(yaml);
+        appconfig['appname'] = yaml.config.name;
         appconfig['map_start_location'] = yaml.config.map_start_location; // Amsterdam
         appconfig['startscene'] = yaml.config.startscene;
         appconfig['sceneslist'] = url + yaml.config.sceneslist;
@@ -16,7 +17,8 @@ define(['js-yaml', 'module'], function(jsyaml, module) {
         appconfig['languages'][0] = window.navigator.userLanguage || window.navigator
           .language;
         appconfig['debug'] = yaml.config.debug;
-        appconfig['logLevel'] = yaml.config.loglevel; // loglevel of Tangram, also possible 'warn' or 'error'
+        // loglevel of Tangram, also possible 'warn' or 'error'
+        appconfig['logLevel'] = yaml.config.loglevel;
         appconfig['mapzenapikey'] = yaml.config.mapzenapikey;
         appconfig['basepath'] = module.config().basepath;
         var i = 0;

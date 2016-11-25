@@ -39,6 +39,7 @@ L.Control.SceneSwitcher = L.Control.extend( /** @lends L.Control.SceneSwitcher.p
     var switcher = this;
     var scene = this._ScenesList.list[sceneid];
     this._currentScene = sceneid;
+    console.log("Going to set window title");
   },
 
   _createSwitcher: function() {
@@ -85,12 +86,13 @@ L.Control.SceneSwitcher = L.Control.extend( /** @lends L.Control.SceneSwitcher.p
       $("#sceneswitcher #" + currentScene.id).toggleClass(
           "inactive")
         .toggleClass("active");
+
       // If Item clicked, scwitch scene
       $("#sceneswitcher li").click({}, function(event) {
         var sceneid = this.id;
         var element = this;
-        require(["postal", "sceneslist"], function(postal,
-          scenesList) {
+        require(["postal", "sceneslist", "promise!tomPolyglot"], function(postal,
+          scenesList, Polyglot) {
           var scene = scenesList.getScene(sceneid);
           var channel = postal.channel();
           channel.publish("scenes.change", {

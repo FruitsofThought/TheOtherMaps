@@ -1,7 +1,7 @@
 "use strict";
 define(
   ['require', 'jquery',
-    'ourpolyglot',
+    'promise!tomPolyglot',
     'js-yaml',
     'jscookie',
     'postal',
@@ -11,33 +11,27 @@ define(
 
     class Scene {
       constructor(config) {
-          this.id = config['id'];
-          this.file = this.id + ".yaml";
-          this.name = 'scenes.' + this.id + '.name';
-          this.groupid = config['groupid'];
-          this.groupname = 'scenes.' + this.id + '.group';
-          this.description = 'scenes.' + this.id + '.description';
-          this.languages = config['languages'];
-          // TODO this needs to go into a post-constructor in Scene
-          var engine = this;
-          var channel = postal.channel();
-          var language;
-          for (language of this.languages) {
-            var path = this.path + 'lang/' + language + '.yaml';
-            channel.publish("language.addfile", {
-              language: language,
-              filename: path
-            });
-          }
-          engine.myPromise = Promise.resolve()
-            .then(function() {
-              var lang = Cookies.get('language');
-              //engine.loadPhrases(lang);
-              return;
-            })
-        }
-        // This should be an event. when the language changes
-        // the polyglot is overridden
+        this.id = config['id'];
+        this.file = this.id + ".yaml";
+        this.name = 'scenes.' + this.id + '.name';
+        this.groupid = config['groupid'];
+        this.groupname = 'scenes.' + this.id + '.group';
+        this.description = 'scenes.' + this.id + '.description';
+        this.languages = config['languages'];
+        // TODO this needs to go into a post-constructor in Scene
+        var engine = this;
+        engine.myPromise = Promise.resolve()
+          .then(function() {
+            var lang = Cookies.get('language');
+            engine.loadPhrases(lang);
+            return;
+          })
+      }
+
+      get load() {
+        return this.myPromise;
+      }
+
       loadPhrases(language) {
 
         if ($.inArray(language, this.languages) == -1) {
@@ -48,29 +42,9 @@ define(
         if (config.debug) {
           translationsjson += "?bust=" + (new Date()).getTime();
         }
+        this.myPromise = Promise.resolve(Polyglot.loadFile(translationsjson));
+      }
 
-        //        console.log("scene language path " + translationsjson);
-        // using synchronous ajax to load the json. can not use requirejs for that (and this is bad, too)
-        $.ajax({
-          url: translationsjson,
-          async: false,
-          cache: true,
-          polyglot: Polyglot,
-          success: function(data) {
-            //            console.log('fetched language file ' + translationsjson);
-            json = jsyaml.load(data);
-            Polyglot.extend(json.phrases);
-          },
-          error: function(state, err, bigerr) {
-            console.log(err + '  ' + bigerr.message);
-            console.log("what layer language is that!?");
-          }
-        });
-      }
-      get Promise() {
-        var engine = this;
-        return engine.myPromise;
-      }
       get tangramScene() {
           var engine = this;
           var path = engine.path + engine.file;

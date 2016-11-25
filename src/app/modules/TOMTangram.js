@@ -85,35 +85,35 @@ define(
 
             this.layer.scene.subscribe({
               view_complete: function() {
+                console.log('Scene view complete');
                 $('body').removeClass('waiting');
               }
             });
             this.layer.scene.subscribe({
               load: function(e) {
-                //$('body').removeClass('waiting');
-                console.log('scene loaded:', e);
+                console.log('Scene load', e);
               }
             });
+
             $('body').addClass('waiting');
-
             this.layer.addTo(this.map);
-
           } else {
             this.layer.scene.load(scene.tangramScene);
+            console.log('TOMTangram: Going to load scene ', scene.tangramScene);
             $('body').addClass('waiting');
 
           }
         }
         // this might be per tile or so. bit odd. keeps on firing
       preUpdate(willrender) {
-        //  console.log("Updating Tangram");
+        console.log("Updating Tangram");
         if (willrender) {
           //    $('body').addClass('waiting');
         }
       }
       postUpdate(result) {
         if (result) {
-          //  console.log("Done Updating Tangram");
+          console.log("Done Updating Tangram");
           //  $('body').removeClass('waiting');
         };
       }

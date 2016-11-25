@@ -22,4 +22,3 @@ prod:
     - 'concurrent:prodFirst'
     - 'concurrent:prodSecond'
     - img
-

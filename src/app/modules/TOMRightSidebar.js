@@ -7,7 +7,7 @@ define(['jquery', 'postal', 'tomMap', 'jscookie', 'hbs!templates/rightsidebar', 
     constructor() {
       var me = this;
 
-      // Insert the Left Sidebar HTML
+      // Insert the Right Sidebar HTML
       console.log('Adding Right Sidebar');
       var html = rightSidebar();
       $('#rightsidebar').html(html);

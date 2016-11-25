@@ -83,7 +83,7 @@ module.exports = {
         'src/app/modules/PermaLink.js',
         'src/app/modules/Scene.js',
         'src/app/modules/ScenesList.js',
-        'src/app/modules/OurPolyglot.js',
+        'src/app/modules/TOMPolyglot.js',
         'src/app/modules/TOMConfig.js',
         'src/app/modules/TOMMap.js',
         'src/app/modules/TOMLegend.js',

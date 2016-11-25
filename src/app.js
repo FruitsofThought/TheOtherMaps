@@ -4,8 +4,8 @@ var baseUrl = '';
 // require.config.baseUrl should only be the subdir part of basepath
 // otherwise handlebars partials gets confused
 
-if (basepath == "\.\./dist/") {
-  // We are running the example
+if ((basepath == "\.\./dist/") || (basepath == "\.\./\.\./dist/")) {
+  // We are running the example or ../../TOMApps
   baseUrl = window.location.pathname + basepath;
 } else {
   var baseUrls = basepath.split('/')
@@ -20,7 +20,7 @@ var loc = window.location
 var mylocation = loc.origin + loc.pathname;
 
 requirejs.config({
-  urlArgs: "bust=22", // + (new Date()).getTime(), this kills javascript debugging
+  urlArgs: "bust=23" + (new Date()).getTime(), //this kills javascript debugging
   baseUrl: baseUrl,
   optimizeAllPluginResources: true,
   enforceDefine: false, // will fail for yaml & json anyways nice for debugging
@@ -48,7 +48,7 @@ requirejs.config({
     tipsy: basepath + 'lib/jquery.tipsy',
     handlebars: basepath + 'lib/handlebars',
     'wikidata-sdk': basepath + 'lib/wikidata-sdk',
-    ourpolyglot: basepath + 'app/modules/OurPolyglot',
+    tomPolyglot: basepath + 'app/modules/TOMPolyglot',
     permalink: basepath + 'app/modules/PermaLink',
     sceneswitcher: basepath + 'app/modules/L.Control.SceneSwitcher',
     scene: basepath + 'app/modules/Scene',

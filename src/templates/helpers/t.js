@@ -1,4 +1,4 @@
-define('templates/helpers/t', ['handlebars', 'ourpolyglot'], function(
+define('templates/helpers/t', ['handlebars', 'promise!tomPolyglot'], function(
   Handlebars, Polyglot) {
   function t(context, options) {
     return Polyglot.t(context);

@@ -49,15 +49,7 @@ define(['promised!require',
             var list = [];
             for (file of result.scenesList) {
               console.log("Scene File: " + file.file);
-              // If not http then add our own path
-              // this probably does not work anymore
-              //  if (file.file.substring(0, 4) != "http") {
-              //    fullfile = window.location.origin + config['path'] +
-              //      file.file;
-              //  } else {
-              fullfile = file.file;
-              //  }
-              engine.scenefiles.push(fullfile);
+              engine.scenefiles.push(file.file);
             }
             console.log("Scene to be loaded ", engine.scenefiles);
             var filepromise = require(engine.scenefiles);
@@ -65,9 +57,12 @@ define(['promised!require',
           })
           .then(function(scenes) {
             var arrayLength = scenes.length;
+            var sceneloadedpromises = [];
             for (var i = 0; i < arrayLength; i++) {
               engine.listofscenes[scenes[i].id] = scenes[i];
+              //    sceneloadedpromises.push(scenes[i].load());
             };
+            //  return Promise.resolve(sceneloadedpromises);
           });
       }
       get Initialized() {

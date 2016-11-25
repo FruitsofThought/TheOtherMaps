@@ -5,7 +5,8 @@ define(['require',
   'jscookie',
   'config',
   'handlebars',
-  'hbs!templates/osmlabel'
+  'hbs!templates/osmlabel',
+  'promise!tomPolyglot'
 ], function(require, $, browser, postal, Cookies, localconfig, handlebars, osmlabel) {
   var config;
   localconfig.then(function(myconfig) {
@@ -102,16 +103,28 @@ define(['require',
           wikidataproperty: wikidataproperty,
           wikidatavalue: wikidatavalue
         });
+        require(["promise!tomPolyglot"], function(Polyglot) {
+          console.log("Loaded Polyglot");
+          Promise.resolve(Polyglot).then(function() {
+            console.log("Resolved loading Polyglot");
+            document.title = Polyglot.t(initialscene.name) +
+              ' | ' + Polyglot.t("home.title");
+          })
+        });
 
       });
 
 
       require(['tomWMS']);
 
-      if (!Cookies.get('firstview')) {
-        Cookies.set('firstview', true);
+      if ((!Cookies.get('firstview')) || (config.debug)) {
         map.sidebarcontrols.rightsidebar.open('homepane');
       }
+      // Set cookie for the path of the page, and only for 7 days from now.
+      Cookies.set('firstview', true, {
+        expires: 7,
+        path: ''
+      });
 
       return;
     });
