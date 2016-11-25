@@ -24,8 +24,8 @@
     "jquery": "^2.2.4",
     "font-awesome": "^4.7.0",
     "tangram": "^0.11.0",
-    "polyglot": "^2.0.0",
-    "leaflet": "^1.0.1",
+    "polyglot": "^2.1.1",
+    "leaflet": "^1.0.2",
     "leaflet-hash": "*",
     "keymaster": "^1.6.3",
     "wikidata-sdk": "master",
@@ -41,7 +41,7 @@
     "PACE": "pace#^1.0.2",
     "tipsy": "^0.1.7",
     "bowser": "^1.5.0",
-    "lodash": "^4.16.5",
+    "lodash": "^4.17.2",
     "leaflet-geocoder-mapzen": "^1.7.1",
     "requirejs-promise": "^1.2.0"
   }
