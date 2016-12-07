@@ -133,6 +133,17 @@ body {
   text-decoration: underline;
 }
 
+/*
+  Be more specific than leaflet itself
+*/
+body .leaflet-left {
+  left: 50px;
+}
+
+body .leaflet-top {
+  top: 0px;
+}
+
 .leaflet-control-locationlist-arrow-next {
 		background-image: url('../img/icon-next.png');
 		float: left;
