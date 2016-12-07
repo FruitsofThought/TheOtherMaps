@@ -1,36 +1,36 @@
 {{#each items}}
   {{#if @first}}
-<table>
+    <table>
   {{/if}}
-  <tr><td>
-  {{#if osmkeyvalue }}
-    {{#with (getosmkeyvalue osmkeyvalue) }}
-      {{> osmlabel item=this class='valuelabel' key=@key}}
-    {{/with}}
-  {{else}}
-  {{ title }}
-  {{/if}}
-<!--</li><li>-->
-  </td><td>
-  <ul class="style">
-    <li class="color">
-      {{#if css}}
-      <a style="{{css}}" title="{{t description }}"></a>
+      <tr><td>
+      {{#if osmkeyvalue }}
+        {{#with (getosmkeyvalue osmkeyvalue) }}
+          {{> osmlabel item=this class='valuelabel' key=@key}}
+        {{/with}}
       {{else}}
-      <a style="background-color: {{ color }};" title="{{t description }}"></a>
+        {{ title }}
       {{/if}}
-    </li>
-  </ul>
-</td><td>
-  {{#if samplelocation.lat }}
-    {{#if samplelocation.title }}
-    <i title="{{ t samplelocation.title }}" class="fa fa-map-marker marker" data-lat="{{ samplelocation.lat }}" data-lon="{{ samplelocation.lon }}" data-zoom="{{ samplelocation.zoom }}" ></i>
-    {{ else }}
-    <i title="{{ t 'home.panels.legend.locationtitle' }}" class="fa fa-map-marker marker" data-lat="{{ samplelocation.lat }}" data-lon="{{ samplelocation.lon }}" data-zoom="{{ samplelocation.zoom }}" ></i>
-  {{/if}}
-  {{/if}}
-</tr></td>
+<!--</li><li>-->
+      </td><td>
+        <ul class="style">
+          <li class="color">
+      {{#if css}}
+            <a style="{{css}}" title="{{t description }}"></a>
+      {{else}}
+            <a style="background-color: {{ color }};" title="{{t description }}"></a>
+      {{/if}}
+          </li>
+        </ul>
+      </td><td>
+    {{#if samplelocation.lat }}
+      {{#if samplelocation.title }}
+        <i title="{{ t samplelocation.title }}" class="fa fa-map-marker marker" data-lat="{{ samplelocation.lat }}" data-lon="{{ samplelocation.lon }}" data-zoom="{{ samplelocation.zoom }}" ></i>
+      {{else}}
+        <i title="{{ t 'home.panels.legend.locationtitle' }}" class="fa fa-map-marker marker" data-lat="{{ samplelocation.lat }}" data-lon="{{ samplelocation.lon }}" data-zoom="{{ samplelocation.zoom }}" ></i>
+      {{/if}}
+    {{/if}}
+    </tr></td>
   {{#if @last}}
-</table>
+    </table>
   {{/if}}
 {{/each}}
