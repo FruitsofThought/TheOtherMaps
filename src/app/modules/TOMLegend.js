@@ -4,6 +4,7 @@ define(['require', 'jquery', 'postal', 'tomMap', 'yaml!templates/osmkeysvalues.y
 
   class TOMLegend {
     constructor() {
+      console.log("Loading TOMLegend");
       this._channel = postal.channel();
       var me = this;
       this._scenessubscription = this._channel.subscribe(
