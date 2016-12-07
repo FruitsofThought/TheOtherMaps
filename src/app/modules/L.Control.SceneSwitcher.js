@@ -91,7 +91,7 @@ L.Control.SceneSwitcher = L.Control.extend( /** @lends L.Control.SceneSwitcher.p
       $("#sceneswitcher li").click({}, function(event) {
         var sceneid = this.id;
         var element = this;
-        require(["postal", "sceneslist", "promise!tomPolyglot"], function(postal,
+        require(["postal", "promise!sceneslist", "promise!tomPolyglot"], function(postal,
           scenesList, Polyglot) {
           var scene = scenesList.getScene(sceneid);
           var channel = postal.channel();

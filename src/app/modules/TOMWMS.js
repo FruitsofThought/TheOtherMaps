@@ -1,6 +1,6 @@
 "use strict";
 define(
-  ['require', 'postal', 'jscookie', 'promise!config', 'tomMap'],
+  ['require', 'postal', 'jscookie', 'promise!config', 'tomMap', 'tomRightSidebar'],
   function(require, postal, Cookies, config, map) {
 
     // TODO Make Screenshot button
@@ -11,18 +11,6 @@ define(
           this.map = map;
           var me = this;
           var _channel = postal.channel();
-          /*          this._scenesubscription = _channel.subscribe(
-                      "scenes.change",
-                      function(data) {
-                        me.ChangeScene(data.scene);
-                      });
-
-                    this._languagesubscription = _channel.subscribe(
-                      "language.change",
-                      function(data) {
-                        console.log("Changing Map Language to " + Cookies.get('language'));
-                      });
-          */
           //        http://qgis.mountbatten.nl/wms/NgamboHistoric?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
           var layers = [
             '1973 Post Revolution Developments',

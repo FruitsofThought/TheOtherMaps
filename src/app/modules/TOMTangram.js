@@ -50,71 +50,71 @@ define(
 
       }
       ChangeScene(scene) {
-          if (typeof this.layer === "undefined") {
-            var options = {
-              scene: scene.tangramScene,
-              preUpdate: this.preUpdate,
-              postUpdate: this.postUpdate,
-              attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="http://www.openstreetmap.org/about" target="_blank">&copy; OSM contributors</> | <a href="https://tilesmountbatten.nl/" target="_blank">Mountbatten</a>',
-              showDebug: (config.debug == true),
-              logLevel: config.logLevel || 'info', // or 'warn' or 'error' or anything else for no logging
-              introspection: (config.debug == true),
-            };
+        if (typeof this.layer === "undefined") {
+          var options = {
+            scene: scene.tangramScene,
+            preUpdate: config.debug ? this.preUpdate : '',
+            postUpdate: config.debug ? this.postUpdate : '',
+            modifyScrollWheel: false,
+            attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="http://www.openstreetmap.org/about" target="_blank">&copy; OSM contributors</> | <a href="https://maps.mountbatten.nl/" target="_blank">Mountbatten</a>',
+            showDebug: (config.debug == true),
+            logLevel: config.logLevel || 'info', // or 'warn' or 'error' or anything else for no logging
+            introspection: (config.debug == true),
+          };
 
+          this.layer = Tangram.leafletLayer(options);
+          var me = this;
+          this.layer.on('init', function() {
+            if (typeof me.layer.scene.config.global === "undefined") {
+              // This is only to prevent errors, the actual
+              // translate function does not work if you assign it from here.
+              //
+              me.layer.scene.config.global = {};
+            }
 
-            this.layer = Tangram.leafletLayer(options);
-            var me = this;
-            this.layer.on('init', function() {
-              if (typeof me.layer.scene.config.global === "undefined") {
-                // This is only to prevent errors, the actual
-                // translate function does not work if you assign it from here.
-                //
-                me.layer.scene.config.global = {};
-              }
+            console.log("INIT Global is  ", me.layer.scene.config.global);
+            me.layer.scene.config.global.labels = true; // We can store this in a cookie later
+            var language = Cookies.get('language');
+            me.layer.scene.config.global.language = (typeof language !== 'undefined') ? language.substr(0, 2) :
+              'en';
+            me.layer.scene.updateConfig();
+            console.log("INIT NEW Global is  ", me.layer.scene.config.global);
+            console.log("Initial Layer Initialized");
+            tomTangramInteraction.initFeatureSelection(me.map, this.scene);
+          });
 
-              console.log("INIT Global is  ", me.layer.scene.config.global);
-              me.layer.scene.config.global.labels = true; // We can store this in a cookie later
-              var language = Cookies.get('language');
-              me.layer.scene.config.global.language = (typeof language !== 'undefined') ? language.substr(0, 2) :
-                'en';
-              me.layer.scene.updateConfig();
-              console.log("INIT NEW Global is  ", me.layer.scene.config.global);
-              console.log("Initial Layer Initialized");
-              tomTangramInteraction.initFeatureSelection(me.map, this.scene);
-            });
-
-            this.layer.scene.subscribe({
-              view_complete: function() {
-                console.log('Scene view complete');
-                $('body').removeClass('waiting');
-              }
-            });
-            this.layer.scene.subscribe({
-              load: function(e) {
-                console.log('Scene load', e);
-              }
-            });
-
-            $('body').addClass('waiting');
-            this.layer.addTo(this.map);
-          } else {
-            this.layer.scene.load(scene.tangramScene);
-            console.log('TOMTangram: Going to load scene ', scene.tangramScene);
-            $('body').addClass('waiting');
-
-          }
+          this.layer.scene.subscribe({
+            view_complete: function() {
+              console.log('Scene view complete');
+              $('body').removeClass('waiting');
+            },
+            error: function(e) {
+              console.error('scene error:', e);
+            },
+            warning: function(e) {
+              console.warning('scene warning:', e);
+            },
+            load: function(e) {
+              console.log('scene loaded:', e);
+            }
+          });
+          $('body').addClass('waiting');
+          this.layer.addTo(this.map);
+        } else {
+          console.log("Switching to " + scene.name);
+          console.log('TOMTangram: Going to load scene ', scene.tangramScene);
+          $('body').addClass('waiting');
+          this.layer.scene.load(scene.tangramScene);
         }
-        // this might be per tile or so. bit odd. keeps on firing
+      }
       preUpdate(willrender) {
-        console.log("Updating Tangram");
         if (willrender) {
-          //    $('body').addClass('waiting');
+          console.log("Going to render a feature");
         }
       }
       postUpdate(result) {
         if (result) {
-          console.log("Done Updating Tangram");
-          //  $('body').removeClass('waiting');
+          console.log("Just rendered a feature");
         };
       }
     };

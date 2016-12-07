@@ -7,6 +7,13 @@ define(['jquery', 'postal', 'promise!config', 'jscookie'],
         this._channel = postal.channel();
         this.permalinkitems = [];
         console.log("Welcome to PermaLink");
+
+        if (Cookies.get('language') == '') {
+          Cookies.set('language', config['languages'][0], {
+            expires: 365
+          })
+        }
+
         // leaflet-style URL hash pattern:
         // #[zoom],[lat],[lng]
         var url_hash = window.location.hash.slice(1, window.location.hash.length)

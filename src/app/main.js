@@ -6,13 +6,11 @@ define(['require',
   'config',
   'handlebars',
   'hbs!templates/osmlabel',
-  'promise!tomPolyglot'
 ], function(require, $, browser, postal, Cookies, localconfig, handlebars, osmlabel) {
   var config;
   localconfig.then(function(myconfig) {
     console.log("resolved config", myconfig);
     config = myconfig;
-
 
     // if either the cookie has not been set yet or you are not using a supported browser
     console.log(browser);
@@ -75,14 +73,12 @@ define(['require',
     );
 
     console.log('Going to require ScenesList');
-    require(['tomMap', 'permalink', 'sceneslist', 'tomTangram',
-      'tomLeftSidebar', 'tomRightSidebar'
-    ], function(map,
-      permaLink, scenesList) {
-      scenesList.Initialized.then(function() {
+    require(['permalink', 'promise!sceneslist'], function(permaLink, scenesList) {
+      require(['tomMap', 'tomTangram', 'tomLeftSidebar', 'tomRightSidebar'], function(map) {
         var initialscenename = permaLink.Scene;
+        console.log('Initial Scene Name', initialscenename);
         var initialscene = scenesList.getScene(initialscenename);
-        //  var scenefile = initialscene.tangramScene;
+        console.log('Initial Scene', initialscene);
         var switcher = L.control.sceneswitcher('sceneswitcher', {
           scenes: scenesList,
           currentScene: initialscenename,
@@ -112,18 +108,18 @@ define(['require',
           })
         });
 
-      });
+        if (config.controls.wms) {
+          require(['tomWMS']);
+        }
 
-
-      require(['tomWMS']);
-
-      if ((!Cookies.get('firstview')) || (config.debug)) {
-        map.sidebarcontrols.rightsidebar.open('homepane');
-      }
-      // Set cookie for the path of the page, and only for 7 days from now.
-      Cookies.set('firstview', true, {
-        expires: 7,
-        path: ''
+        if ((!Cookies.get('firstview')) || (config.debug)) {
+          map.sidebarcontrols.rightsidebar.open('homepane');
+        }
+        // Set cookie for the path of the page, and only for 7 days from now.
+        Cookies.set('firstview', true, {
+          expires: 7,
+          path: ''
+        });
       });
 
       return;

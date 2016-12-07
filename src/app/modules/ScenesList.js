@@ -3,7 +3,7 @@ define(['promised!require',
     'jquery',
     'js-yaml',
     'promise!config',
-    'yaml'
+    //  'yaml'
   ],
   function(require, $, jsyaml, config) {
     // |There are several ways to (not) return a promise for an
@@ -51,46 +51,44 @@ define(['promised!require',
               console.log("Scene File: " + file.file);
               engine.scenefiles.push(file.file);
             }
-            console.log("Scene to be loaded ", engine.scenefiles);
+            console.log("Scenes to be loaded ", engine.scenefiles);
             var filepromise = require(engine.scenefiles);
             return (filepromise);
           })
           .then(function(scenes) {
+            console.log("Scenes Loaded");
             var arrayLength = scenes.length;
             var sceneloadedpromises = [];
             for (var i = 0; i < arrayLength; i++) {
               engine.listofscenes[scenes[i].id] = scenes[i];
-              //    sceneloadedpromises.push(scenes[i].load());
             };
-            //  return Promise.resolve(sceneloadedpromises);
+            return engine;
           });
       }
       get Initialized() {
         var engine = this;
         console.log("Retrieving the Initialized");
-        return engine.listpromise;
-      }
-      get Promises() {
-        console.log("Retrieving the promisses");
-        var engine = this;
-        return new Promise(engine.scenepromises);
+        return Promise.resolve(engine.listpromise);
       }
       get list() {
         console.log("get SceneList List ");
         var engine = this;
-        console.log("Promised SceneList List success ");
+        console.log("Promised SceneList List success ", engine.listofscenes);
         return engine.listofscenes;
-        //});
       }
       set list(value) {
         this.listofscenes = value;
       }
       getScene(sceneid) {
         var engine = this;
+        console.log('getScene', sceneid);
+        console.log('getScene List', engine.listofscenes);
         var scene = engine.listofscenes[sceneid];
         return scene;
       }
     }
-    return new ScenesList(config['sceneslist']);
+
+    var local = new ScenesList(config['sceneslist']);
+    return Promise.resolve(local.Initialized);
 
   });

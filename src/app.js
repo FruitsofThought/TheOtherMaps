@@ -20,9 +20,9 @@ var loc = window.location
 var mylocation = loc.origin + loc.pathname;
 
 requirejs.config({
-  urlArgs: "bust=23" + (new Date()).getTime(), //this kills javascript debugging
+  urlArgs: "bust=25", // + (new Date()).getTime(), //this kills javascript debugging
   baseUrl: baseUrl,
-  optimizeAllPluginResources: true,
+  optimizeAllPluginResources: false,
   enforceDefine: false, // will fail for yaml & json anyways nice for debugging
   paths: {
     jquery: basepath + 'lib/jquery',

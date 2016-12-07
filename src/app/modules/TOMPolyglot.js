@@ -31,39 +31,25 @@ define(['jquery', 'polyglot', 'js-yaml', 'postal', 'jscookie', 'promise!config']
       var _languagesubscription = _channel.subscribe(
         "language.change",
         function(data) {
-          Cookies.set('language', data.language);
-          me.setLanguage(data.language);
           // We could also replace all strings in the page now, but that is too much
           // work for now, so the permalink module reloads the page instead
-
         });
 
-      /*      var _languagefilessubscription = _channel.subscribe(
-              "language.addfile",
-              function(data) {
-                console.log("Addfile received " + data.filename);
-                me.files[data.language].push(data.filename);
-                if ((data.language == me.language) || (data.language == 'en-US')) {
-                  me.loadFile(data.filename);
-                }
-              });
-      */
       // We always load en-US all other languages might not be complete
       console.log('Initial Language Load');
-      var initialpromises = [];
-      initialpromises.push(this.setLanguage('en-US'));
+      var initialpromises = this.setLanguage('en-US');
       console.log("Initial promises #1", initialpromises);
       if (this.startlang !== "en-US") {
         console.log('Prefered Language Load: ' + this.startlang);
         if (typeof this.files[this.startlang] !== "undefined") {
           console.log("Initial promises #2", initialpromises);
-          initialpromises.push(this.setLanguage(this.startlang));
+          initialpromises = $.merge(initialpromises, this.setLanguage(this.startlang));
         } else {
           console.log("Unsupported Language");
         }
       }
       this.loader = Promise.resolve(initialpromises).then(function() {
-        console.log("FINALLY Loaded Tooltips");
+        console.log("Finally Loaded Polyglot files");
       });
     }
 
@@ -136,6 +122,7 @@ define(['jquery', 'polyglot', 'js-yaml', 'postal', 'jscookie', 'promise!config']
 
       var localPolyglot = new TOMPolyglot();
       localPolyglot.loader.then(function() {
+        console.log("Resolved Polyglot");
         resolve(localPolyglot);
       })
     }

@@ -5,7 +5,7 @@ define(
     'js-yaml',
     'jscookie',
     'postal',
-    'config'
+    'promise!config'
   ],
   function(require, $, Polyglot, jsyaml, Cookies, postal, config) {
 
@@ -23,8 +23,12 @@ define(
         engine.myPromise = Promise.resolve()
           .then(function() {
             var lang = Cookies.get('language');
-            engine.loadPhrases(lang);
-            return;
+            engine.loadPhrases(lang).then(function() {
+              return true;
+            });
+          })
+          .then(function() {
+            return engine;
           })
       }
 
@@ -42,7 +46,7 @@ define(
         if (config.debug) {
           translationsjson += "?bust=" + (new Date()).getTime();
         }
-        this.myPromise = Promise.resolve(Polyglot.loadFile(translationsjson));
+        return Polyglot.loadFile(translationsjson);
       }
 
       get tangramScene() {

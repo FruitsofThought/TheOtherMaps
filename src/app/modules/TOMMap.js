@@ -10,19 +10,22 @@ define(['require', 'jquery', 'promise!config', 'permalink', 'leaflet', 'leafletc
     var map = L.map('map', {
       center: map_start_location.slice(0, 3),
       zoom: map_start_location[2],
-      _debugTangram: true,
-      visualClickEvents: 'click contextmenu' //can be multiple space-seperated events, like 'click', 'contextmenu', 'dblclick'...
+      debugTangram: config.debug,
+      visualClickEvents: 'click contextmenu', //can be multiple space-seperated events, like 'click', 'contextmenu', 'dblclick'...
+      zoomControl: true
     });
     var hash = new L.Hash(map);
 
-    var options = {
-      layers: ['country', 'region', 'locality', 'venue', 'street'],
-      params: {
-        sources: ['wof'],
-        //'boundary.country': ['nl', 'tz'] // This fails, you can only  use 1 country as a string
-      }
-    };
+    if (config.controls.pelias) {
+      var options = {
+        layers: ['country', 'region', 'locality', 'venue', 'street'],
+        params: {
+          sources: ['wof'],
+          //'boundary.country': ['nl', 'tz'] // This fails, you can only  use 1 country as a string
+        }
+      };
 
-    L.control.geocoder(config.mapzenapikey, options).addTo(map);
+      L.control.geocoder(config.mapzenapikey, options).addTo(map);
+    }
     return map;
   });
