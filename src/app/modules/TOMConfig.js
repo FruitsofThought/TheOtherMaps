@@ -1,3 +1,19 @@
+/**
+ * Copyright (c) 2016, Reinier Battenberg
+ * All rights reserved.
+ *
+ * Source code can be found at:
+ * https://github.com/FruitsofThought/TheOtherMaps
+ *
+ * @license GPL 3.0
+ *
+ *
+ * @module TOMConfig
+ *
+ * @file Creates loads the configuration from the TOMApps home directory/config.yaml file
+ * Also loads any language files present in the TOMApps lang folder and in the languages array in the config.
+ */
+"use strict"
 define(['jquery', 'js-yaml', 'module'], function($, jsyaml, module) {
   var appconfig = Array();
   appconfig['languagefiles'] = [];

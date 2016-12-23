@@ -1,3 +1,17 @@
+/**
+ * Copyright (c) 2016, Reinier Battenberg
+ * All rights reserved.
+ *
+ * Source code can be found at:
+ * https://github.com/FruitsofThought/TheOtherMaps
+ *
+ * @license GPL 3.0
+ *
+ *
+ * @module TOMMap
+ *
+ * @file Creates the leaflet map with TOM attributes
+ */
 "use strict";
 define(['require', 'jquery', 'promise!config', 'permalink', 'leaflet', 'leafletclickevents',
     'leaflethash', 'sceneswitcher', 'leafletgeocodermapzen'

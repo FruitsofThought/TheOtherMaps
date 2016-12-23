@@ -1,3 +1,18 @@
+/**
+ * Copyright (c) 2016, Reinier Battenberg
+ * All rights reserved.
+ *
+ * Source code can be found at:
+ * https://github.com/FruitsofThought/TheOtherMaps
+ *
+ * @license GPL 3.0
+ *
+ *
+ * @module Main Application
+ *
+ * @file This is the application itself.
+ */
+
 define(['require',
   'jquery',
   'bowser',
