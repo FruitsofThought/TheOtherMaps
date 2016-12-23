@@ -1,6 +1,8 @@
 # TheOtherMaps
 Non Standard OpenStreetMap Maps web client. Based on the incredible Tangram Library.
 
+Very scarce code documentation is rendered on http://fruitsofthought.github.io/TheOtherMaps/
+
 ## Setup
 
 To prepare your Ubuntu system (without nodejs installed):
