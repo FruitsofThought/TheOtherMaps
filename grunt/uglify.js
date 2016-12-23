@@ -84,7 +84,7 @@ module.exports = {
       //      'dist/app/configtz.js': ['src/app/configtz.js'],
       //      'dist/app/configlocal.js': ['src/app/configlocal.js'],
       //      'dist/app/configprod.js': ['src/app/configprod.js'],
-      'dist/app/modules/Languages.js': ['src/app/modules/Languages.js'],
+      //'dist/app/modules/Languages.js': ['src/app/modules/Languages.js'],
       // es6 by now:
       //'dist/app/modules/PermaLink.js': ['src/app/modules/Permalink.js'],
       // These files uses Javascript 6 (ESM6 or Harmony) and uglify does not support that yet.

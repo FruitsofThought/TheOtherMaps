@@ -1,6 +1,6 @@
 "use strict";
 define(['jquery', 'postal', 'tomMap', 'jscookie', 'hbs!templates/rightsidebar', 'hbs!templates/osmlabel', 'tomLegend',
-  'tomLocationsPanel', 'leafletsidebar', 'locationlist', 'sceneswitcher'
+  'tomLocationsPanel', 'leafletsidebar', 'sceneswitcher'
 ], function($, postal, map, Cookies, rightSidebar) {
 
   class TOMRightSidebar {

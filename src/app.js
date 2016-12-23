@@ -1,3 +1,19 @@
+/**
+ * Copyright (c) 2016, Reinier Battenberg
+ * All rights reserved.
+ *
+ * Source code can be found at:
+ * https://github.com/FruitsofThought/TheOtherMaps
+ *
+ * @license GPL 3.0
+ *
+ *
+ * @module Main Application
+ *
+ * @file This is the main entry point of the library. It sets paths and loads the configuration
+ */
+
+
 var basepath = requirejs.toUrl('');
 var baseUrl = '';
 // basepath will look like the whole URL of this app.
@@ -20,7 +36,7 @@ var loc = window.location
 var mylocation = loc.origin + loc.pathname;
 
 requirejs.config({
-  urlArgs: "bust=25", // + (new Date()).getTime(), //this kills javascript debugging
+  urlArgs: "bust=27", // + (new Date()).getTime(), //this kills javascript debugging
   baseUrl: baseUrl,
   optimizeAllPluginResources: false,
   enforceDefine: false, // will fail for yaml & json anyways nice for debugging
@@ -43,7 +59,6 @@ requirejs.config({
     leafletsidebar: basepath + 'lib/leaflet/leaflet-sidebar',
     leafletclickevents: basepath + 'lib/leaflet/L.VisualClick',
     leafletgeocodermapzen: basepath + 'lib/leaflet-geocoder-mapzen',
-    locationlist: basepath + 'app/modules/leaflet.locationlist',
     keymaster: basepath + 'lib/keymaster',
     tipsy: basepath + 'lib/jquery.tipsy',
     handlebars: basepath + 'lib/handlebars',
@@ -85,9 +100,6 @@ requirejs.config({
       exports: 'leafletsidebar'
     },
     sceneswitcher: {
-      deps: ['leaflet']
-    },
-    locationlist: {
       deps: ['leaflet']
     },
   },
